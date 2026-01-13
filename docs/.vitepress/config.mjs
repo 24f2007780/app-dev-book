@@ -64,6 +64,10 @@ export default withMermaid(defineConfig({  title: 'Application Development',
                   {
                     text: 'String Templating',
                     link: '/appdev-I-theory/string-templating'
+                  },
+                  {
+                    text: 'Jinja2',
+                    link: '/appdev-I-theory/jinja2.md'
                   }
                 ]
               },

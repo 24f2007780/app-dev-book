@@ -1,5 +1,7 @@
 # Jinja2 Guide <a name="jinja2-guide"></a>
 
+<div v-pre>
+
 In previous sections, we have discussed about `string.Template` and Python's built-in formatting methods like `f-strings`, `str.format()`, and `%-formatting`. These methods are great for simple string interpolation, but when it comes to generating complex HTML or text documents with appropriate safety measures, a more powerful templating engine is often needed.
 
 ## Why Jinja2?
@@ -24,7 +26,7 @@ In previous sections, we have discussed about `string.Template` and Python's bui
 Templates in Jinja2 are plain text blocks with placeholders and control structures enclosed in special delimiters, which when rendered with context data produce the final output.
 
 Example of a simple Jinja2 template:
-
+:::v-pre
 ``` python
 from jinja2 import Template
 template = Template("""
@@ -38,7 +40,7 @@ print(rendered)
 
 Output:
 
-``` html
+```html
   <h1>Welcome, Alice!</h1>
   <p>Does user have admin privileges?True</p>
   <p> will not be displayed</p>
@@ -68,7 +70,7 @@ Jinja2 have its own expression syntax which is similar to Python but not exactly
 
 ### syntax
 
-``` jinja2
+```html
 {{ variable }}
 {{ user.name }}
 {{ items[0] }}
@@ -105,7 +107,7 @@ output:
 
 We can add comments in Jinja2 templates using `{# ... #}` syntax. Comments are ignored during rendering.
 
-``` jinja2
+```html
 {# This is a comment #}
 ```
 
@@ -153,7 +155,7 @@ output:
 
 ### For Loops
 
-``` jinja2
+```html
 {% for item in items %}
    <li>{{ loop.index }} - {{ item }}</li>
 {% endfor %}
@@ -164,7 +166,7 @@ Special loop vars: `loop.index`, `loop.first`, `loop.last`,
 
 ### Set Variables
 
-``` jinja2
+```html
 {% set total = price * quantity %}
 ```
 
@@ -172,7 +174,7 @@ Special loop vars: `loop.index`, `loop.first`, `loop.last`,
 
 ## 🔹 With Statement (Scoped Variables)
 
-``` jinja2
+```html
 {% with x = 5 %}
    <p>{{ x }}</p>
 {% endwith %}
@@ -184,7 +186,7 @@ Special loop vars: `loop.index`, `loop.first`, `loop.last`,
 
 Example with Flask:
 
-``` jinja2
+```html
 {% with messages = get_flashed_messages(with_categories=true) %}
   {% if messages %}
     {% for category, msg in messages %}
@@ -198,7 +200,7 @@ Example with Flask:
 
 ## 🔹 Macros (Reusable Functions)
 
-``` jinja2
+```html
 {% macro render_input(name, type="text") %}
   <input type="{{ type }}" name="{{ name }}">
 {% endmacro %}
@@ -210,7 +212,7 @@ Example with Flask:
 
 ## 🔹 Importing Macros
 
-``` jinja2
+```html
 {% import "forms.html" as forms %}
 {{ forms.render_input("username") }}
 
@@ -222,7 +224,7 @@ Example with Flask:
 
 ## 🔹 Call Blocks (Macros with Blocks)
 
-``` jinja2
+```html
 {% macro panel(title) %}
   <div class="panel">
     <h3>{{ title }}</h3>
@@ -244,7 +246,7 @@ Example with Flask:
 
 ## 🔹 Filters (Common)
 
-``` jinja2
+```html
 {{ "hello world" | title }}       # Hello World
 {{ name | upper }}                # UPPERCASE
 {{ list | length }}               # Count
@@ -256,7 +258,7 @@ Example with Flask:
 
 ## 🔹 Escaping
 
-``` jinja2
+```html
 {% raw %}
    {{ this will not be evaluated }}
 {% endraw %}
@@ -266,14 +268,14 @@ Example with Flask:
 
 ## 🔹 Whitespace Control
 
-``` jinja2
+```html
 {{- variable -}}
 {% if cond -%} text {%- endif %}
 ```
 
 ## Template Inheritance (`extends` + `block`)
 
-``` jinja2
+```html
 {% extends "base.html" %}
 {% block content %}
    <h1>Hello</h1>
@@ -294,7 +296,7 @@ This will prepend the base content block( super()'s output ) to the block conten
 
 ## 🔹 Includes
 
-``` jinja2
+```html
 {% include "navbar.html" %}
 ```
 
@@ -303,7 +305,7 @@ This will prepend the base content block( super()'s output ) to the block conten
 
 Example:
 
-``` jinja2
+```html
 {% include "sidebar.html" with context %}
 {% include "footer.html" without context %}
 ```
@@ -319,3 +321,5 @@ Example:
 -   `macro` → Reusable function-like snippets\
 -   `call` → Macros with blocks of HTML\
 -   Filters → Modify data output
+
+</div>
