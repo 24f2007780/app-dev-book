@@ -13,7 +13,7 @@ Requirements --> Tests --> Code --> Integration --> Delivery --> Deployment --> 
 M["middleware"]
 Authentication --> M
 proxy --> M
-1["load balancing"] --> M
+L["load balancing"] --> M
 ```
 ## Service Approach
 Permanent Deployment: auto-restart servers, Always-on internet, uninterrupted power, monitoring logging

@@ -45,19 +45,18 @@ Replace `env_name` with the desired name for your virtual environment.
 ![creating](./static/Creating-venv.webp)
 #### Activating a virtual environment
 
-[list2tab]
+::: code-group
+```bash [On Windows]
+# enter following command in command prompt
+.\env_name\Scripts\activate
+```
 
-* On Windows
-    Enter the following command in command prompt:
-    ```bash
-    .\env_name\Scripts\activate
-    ```
-
-- On macOS and Linux
-    Enter the following command in terminal:
-    ```bash
-    source env_name/bin/activate
-    ```
+```bash [On macOS and Linux]
+# enter following command in terminal
+source env_name/bin/activate
+  ```
+  
+:::
 
 #### Deactivating a virtual environment
 
@@ -148,3 +147,60 @@ The installation steps for VS Code differ by operating system. Below are the ste
 
 ***VS Code tour video guide:*** [vscode tour video](https://youtu.be/yjeHLSrhPao).
 
+
+# Latency
+Speed of light: 3,00,000 m/s ~ $2 \times 10^{8}$ m/s on **copper** cable ~5ns/m  ~ 5ms for 1000km
+- If continuous request-response : <span style="color:rgb(240, 96, 118)"> 50 requests/sec </span> (CHN to DEL 2000km 20ms round trip)
+## Response size
+
+$$\boxed{\begin{aligned}&\text{ 19245 bytes of content(trackers, 100B headers, HTML, CSS, JS)} \\& \text{receives 14–16.4B daily →each person searching 3-4x}\\& 189,815  \text{ requests/second} \sim \frac{3.652  \times 10^9}{19.245 \times 10^3}\\&\text{Network connection=3.6 Gbps otherwise server crashes}\end{aligned}}$$
+$$\boxed{\begin{aligned}\text{Youtube$\underbrace{2M}_\text{live views} \times\underbrace{6MB}_\text{py HTTP server process}$=12 TB RAM}\end{aligned}}$$
+$$\boxed{\begin{aligned}&\text{Google index 100B web pages $\sim$ 100 PetaBytes}\\&\text{Cross-reference, pagerank distributed over Million Servers }\end{aligned}}$$
+
+| Prefix | Power of 10 |
+| ------ | ----------- |
+| exa    | $10^{18}$   |
+| peta   | $10^{15}$   |
+| tera   | $10^{12}$   |
+| giga   | $10^{9}$    |
+| mega   | $10^{6}$    |
+| kilo   | $10^{3}$    |
+| hecto  | $10^{2}$    |
+| deka   | $10^{1}$    |
+| byte   | $10^{0}$    |
+
+- 📦 Bits and Bytes
+
+    - **1 Byte** = 8 bits
+    - **1 KB** = 1000 Bytes
+    - **1 MB** = 1000 KB = $10^{6}$ Bytes
+    - **1 GB** = 1000 MB = $10^{6}$ KB = $10^{9}$ Bytes
+    - **1 TB** = 1000 GB = $10^{6}$ MB = $10^{9}$ KB = $10^{12}$ Bytes
+
+- ⏱️ Time Conversions
+    - **1 second (s)** = 1000 milliseconds (ms)
+    - **1 millisecond (ms)** = $10^{-3}$ seconds
+    - **1 microsecond (µs)** = $10^{-3}$  milliseconds = $10^{-6}$  seconds
+    - **1 nanosecond (ns)** = $10^{-3}$  microseconds = $10^{-6}$  milliseconds = $10^{-9}$  seconds
+
+- 🔢 Large Number Units
+    - **1 million** = $10^{6}$  units
+    - **1 billion** = $10^{3}$  million = $10^{9}$  units
+    - **1 trillion** = $10^{3}$  billion = $10^{6}$  million = $10^{12}$  units
+
+---
+
+
+## 🌐 Bandwidth Concepts
+$$
+\text{Bandwidth} = (\text{Number of requests per second }) \times (\text{size of request})
+$$
+
+
+<!-- <ClientOnly> -->
+  <LatencyVisualizer />
+<!-- </ClientOnly> -->
+
+
+For more numericals
+<iframe src="https://drive.google.com/file/d/1WzbE5AQ08NXfRE6adb7sggVSy6yndeY2/preview" width="640" height="480"></iframe>

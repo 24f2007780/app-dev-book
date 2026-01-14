@@ -102,7 +102,7 @@ def logout():
 1.  Server Authentication: ❌ **DNS hijack** → false IP, **chain of trust** entries → redirect to another server
 ```mermaid
 graph LR
-1["❌ tap channel"]--> 2["Server certificates"]--> 3["Client certificates rare in corporate intranets"]-->4["Certificate Authority CA"]-->5["OS root certificate fails❌"]
+A["❌ tap channel"]--> B["Server certificates"]--> C["Client certificates rare in corporate intranets"]-->D["Certificate Authority CA"]-->E["OS root certificate fails❌"]
 ```
 
 2. Encrypt all **physical wire** communications using **TLS/SSL** protocols ❌ intercepted

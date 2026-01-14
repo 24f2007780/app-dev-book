@@ -35,8 +35,9 @@ Links:
 ### Test Generation
 
 
-[list2tab]
-- API-based
+:::tabs
+
+== API-based
   Using API specifications like Swagger / OpenAPI, the test generator knows:
 	- Possible endpoints
 	- Required request format
@@ -46,19 +47,21 @@ Links:
 	- Authentication failure
 	- Edge cases
 	- Incorrect API traffic
-- Abstract Tests
+
+== Abstract Tests
   semi formal verbal description (❌ code)
   - apply to generic models
--  Model-based testing
+
+==  Model-based testing
   Scenarios: (Model generates test for each possible <span style="color:rgb(181, 118, 244)"> states &  transitions </span> )
 	- abstract models → **executable tests** ![](https://www.einfochips.com/wp-content/uploads/2021/05/test-cases-generated-using-the-state-diagrams.png)
 	```mermaid
 	flowchart LR
-	1["state1: User logged in"] --"Yes"--> 1Y["show page"]
-	1--"No"--> 1N["redirect to login page"]
-	2["Forgot password"]--"Yes"--> 2A["state2: pass reset"] --> 2B[redirect to desired page]
+	A["state1: User logged in"] --"Yes"--> AY["show page"]
+	A--"No"--> AN["redirect to login page"]
+	B["Forgot password"]--"Yes"--> BA["state2: pass reset"] --> BB[redirect to desired page]
 	```
-- (G)UI testing
+== (G)UI testing
   user interface
 	- specific elements ✅ present on page
 	- ✅ navigation links
@@ -66,7 +69,8 @@ Links:
 		- ❌ programmatic requests (captcha) ✅ browser
 			- request gen: `capybara (ruby), py requests`
 			- browser automate `selenium`
-- Security testing
+
+== Security testing
 	- generate invalid inputs to test app behaviour (`SQL injection⚠️/server overload DoS)`
 	- `black-box` assume attacker doesn't know implement(miss edge cases) `white-box` know code implementation (over-complicated, focus on less IMP parts)
 	- `White-box`  designing test cases based on the **code detailed insights** but 
@@ -74,10 +78,11 @@ Links:
 	- **Fuzzing** random/semi-random garbage inputs
 	- `Grey-box=`Combination of `white-box` & `black-box`
 
-
-- Regression Testing
+== Regression Testing
 	- make sure previous tests does ❌ start failing (modification → break existing features) → `series of tests for all features`
 	- **Authentication** (identify & verify like username, password)+ **Authorisation**(role-based access control rights to edit/view)
+	
+:::
 
 #### Coverage
 **Code** coverage: Every line executed at least once.

@@ -6,6 +6,10 @@ date: 2025-04-24 14:25
 syllabus: 
 ---
 
+subsections
+diy codes
+simple examples
+
 ```html
 <link rel="stylesheet" type="text/css" href="{{ url_for('static',
 filename='bootstrap/css/bootstrap.min.css') }}"/>
@@ -39,30 +43,31 @@ $http:// \underbrace{0.0.0.0}_\text{default IP address}: \underbrace{8000}_\text
 
 HTTP 1.1 variant → large persistent connections and pipelining<br>
 
-[list2tab]
-- Client Request
-    ```bash
-    GET / HTTP/1.1
-    Host: localhost:8000 or www.domain.com
-    User-Agent: curl/7.64.1
-    Accept: */*
-    ```
-- Server Response
-    ```bash
-    HTTP/1.1 200 OK
-    Server: SimpleHTTP/0.6 Python/3.x
-    Content-Type: text/html
-    Content-Length: <file-size>
-    ```
+:::code-group
 
+```bash [Client Request]
+GET / HTTP/1.1
+Host: localhost:8000 or www.domain.com
+User-Agent: curl/7.64.1
+Accept: */*
+```
+
+```bash [Server Response]
+HTTP/1.1 200 OK
+Server: SimpleHTTP/0.6 Python/3.x
+Content-Type: text/html
+Content-Length: <file-size>
+```
+
+:::
 
 - `127.0.0.1 (IPv4)` and `::1 (IPv6)` are **loopback** addresses. Packets sent to these addresses:
     - Never leave the host machine & are looped through the network interface card only.
     - This can be used for **diagnostic** purposes to verify that the internal path through the TCP/IP protocols is working.
 
-<client-only>
-    <CurlRestAPI />
-</client-only>
+<ClientOnly>
+  <CurlRestAPI />
+</ClientOnly>
 
 | **Command**          | **Description**                                          |
 |----------------------|----------------------------------------------------------|

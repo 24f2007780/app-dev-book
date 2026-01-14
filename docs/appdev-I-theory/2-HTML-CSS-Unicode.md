@@ -128,53 +128,44 @@ a way of using cues/codes in regular flow of text to make *clear, easy to unders
 	- Web storage (persistent, remember where you left the file)
 	- Drag & Drop (drag from OS to website)
 
-## regex
-<iframe
-  scrolling="no"
-  src="https://cheatography.com/davechild/cheat-sheets/regular-expressions/"
-  width="1480"
-  height="814"
-  style="border:0px;">
-</iframe>
+## [Regex cheatsheet](https://cheatography.com/davechild/cheat-sheets/regular-expressions/)
 
 
-### Styling
-- Separate CSS files/blocks
-	- (Cascading Style Sheets) allows multiple definitions → Latest takes precedence
-	- Selects all HTML elements of a given {} & applies style to them
+:::code-group
 
-[list2tab]
-- type selector
-	```css
-	a:hover{text-decoration: underline;
-	font-family: 'Inter', sans-serif;margin: 0;}
-	```
-- .class selector
-  reusable `<class="classname"`
-	```css
-	.centered{text-align: center;}
-	
-	.large{font-size: large;}
-	```
-- ID selector: unique with `id="main-header"`
-	```css
-	#main-header {
-	font-size: 2em;
-	padding: 30px 20px;}
-	```
--  attribute selector 
-	```css
-	a[title] {
-		color: purple;
-		} /*all <a> elements with title attr*/
-	input[type="button"] {
-		border: 1px solid black;
-		}/*<input> element with EXACTLY type="button"*/
-	div[class*="post"] {
-		background-color: #333;
-		}/*all <div> whose class contains "post" substring
-	^ starts with       $ ends with*/
-	```
+```css [type selector]
+a:hover{text-decoration: underline;
+font-family: 'Inter', sans-serif;margin: 0;}
+```
+
+```css [.class selector]
+// reusable <class="classname"
+.centered{text-align: center;}
+
+.large{font-size: large;}
+```
+
+```css
+// ID selector: unique with id="main-header"
+#main-header {
+font-size: 2em;
+padding: 30px 20px;}
+```
+
+```css [attribute selector ]
+a[title] {
+	color: purple;
+	} /*all <a> elements with title attr*/
+input[type="button"] {
+	border: 1px solid black;
+	}/*<input> element with EXACTLY type="button"*/
+div[class*="post"] {
+	background-color: #333;
+	}/*all <div> whose class contains "post" substring
+^ starts with       $ ends with*/
+```
+
+:::
 
 
 ```html
@@ -209,4 +200,4 @@ a way of using cues/codes in regular flow of text to make *clear, easy to unders
 </div>
 ```
 ## JavaScript or ECMAScript
-- programmability inside browser which HTML, CSS don't #MAD2
+- programmability inside browser which HTML, CSS can't do (you will learn in Appdev-2)
