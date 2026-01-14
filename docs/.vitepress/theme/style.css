@@ -42,6 +42,41 @@
  * - `danger`: Used to show error, or dangerous message to the users. Used
  *   in custom container, badges, etc.
  * -------------------------------------------------------------------------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem;
+  margin: 1.5rem 0;
+}
+
+.card {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+  color: var(--vp-c-brand-1);
+}
+
+.card ul {
+  padding-left: 1.1rem;
+  margin: 0;
+}
+
+.card li {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.hl {
+  color: rgb(98, 151, 208);
+  font-weight: 600;
+}
 
 :root {
   --vp-c-default-1: var(--vp-c-gray-1);

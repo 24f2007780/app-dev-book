@@ -15,7 +15,7 @@ const VUE_PREFIX = "/appdev-II-theory/vue"
 export default defineConfig({  
   title: 'Application Development',
   description: 'Documentation for AppDev Projects and Theory',
-  base: "/",
+  base: '/MAD1TAs-book/',
   lang: 'en-US',
   head : [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: './assets/favicon.svg' }]
@@ -49,7 +49,7 @@ export default defineConfig({
           ]
         }
       ],
-            '/appdev-I-theory/': [
+      '/appdev-I-theory/': [
           {
             text: 'AppDev I Theory',
             collapsed: false,

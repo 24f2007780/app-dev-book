@@ -1,4 +1,4 @@
-# Jinja2 Guide <a name="jinja2-guide"></a>
+# Jinja2 Guide
 
 :::info
 This guide is designed as a compact reference to Jinja2 syntax and features.
