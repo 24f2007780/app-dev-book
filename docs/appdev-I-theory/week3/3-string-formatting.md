@@ -4,7 +4,7 @@ In python course, we have been introduced to various ways of string formatting l
 
 ---
 
-## % Operator (C-lang printf style)<a name="percent-operator"></a>
+## % Operator (C-lang printf style)<a id="percent-operator"></a>
 
 The `%` operator is an older method of string formatting in Python, similar to the `printf` style in C. It uses format specifiers to indicate where and how to format the values with strict type checking.
 
@@ -31,7 +31,7 @@ Hello, my name is John and I am 25 years old.
 
 
 
-## str.format() method (Python 2.7+) <a name="str-format-method"></a>
+## str.format() method (Python 2.7+) <a id="str-format-method"></a>
 
 The `str.format()` method allows you to format strings by placing placeholders in the string and then calling the `format()` method with the values to replace those placeholders. `str.format()` replaces placeholders with values and allows **accessing object attributes** and **items**, but **does not evaluate Python expressions.**
 
@@ -63,7 +63,7 @@ Hello, my name is Charlie and I am 28 years old.
 | More flexible than `%` and f-strings<br>Allows attribute and item access<br>Supports advanced formatting options<br>Reusable templates<br>Available in Python 2.7+ and 3.x<br>Safer than f-strings (no expression evaluation) | Slightly less readable than f-strings<br>More verbose syntax<br>Only basic substitutions<br>Not suitable for complex templating<br>Attribute/item access can still be dangerous<br>Security risk if user input is part of the template |
 
 
-## f-strings (Python 3.6+)  <a name="f-strings"></a>
+## f-strings (Python 3.6+)  <a id="f-strings"></a>
 
 f-strings or formatted string literals are a way to embed expressions inside string literals, using curly braces `{}`. They are prefixed with the letter `f` or `F`. f-strings allow for **full expression evaluation** inside the curly braces.
 
@@ -79,14 +79,14 @@ print(greeting)
 ```txt [output]
 Hello, my name is Alice and I am 30 years old.
 ```
+
 :::
 
 | Pros                                                                                                                         | Cons                                                                                                                                                                                         |
 | ---------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Very readable and concise<br>Fastest formatting method<br>Supports advanced formatting<br>Allows any valid Python expression | Python 3.6+ only<br>Not reusable as a template<br>Template and data mixed together<br>Evaluated immediately<br>Not suitable for complex templating<br>**High security risk with user input** |
 
-
-## Summary<a name="summary"></a>
+## Summary<a id="summary"></a>
 
 | Feature                     | % Operator          | str.format()        | f-strings           |
 |-----------------------------|---------------------|---------------------|---------------------|

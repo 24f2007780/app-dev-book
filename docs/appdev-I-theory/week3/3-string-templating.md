@@ -92,6 +92,7 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 KeyError: 'place'
 ```
+
 KeyError is raised in the second case because `place` is not provided but safe_substitute handles it gracefully returning the placeholder as is.
 :::
 

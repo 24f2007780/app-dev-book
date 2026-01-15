@@ -51,7 +51,7 @@ python myfile.py argument1 argument2 "complex argument 3"
 
 See the image below for a visual representation of `sys.argv` for the above command:
 
-![sys-argv](./static/sys-argv.png)
+![sys-argv](../static/sys-argv.png)
 
 :::info note
 

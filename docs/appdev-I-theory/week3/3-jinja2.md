@@ -1,6 +1,6 @@
 # Jinja2 Guide
 
-:::info
+:::info **Disclaimer**
 This guide is designed as a compact reference to Jinja2 syntax and features.
 You can read it linearly or jump directly to a section when you need a refresher.
 :::
@@ -33,6 +33,7 @@ Templates in Jinja2 are plain text blocks with placeholders and control structur
 Example of a simple Jinja2 template:
 
 :::code-group
+
 ``` python [Example #1]
 from jinja2 import Template
 template = Template("""
@@ -49,6 +50,7 @@ print(rendered)
   <p>Does user have admin privileges?True</p>
   <p> will not be displayed</p>
 ```
+
 :::
 
 Some important information about Jinja2 rendering:
@@ -94,11 +96,12 @@ template = Template("""
 rendered = template.render(user={"name": "Alice"}, price=19.99, quantity=3)
 print(rendered)
 ```
- 
-``` html [output]
+
+```html [output]
   <h1>Welcome, Alice!</h1>
   <p>Your total is: $59.97</p>
 ```
+
 :::
 
 :::details Try it yourself
@@ -366,7 +369,7 @@ We can import macros from other templates using `import` or `from ... import` st
 {{ render_input("email") }}
 ```
 
-:::details ### Try it yourself
+:::details **Try it yourself**
 
 copy the following code and paste it into a python file, then run it to see the output
 

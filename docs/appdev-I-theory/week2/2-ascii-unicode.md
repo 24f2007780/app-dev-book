@@ -10,7 +10,7 @@ Computers only work with **bits** $0/1$. So we need some Standard “encoding”
 ::: tip American Standard Code for **Information Interchange**: is a character encoding between Machines or humans → standard that assigns a unique numerical value to each character. 
 $$\begin{gather}\text{We use 7-bits because $2^7$ 128 different entities can fit i.e. numbers + English 26 letters }\\\underbrace{0...9}_{48 -57}+\underbrace{A...Z}_{65 -90}+ \underbrace{a...z}_{97-122}
 \end{gather}$$
-![](https://blog.gcwizard.net/wp-content/uploads/2021/01/ASCII-code.png)
+![ascii-code](https://blog.gcwizard.net/wp-content/uploads/2021/01/ASCII-code.png)
 
 But if we want to include `!@# %&*() -Ľätīń/Rõman` then  $2^8 =256$ we use 8 bit ASCII
 

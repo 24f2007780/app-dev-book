@@ -118,7 +118,7 @@ $$
 
 </div>
 
-![](https://dotnettutorials.net/wp-content/uploads/2022/08/word-image-29702-1.png)
+![binary-decimal-converson](https://dotnettutorials.net/wp-content/uploads/2022/08/word-image-29702-1.png)
 
 ### Binary-Decimal Conversion
 Each bit represents a power of 2, starting from the rightmost bit (Least Significant bit $\to 2^0$)<br>

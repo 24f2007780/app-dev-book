@@ -41,7 +41,7 @@ Ex: *bittorrent, Blockchain, Distributed file systems*
 👉 So, every downloader also becomes an uploader
 :::
 
-![](./static/client-peer-architecture.png)
+![architectures](../static/client-peer-architecture.png)
 source: https://em360tech.com/tech-articles/client-server-architecture-enterprise-it
 
 
@@ -51,4 +51,4 @@ A general, reusable solution to a commonly occurring problem within a given cont
 - <span style="color:rgb(240, 96, 118)"> Indexed Metadata </span>: time and attachments info & type; summarize basic information for tracking
 :::
 
-### ⭐Checkout [Model-View-Controller Architecture](./4-database-layer-MODEL#mvc-model-view-controller) from Week-4
+### ⭐Checkout [Model-View-Controller Architecture](../week4/4-database-layer-MODEL#mvc-model-view-controller) from Week-4

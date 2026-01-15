@@ -32,7 +32,7 @@ In this course, we will use the Python programming language for application deve
 1. You should see the installed Python version printed in the terminal.
 1. If you see an error message, revisit the installation steps and ensure that Python is added to PATH.<br> Video guide: [python installation video](https://www.youtube.com/watch?v=91SGaK7_eeY).
 
-![python version](./static/python-version.png)
+![python version](../static/python-version.png)
 
 ### Virtual Environments
 
@@ -47,10 +47,12 @@ python -m venv env_name
 ```
 
 Replace `env_name` with the desired name for your virtual environment.
-![creating](./static/Creating-venv.webp)
+![creating](../static/Creating-venv.webp)
+
 #### Activating a virtual environment
 
 ::: code-group
+
 ```bash [On Windows]
 # enter following command in command prompt
 .\env_name\Scripts\activate
@@ -83,7 +85,7 @@ Video guide: [python virtual environment video](https://youtu.be/Z9Vm9Uxk5pA).
 </div> -->
 
 
-![virtual environment activated](./static/virtual-env.png)
+![virtual environment activated](../static/virtual-env.png)
 
 ### pip - Python package installer
 

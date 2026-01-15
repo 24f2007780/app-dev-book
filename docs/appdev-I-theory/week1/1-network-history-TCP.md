@@ -52,7 +52,7 @@ tcp --> domain --> http --"DNS database of ISP local cache/other DNS servers"-->
 
 You will learn about *HTTP methods* in greater detail in [Week 6](./6-Rest-APIs.md)
 
-## ⭐Checkout [Curl Commands](5-business-logic-layer-CONTROLLER#curl-commands) from Week-5
+## ⭐Checkout [Curl Commands](../week5/5-business-logic-layer-CONTROLLER#curl-commands) from Week-5
 
 ## Transmission Control Protocol
 TCP uses 16-bit unsigned integers for port numbers
@@ -91,21 +91,18 @@ $$
 \end{align}
 $$
 
-
 Correct Answer: B) `0000:0000:AC10:0A19`
-![](./static/binary-conversion-table.png)
+![binary-to-decimal](../static/binary-conversion-table.png)
 :::
 
-
 👉 IP = which machine?
-👉 Port = which service on that machine? 
+👉 Port = which service on that machine?
+
 | Port    | Service            |
 | ------- | ------------------ |
-| **80**  | HTTP webpages         |
-| **443** | HTTPSecure |
+| **80**  | HTTP webpages      |
+| **443** | HTTPSecure         |
 | **25**  | sending Email      |
-
-
 
 ### Status codes
 
@@ -147,4 +144,4 @@ Correct Answer: B) `0000:0000:AC10:0A19`
 - **Multicast** is a one-to-many communication where data is sent from one sender to multiple specified receivers who join a multicast group, optimizing bandwidth usage.
 ::: 
 
-## ⭐Checkout [Latency & bandwidth](0-latency-bandwidth.md) from Week-0
+## ⭐Checkout [Latency & bandwidth](../week0/0-latency-bandwidth.md) from Week-0
