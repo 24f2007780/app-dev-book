@@ -1,10 +1,3 @@
----
-tags:
-  - MAD1
-  - W6
-date: 2025-04-24 14:25
-syllabus: 
----
 
 - [pip cheatsheet](https://opensource.com/sites/default/files/gated-content/cheat_sheet_pip.pdf)
 - Flask, by default, normalizes the URL path—multiple consecutive slashes are treated as a single slash. Both `@app.route('/')` and `@app.route('//')` will match the root endpoint depends what defined b4.
@@ -941,4 +934,4 @@ The response will automatically be:
 > - For many-to-many, use an association table with two foreign keys and `secondary` in relationships.
 > #### one-to-one
 > add `unique=True` constraint on the foreign key column.
-> ![[Pasted image 20250830140030.png]]
+> ![](./static/Pasted image 20250830140030.png)

@@ -158,44 +158,71 @@ HTTP 500 Internal Server Error
 </script>
 
 <style scoped>
+/* =========================================================
+   StatusCodeSimulator – High-contrast response console
+   ========================================================= */
+
 .api-demo {
-  border: 1px solid #ddd;
-  padding: 16px;
-  border-radius: 10px;
-  background: #fafafa;
+  background:
+    linear-gradient(
+      160deg,
+      var(--vp-c-bg-soft),
+      var(--vp-c-bg)
+    );
+  border-radius: 14px;
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.14),
+    inset 0 0 0 1px var(--vp-c-divider);
+  color: var(--vp-c-text-1);
+}
+
+.api-demo h2 {
+  color: var(--vp-c-brand-1);
+  margin-bottom: 0.25rem;
 }
 
 .hint {
-  color: #555;
-  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: var(--vp-c-text-2);
+  margin-bottom: 0.75rem;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .buttons button {
-  margin: 6px;
-  padding: 8px 14px;
-  border-radius: 6px;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
   border: none;
+  font-weight: 600;
   cursor: pointer;
-  background: #6366f1;
+  background: var(--vp-c-brand-3);
   color: white;
-  font-weight: 500;
 }
 
 .buttons button:hover {
-  background: #4f46e5;
+  background: var(--vp-c-brand-2);
 }
 
+/* Output console */
 .output {
-  margin-top: 16px;
-  background: #0f172a;
-  color: #e5e7eb;
-  padding: 14px;
-  border-radius: 8px;
-  min-height: 200px;
+  margin-top: 1rem;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-left: 6px solid var(--vp-c-brand-2);
+  border-radius: 12px;
+  padding: 0.9rem;
+  min-height: 220px;
 }
 
 pre {
+  margin: 0;
   white-space: pre-wrap;
   font-family: monospace;
+  font-size: 0.9rem;
 }
 </style>

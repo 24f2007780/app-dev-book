@@ -1,17 +1,4 @@
----
-tags:
-  - MAD1
-  - W11
-date: 2025-04-24 14:25
-syllabus: 
----
-
-Links:
-- https://codepen.io/calebdwilliams/pen/rRNJPJ
-- https://html.spec.whatwg.org/multipage/custom-elements.html
-- https://css-tricks.com/an-introduction-to-web-components/
-- https://github.com/mdn/web-components-examples
-
+# Beyond HTML
 
 :::tab
 
@@ -206,11 +193,11 @@ books.forEach(book => {
 
 
 T1 2025
-![[Pasted image 20251204173738.png]]
+![](./static/Pasted image 20251204173738.png)
 T3 2024
-![[Pasted image 20251204173858.png]]
+![](./static/Pasted image 20251204173858.png)
 T2 2024
-![[Pasted image 20251204173911.png]]
+![](./static/Pasted image 20251204173911.png)
 T1 2024
 Which of the below JavaScript statement(s) are used to print information on the browser’s console?
 
@@ -219,3 +206,10 @@ window.alert()
 console.log()
 document.write()
 None of these
+
+:::info Check the following links for more details:
+- https://codepen.io/calebdwilliams/pen/rRNJPJ
+- https://html.spec.whatwg.org/multipage/custom-elements.html
+- https://css-tricks.com/an-introduction-to-web-components/
+- https://github.com/mdn/web-components-examples
+:::

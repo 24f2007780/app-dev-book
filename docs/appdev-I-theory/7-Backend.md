@@ -1,19 +1,4 @@
----
-tags:
-  - MAD1
-  - W7
-date: 2025-04-24 14:25
-syllabus: 
----
-
-Links:
-- [NoSQL](https://www.ml4devs.com/en/articles/datastore-choices-sql-vs-nosql-database/)
-- [documentation](https://dev.mysql.com/doc/refman/8.4/en/index-btree-hash.html)
-- [Postgres](https://www.postgresql.org/docs/current/geqo.html)
-- [Screencasts Intro to FTS](https://www.youtube.com/watch?v=9NQUZgU2mMA&list=PLOXyVgDYMn7exXum694qtcRv7K4joLsH0&index=17)
-
-
-### Memory Hierarchy
+# Memory Hierarchy
 ![](https://cn.edurev.in/ApplicationImages/Temp/1421638_a9fe7b34-1e74-45f4-a8ae-cbbeea02d22a_lg.png?w=360&dpr=2.6)
 [ℹ️Magnetic disk animation](https://youtu.be/ngP6nSt_yAE)
 SRAM → **Static** RAM              DRAM → **Dynamic** RAM
@@ -135,3 +120,10 @@ client ← secure sockets → server
 - **Server certificate:** DNS verified by trusted 3rd party, difficult to spoof, maths properties very ↓ probability of mistakes match.
 - ✅ secure link for data transfer❌ validation/safety checks 
 - ↑performance overhead or ↓ caching (intermediate proxies can't read packets)
+
+:::info Check the following links for more details:
+- [NoSQL](https://www.ml4devs.com/en/articles/datastore-choices-sql-vs-nosql-database/)
+- [documentation](https://dev.mysql.com/doc/refman/8.4/en/index-btree-hash.html)
+- [Postgres](https://www.postgresql.org/docs/current/geqo.html)
+- [Screencasts Intro to FTS](https://www.youtube.com/watch?v=9NQUZgU2mMA&list=PLOXyVgDYMn7exXum694qtcRv7K4joLsH0&index=17)
+:::

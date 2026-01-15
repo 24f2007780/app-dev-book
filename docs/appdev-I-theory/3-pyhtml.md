@@ -133,9 +133,7 @@ print(doc)
 
 In this section, we explored the `sys` module in Python, focusing on `sys.argv` for command-line argument handling. We also introduced the `pyhtml` library for generating HTML using Python syntax, demonstrating its basic usage and how to create nested HTML structures. Finally, we compared `pyhtml` with the popular templating engine `jinja2`, highlighting their differences in syntax, use cases, and community support.
 
-:::info
-
-**Check the following links for more details:**
+:::info Check the following links for more details:
 
 - [sys module documentation](https://docs.python.org/3/library/sys.html)
 - [pyhtml documentation](https://pypi.org/project/pyhtml/)

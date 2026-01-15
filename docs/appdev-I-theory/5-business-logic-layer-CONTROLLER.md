@@ -1,15 +1,3 @@
----
-tags:
-  - MAD1
-  - W5
-date: 2025-04-24 14:25
-syllabus: 
----
-
-subsections
-diy codes
-simple examples
-
 ```html
 <link rel="stylesheet" type="text/css" href="{{ url_for('static',
 filename='bootstrap/css/bootstrap.min.css') }}"/>

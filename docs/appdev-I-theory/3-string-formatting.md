@@ -12,38 +12,31 @@ The `%` operator is an older method of string formatting in Python, similar to t
 - `%d` - Integers
 - `%f` - Floating point numbers
 
-``` python
+:::code-group
+``` python [% operator]
 name = "John"
 age = 25
 greeting = "Hello, my name is %s and I am %d years old." % (name, age)
 print(greeting)
 ```
 
-Output:
-
-```txt
+```txt [output]
 Hello, my name is John and I am 25 years old.
 ```
+:::
 
-### pros:
+| Pros                                                                                                                                                                                  | Cons                                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Safer than `f-strings` and `str.format()`<br>Does not allow code execution or attribute access<br>Supported in all Python versions<br>Simple and straightforward for basic formatting | Less readable for complex formatting<br>More error-prone with many variables<br>Limited functionality<br>Mostly outdated and not recommended for new code |
 
-- Safer than `f-strings` and `str.format()`, does not allow any code execution or attribute access.
-- Supported in all Python versions.
-- Simple and straightforward for basic formatting needs.
 
-### cons:
-
-- Less readable and more error-prone for complex formatting.
-- Limited functionality compared to f-strings and `str.format()`.
-- Mostly considered outdated and not recommended for new code.
-
----
 
 ## str.format() method (Python 2.7+) <a name="str-format-method"></a>
 
 The `str.format()` method allows you to format strings by placing placeholders in the string and then calling the `format()` method with the values to replace those placeholders. `str.format()` replaces placeholders with values and allows **accessing object attributes** and **items**, but **does not evaluate Python expressions.**
 
-``` python
+:::code-group
+``` python [.format()]
 name1 = "Bob"
 age1 = 25
 
@@ -58,67 +51,40 @@ print(greeting1)
 print(greeting2)
 ```
 
-Output:
 
-```txt
+```txt [output]
 Hello, my name is Bob and I am 25 years old.
 Hello, my name is Charlie and I am 28 years old.
 ```
+:::
 
-### pros
+| Pros                                                                                                                                                                                                                          | Cons                                                                                                                                                                                                                                   |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| More flexible than `%` and f-strings<br>Allows attribute and item access<br>Supports advanced formatting options<br>Reusable templates<br>Available in Python 2.7+ and 3.x<br>Safer than f-strings (no expression evaluation) | Slightly less readable than f-strings<br>More verbose syntax<br>Only basic substitutions<br>Not suitable for complex templating<br>Attribute/item access can still be dangerous<br>Security risk if user input is part of the template |
 
-- More flexible than both printf-style formatting and f-strings.
-- Allows accessing object attributes and items.
-- Supports advanced formatting options.
-- Safer than f-strings as it does not evaluate arbitrary expressions.
-- Can be reused with different data.
-- Available in all Python versions from 2.7 and 3.x.
-
-### cons
-
-- Slightly less readable than f-strings.
-- More verbose syntax.
-- Only allows basic substitutions.
-- Not suitable for complex templating needs.
-- Supports attributes and items, but not full expressions, which is safer than f-strings but still can be dangerous in certain contexts.
-- **Security risk if user input is involved in template itself.**
-
----
 
 ## f-strings (Python 3.6+)  <a name="f-strings"></a>
 
 f-strings or formatted string literals are a way to embed expressions inside string literals, using curly braces `{}`. They are prefixed with the letter `f` or `F`. f-strings allow for **full expression evaluation** inside the curly braces.
 
-``` python
+:::code-group
+
+``` python [f-string]
 name = "Alice"
 age = 30
 greeting = f"Hello, my name is {name} and I am {age} years old."
 print(greeting)
 ```
 
-Output:
-
-```txt
+```txt [output]
 Hello, my name is Alice and I am 30 years old.
 ```
+:::
 
-### pros
+| Pros                                                                                                                         | Cons                                                                                                                                                                                         |
+| ---------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Very readable and concise<br>Fastest formatting method<br>Supports advanced formatting<br>Allows any valid Python expression | Python 3.6+ only<br>Not reusable as a template<br>Template and data mixed together<br>Evaluated immediately<br>Not suitable for complex templating<br>**High security risk with user input** |
 
-- More readable and concise.
-- Supports advanced formatting options.
-- Faster than both `%` operator and `str.format()` method.
-- Allows embedding of **any valid Python expression** inside the curly braces.
-
-### cons
-
-- Only available in Python 3.6 and later.
-- Not suitable for complex templating needs.
-- Template and data live together
-- Evaluated immediately
-- Not reusable as a template
-- **Security risk if user input is directly embedded**
-
----
 
 ## Summary<a name="summary"></a>
 
@@ -135,17 +101,16 @@ Hello, my name is Alice and I am 30 years old.
 
 ---
 
-:::danger
-**Security Warning:** Avoid using f-strings or `str.format()` with untrusted user input. Both `fstring` and `string.format` allows **dynamic expression evaluation** which can be exploited. Always sanitize and validate any user-provided data before embedding it in strings or simply use safer templating engines like [**string.Template**](./3-string-templating.md#string.Template) or [**jinja2.Template**](./3-jinja2.md).<br>
+:::danger Security Warning:
+Avoid using f-strings or `str.format()` with untrusted user input. Both `fstring` and `string.format` allows **dynamic expression evaluation** which can be exploited. Always sanitize and validate any user-provided data before embedding it in strings or simply use safer templating engines like [**string.Template**](./3-string-templating.md#string.Template) or [**jinja2.Template**](./3-jinja2.md).<br>
 :::
 
-:::tip
+:::tip see here for more information:
+- comparision of string formatting methods in python [here](https://realpython.com/python-string-formatting/#choosing-the-right-string-formatting-method)
 
-- **see comparision of string formatting methods in python** [here](https://realpython.com/python-string-formatting/#choosing-the-right-string-formatting-method)
+- comparsion with templating tools [here](3-jinja2.md#comparison-tables)
 
-- **see comparsion with templating tools** [here](./3-jinja2.md#Comparison Tables)
-
-- for more information on security risks related to string formatting, refer to this article: [Python String Formatting Security Risks](https://www.geeksforgeeks.org/python/vulnerability-in-str-format-in-python/)
+- on security risks related to string formatting, refer to this article: [Python String Formatting Security Risks](https://www.geeksforgeeks.org/python/vulnerability-in-str-format-in-python/)
 
 ***though there are more ways of string formatting in python like '%' operator, and more techniques related to `str.format()` method, we will not be covering them here. But you can refer to the official documentation for more details: [python official documentation](https://docs.python.org/3/library/string.html#formatstrings)***
 :::

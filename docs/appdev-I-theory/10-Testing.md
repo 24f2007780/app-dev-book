@@ -1,15 +1,3 @@
----
-tags:
-  - MAD1
-  - W10
-date: 2025-04-24 14:25
-syllabus: 
----
-
-Links:
-1. https://flask-security-too.readthedocs.io/en/stable/configuration.html
-2. https://dev.to/doabledanny/git-cheat-sheet-50-commands-free-pdf-and-poster-4gcn
-
 # Levels of Testing
 
 [list2card]
@@ -258,3 +246,8 @@ To avoid duplicating fixtures across test files.
 
 * Pytest automatically looks for fixtures in `conftest.py`
 * No need to import `fruit_basket` manually
+
+:::info Check the following links for more details:
+1. https://flask-security-too.readthedocs.io/en/stable/configuration.html
+2. https://dev.to/doabledanny/git-cheat-sheet-50-commands-free-pdf-and-poster-4gcn
+:::

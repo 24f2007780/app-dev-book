@@ -1,10 +1,3 @@
----
-tags:
-  - MAD1
-  - W9
-date: 2025-04-24 14:25
-syllabus: 
----
 
 ## Access Control
 - ❌ all parts for public access (read-only, read-write, modify-only❌ create) 

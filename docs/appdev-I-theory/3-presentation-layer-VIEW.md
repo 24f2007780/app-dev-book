@@ -1,11 +1,3 @@
----
-tags:
-  - MAD1
-  - W3
-date: 2025-04-24 14:25
-syllabus: 
----
-
 - ✅✅ [Builtin-filter](https://jinja.palletsprojects.com/en/stable/templates/#list-of-builtin-filters)
 
 
@@ -23,42 +15,6 @@ syllabus:
 9. **Help Users Recognize, Diagnose, & Recover from Errors:** Use plain language in error messages, clearly indicate problems, & suggest solutions.
 10. **Help & Documentation:** Provide easy-to-search, concise help & documentation focused on user tasks, available when needed.
 
-#### PyHTML
-```python
-import pyhtml as h
-t = h.html(
-	h.head(
-		h.title('Test Page')
-	), 
-	h.body(
-		h.h1('This is a title'),
-		h.div('This is some text'),
-		h.div(h.h2('inside title'), h.p('some text in a paragraph.'))
-		)
-	)
-)
-print(t.render())
-
-def f_table(ctx):
-	return (tr(
-	td(cell) for cell in row
-	) for row in ctx['table'])
-```
-
-#### jinja template
-```python
-from jinja2 import Template
-
-t = Template('$name is the $job of $company')
-s = t.substitute(name='Tim Cook', 
-job='CEO', company='Apple Inc.')
-print(s)
-t = Template('Hello {{ something }}') #{{ variable }}
-print(t.render(something='World'))
-
-t = Template('My favorite numbers: {% for n in range(1,10) %}{{n}}''{% endfor %}')
-print(t.render())
-```
 
 ### Accessibility
 <div class="card-grid">

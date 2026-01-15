@@ -4,9 +4,8 @@ The `string.Template` class is part of Python's standard library `string` provid
 
 We have to use the `Template` class from the `string` module to create a template object. We can then use the `substitute()` or `safe_substitute()` methods to replace the placeholders with actual values.
 
-## Example
-
-``` python
+:::code-group
+``` python [Example #1]
 from string import Template
 template = Template("Hello, my name is $name and I am ${my_age} years old.")
 
@@ -17,17 +16,13 @@ print(greeting1)
 print(greeting2)
 ```
 
-Output:
-
-```txt
+```txt [output]
 Hello, my name is David and I am 35 years old.
 Hello, my name is Eva and I am 29 years old.
 ```
+:::
 
-::: tip
-
-**Try it yourself**
-
+::: details Try it yourself
 copy the following code and paste it into a python file, then run it to see the output
 
 ``` python
@@ -39,20 +34,10 @@ print(result)
 
 :::
 
-## Pros
+| Pros                                                                                                                                                                                                                | Cons                                                                                                                                                                          |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Simple and easy to use for basic templating<br>Template and data are clearly separated<br>Available in Python 2.4+ and all 3.x versions<br>Safe for user input (no code execution)<br>No attribute or object access | Less flexible than f-strings and `str.format()`<br>No support for expressions<br>No advanced formatting options<br>Limited feature set<br>Not suitable for complex templating |
 
-- Simple and easy to use for basic templating needs.
-- Template and data are separated.
-- Available in all Python versions from 2.4 and 3.x.
-- Safe for user input as it does not allow arbitrary code execution.
-
-## Cons
-
-- Less flexible than f-strings and `str.format()`.
-- Does not support complex expressions or formatting.
-- Limited functionality compared to more advanced templating engines.
-- Only supports basic placeholder substitution.
-- Not suitable for complex templating needs.
 
 ## Placeholder Syntax
 
@@ -64,9 +49,8 @@ print(result)
 
 :::
 
-### Example
-
-``` python
+:::code-group
+``` python [Example #2]
 from string import Template
 template1 = Template("Total cost is $amount.")
 template2 = Template("Your balance is ${my_balance} USD.")
@@ -80,24 +64,20 @@ print(result3)
 
 ```
 
-Output:
-
-```txt
+```txt [output]
 Total cost is 100.
 Your balance is 250 USD.
 This costs $5.
 ```
-
----
+:::
 
 ## substitute() vs safe_substitute()
 
 - `substitute()`: Raises a `KeyError` if any placeholders are missing in the provided data.
 - `safe_substitute()`: Leaves placeholders unchanged if they are missing, avoiding exceptions.
 
-### Example
-
-``` python
+:::code-group
+``` python [Example #3]
 from string import Template
 template = Template("Hello, $name! Welcome to $place.")
 result1 = template.safe_substitute(name="Alice")
@@ -106,20 +86,16 @@ print(result1)
 print(result2)
 ```
 
-Output:
-
-```txt
+```txt [output]
 Hello, Alice! Welcome to $place.
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 KeyError: 'place'
 ```
-
 KeyError is raised in the second case because `place` is not provided but safe_substitute handles it gracefully returning the placeholder as is.
+:::
 
-:::tip
-
-**Try it yourself**
+:::details Try it yourself
 
 copy the following code and paste it into a python file, then run it to see the output
 

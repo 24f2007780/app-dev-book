@@ -4,8 +4,8 @@ flowchart LR
     %% --- TOP BLOCK: Networking History & Protocols ---
     A["📞 **Telephone** Networks <br> Physical line tied up during call. A talks to B through *complex switching network*"]
     B["📦 **Packet-switched networks**: Wire occupied only when data is sent; can carry several different convos, any type of data. faster"]
-    proto["Many protocols: *IBM SNA, DECnet, Ethernet* each had own rules"]
-    C["How do different networks talk❓→ 🌍 **Internet**<br>standard headers & packet format *network of servers*"]
+    proto["*IBM SNA, DECnet, Ethernet* each had own protocol rules"]
+    C["How do different networks talk❓→ 🌍 **Internet IP**<br>standard headers & packet format *network of servers*"]
 
     A --> B --"**ARPANet**<br>Node-to-node network"--> proto  --> C
 
@@ -13,8 +13,8 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-tcp["🔁**TCP**: Reliable delivery"] 
-domain["🌐 Domain names are easier to remember than IP address: protocol://www.**Domain Name**.com/gov/org/net/country/folder/file.html"]
+tcp["🔁**TCP**: Reliable error-prone delivery & autoscale"] 
+domain["🌐 **Domain name** is easier to remember than **IP address**: protocol://www.**Domain Name**.com/gov/org/net/country/folder/file.html"]
 http["📄 HyperText: Text with links & Formatting tags"]
 web["🌍**World Wide Web**: network of linked documents"]
 tcp --> domain --> http --"DNS database of ISP local cache/other DNS servers"--> web 
@@ -49,7 +49,10 @@ tcp --> domain --> http --"DNS database of ISP local cache/other DNS servers"-->
 | **POST**   | Send data    | Submit a form, upload files  |
 | **PUT**    | Update data  | Edit user profile   |
 | **DELETE** | Remove data  | Delete account |
-You will learn about it in greater detail in [Week 6](./6-Rest-APIs.md)
+
+You will learn about *HTTP methods* in greater detail in [Week 6](./6-Rest-APIs.md)
+
+## ⭐Checkout [Curl Commands](5-business-logic-layer-CONTROLLER#curl-commands) from Week-5
 
 ## Transmission Control Protocol
 TCP uses 16-bit unsigned integers for port numbers
@@ -143,3 +146,5 @@ Correct Answer: B) `0000:0000:AC10:0A19`
 - **Unicast** is a one-to-one communication where data is sent from one sender to a single specific receiver.
 - **Multicast** is a one-to-many communication where data is sent from one sender to multiple specified receivers who join a multicast group, optimizing bandwidth usage.
 ::: 
+
+## ⭐Checkout [Latency & bandwidth](0-latency-bandwidth.md) from Week-0

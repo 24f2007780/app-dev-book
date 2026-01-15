@@ -106,112 +106,121 @@ FINAL ANSWER:
 </script>
 
 <style scoped>
+/* =========================================================
+   LatencyVisualizer – Diagram-focused contrasting surface
+   ========================================================= */
+
 .net-demo {
-  color:#000;
-  border: 1px solid #ffffff;
-  padding: 16px;
-  border-radius: 10px;
-  background: #fff;
+  background:
+    radial-gradient(
+      circle at top,
+      var(--vp-c-bg-soft),
+      var(--vp-c-bg)
+    );
+  border-radius: 16px;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.15),
+    inset 0 0 0 1px var(--vp-c-divider);
+  color: var(--vp-c-text-1);
 }
 
-/* INPUT */
+.net-demo h2 {
+  text-align: center;
+  color: var(--vp-c-brand-1);
+  margin-bottom: 0.75rem;
+}
+
+/* Input */
 .input {
-  margin: 12px 0;
+  margin: 0.75rem 0;
 }
 
 .input input {
-  margin-left: 8px;
-  padding: 4px 6px;
-  width: 130px;
-  background: #fff;
-  border: 1px solid #000;
-  border-radius: 4px;
-  outline: none;
+  margin-left: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg);
 }
 
 .input input:focus {
-  border: 2px solid #000;
+  outline: none;
+  border-color: var(--vp-c-brand-2);
+  box-shadow: 0 0 0 2px var(--vp-c-brand-soft);
 }
 
-/* NETWORK DIAGRAM */
+/* Network */
 .network {
   display: flex;
   align-items: center;
-  margin: 20px 0;
+  margin: 1rem 0;
 }
 
+/* Nodes */
 .node {
-  width: 90px;
+  width: 92px;
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg-soft);
+  font-weight: 600;
   text-align: center;
-  padding: 8px;
-  border-radius: 6px;
-  font-weight: bold;
-  border: 1px solid #000;
-  background: #fff;
 }
 
-.node img {
-  width: 48px;
-}
+.client { background: var(--vp-c-brand-soft); }
+.router { background: var(--vp-c-warning-soft); }
+.server { background: var(--vp-c-tip-soft); }
 
-.client { background: #e0e7ff; }
-.router { background: #fef3c7; }
-.server { background: #dcfce7; }
-
+/* Links */
 .link {
   flex: 1;
   height: 6px;
-  margin: 0 6px;
+  margin: 0 0.4rem;
+  border-radius: 4px;
   position: relative;
   overflow: hidden;
-  border: 1px solid #000;
 }
 
-.cable { background: #2563eb; }
-.air { background: #16a34a; }
+.cable { background: var(--vp-c-brand-3); }
+.air { background: var(--vp-c-tip-3); }
 
+/* Packet */
 .packet {
   position: absolute;
   top: -4px;
   width: 12px;
   height: 12px;
-  background: red;
+  background: var(--vp-c-danger-3);
   border-radius: 50%;
   animation: move 2s linear infinite;
 }
 
-.fast {
-  animation-duration: 1s;
-}
+.fast { animation-duration: 1s; }
 
 @keyframes move {
   from { left: -10px; }
   to { left: 100%; }
 }
 
-/* OUTPUT */
+/* Button */
+button {
+  margin-top: 0.5rem;
+  padding: 0.55rem 1.5rem;
+  border-radius: 999px;
+  background: var(--vp-button-brand-bg);
+  color: var(--vp-button-brand-text);
+  border: none;
+  font-weight: 600;
+}
+
+/* Output */
 .result {
-  margin-top: 12px;
-  background: #fff;
-  border: 1px solid #000;
-  padding: 12px;
-  border-radius: 6px;
-  white-space: pre-wrap;
+  margin-top: 0.75rem;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  padding: 0.9rem;
   font-family: monospace;
 }
 
-/* BUTTON */
-button {
-  margin-top: 8px;
-  padding: 8px 16px;
-  background: #000;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #222;
-}
 </style>

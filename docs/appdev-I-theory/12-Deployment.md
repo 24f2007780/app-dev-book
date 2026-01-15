@@ -1,10 +1,4 @@
----
-tags:
-  - MAD1
-  - W12
-date: 2025-04-24 14:25
-syllabus: 
----
+
 
 ```mermaid
 flowchart LR

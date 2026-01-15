@@ -1,10 +1,3 @@
----
-tags:
-  - MAD1
-  - W8
-date: 2025-04-24 14:25
-syllabus: 
----
 
 
 - **Server-Side Rendering (SSR)** – HTML is generated on the server (e.g., using Jinja2 in Flask), and sent as a complete page to the browser.

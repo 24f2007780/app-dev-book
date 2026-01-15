@@ -70,6 +70,7 @@ export default defineConfig({
                     text:'sys',
                     link: '/appdev-I-theory/0-sys'
                   }
+      
                 ]
               },
               { 
@@ -86,12 +87,27 @@ export default defineConfig({
                   }
                 ]
               },
-              { text: 'W2 – HTML CSS ASCII Unicode', link: '/appdev-I-theory/2-HTML-CSS-Unicode' },
+              { text: 'W2 – Representing Text', link: '/appdev-I-theory/2-ascii-unicode' , collapsed: false
+                ,items: [
+                  {
+                    text: 'HTML page',
+                    link: '/appdev-I-theory/2-html'
+                  },
+                  {
+                    text:'CSS styling',
+                    link: '/appdev-I-theory/2-css'
+                  }
+                ]
+              },
               {
                 text: 'W3 – Presentation: VIEW',
-                link: '/appdev-I-theory/3-jinja-presentation-layer-VIEW',
+                link: '/appdev-I-theory/3-presentation-layer-VIEW',
                 collapsed: false,
                 items: [
+                  {
+                    text: 'String formatting in python',
+                    link: '/appdev-I-theory/3-string-formatting'
+                  },
                   {
                     text: 'String Templating',
                     link: '/appdev-I-theory/3-string-templating'

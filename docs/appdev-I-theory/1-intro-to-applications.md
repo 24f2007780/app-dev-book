@@ -1,11 +1,4 @@
----
-tags:
-  - T3-2025
-  - MAD1
-  - W1
-date: 2025-09-25 18:22
 Lecture slides: https://drive.google.com/file/d/1tF4xXmpifRsXBd1YA4Ww5w3xDrvEMfNt/view?usp=sharing
----
 
 <div style="background-color=black;color:white">
 </div>
@@ -22,12 +15,12 @@ is computer program, originally referred to any mobile or desktop application, b
 
 | **Aspect / Feature**     | **Desktop Applications**                     | **Mobile Applications**                                        | **Web Applications**                           |
 | ------------------------ | -------------------------------------------- | -------------------------------------------------------------- | ---------------------------------------------- |
-| **Execution Model**      | Standalone applications installed on a PC    | Network-oriented apps that frequently communicate with servers | Heavily cloud-based, runs inside a browser     |
+| **Execution Model**      | Standalone applications installed on a PC    | Network-oriented apps that frequently communicate with servers | runs inside a browser     |
 | **Examples**             | MS Word, Photoshop, VLC Media Player         | Instagram, Google Maps                               | Gmail, Google Docs, YouTube                    |
-| **Data Storage**         | Mostly local storage + optional network sync *Excel* | Limited local storage, relies on cloud (like *WhatsApp chats synced to cloud*)    | Mostly server-side storage (datacenters *Google Drive*)       |
+| **Data Storage**         | Mostly local storage + optional network sync *Excel* | Limited local storage (like *WhatsApp chats synced to cloud*)    | Mostly server-side storage (CLOUD datacenters *Google Drive*)       |
 | **Hardware Constraints** | High CPU, memory, disk available             | Limited screen, battery, memory, processing power              | Depends on server power, client is lightweight |
-| **SDK/ Development**             | OS-specific  Windows SDK, macOS Cocoa                     | OS-specific Android SDK, Flutter or cross-platform                                          | across OS: React, Vue, Django, Flask                      |
-| **User Interaction**     | *Keyboard, mouse, files, folders*              | *Touch, audio, tilt gestures, camera, sensors*                               | *Mouse, keyboard, browser-based UI*              |
+| **SDK/ Development**             | OS-specific  Windows SDK, macOS Cocoa                     | OS-specific Android SDK, Flutter or cross-platform                                          | across OS & devices: React, Vue, Django, Flask                      |
+| **User Interaction**     | *Keyboard, mouse, files, folders*              | *Touch, audio, tilt gestures, camera*                               | * browser-based UI*              |
 
 
 **Embedded devices:** single function, limited scope
@@ -36,7 +29,7 @@ is computer program, originally referred to any mobile or desktop application, b
 flowchart TD
 A["Components"]
 A --> S["**Storage**"]
-A --> C["**Computation**"]
+A --> C["**Compute**"]
 A --> P["**Presentation**"]
 ```
 
@@ -48,5 +41,4 @@ A --> P["**Presentation**"]
 - **Emulators / Simulators** → Let you test apps without real devices (Android SDK has phone emulator).
 :::
 
-## ⭐Checkout [Curl Commands](5-business-logic-layer-CONTROLLER#curl-commands) from Week-5
 

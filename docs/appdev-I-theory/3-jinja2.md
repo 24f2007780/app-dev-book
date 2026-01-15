@@ -32,7 +32,8 @@ Templates in Jinja2 are plain text blocks with placeholders and control structur
 
 Example of a simple Jinja2 template:
 
-``` python
+:::code-group
+``` python [Example #1]
 from jinja2 import Template
 template = Template("""
   <h1>Welcome, {{ username }}!</h1>
@@ -43,13 +44,12 @@ rendered = template.render(username="Alice", is_admin=True)
 print(rendered)
 ```
 
-Output:
-
-```html
+```html [output]
   <h1>Welcome, Alice!</h1>
   <p>Does user have admin privileges?True</p>
   <p> will not be displayed</p>
 ```
+:::
 
 Some important information about Jinja2 rendering:
 
@@ -83,11 +83,9 @@ Jinja2 has its own expression syntax which is similar to Python but not exactly 
 {{ user in users }}
 ```
 
-### code example
+:::code-group
 
-code snippet:
-
-``` python
+``` python [Example #2]
 from jinja2 import Template
 template = Template("""
   <h1>Welcome, {{ user.name }}!</h1>
@@ -96,17 +94,14 @@ template = Template("""
 rendered = template.render(user={"name": "Alice"}, price=19.99, quantity=3)
 print(rendered)
 ```
-
-output:
-
-``` html
+ 
+``` html [output]
   <h1>Welcome, Alice!</h1>
   <p>Your total is: $59.97</p>
 ```
+:::
 
-:::tip
-
-### Try it yourself
+:::details Try it yourself
 
 copy the following code and paste it into a python file, then run it to see the output
 
@@ -156,9 +151,9 @@ Jinja2 provides control structures like conditionals and loops to add logic to t
 {% endif %}
 ```
 
-example:
+:::code-group
 
-``` python
+``` python [Example #3]
 from jinja2 import Template
 template = Template("""
   {% if user == "Alice" %}
@@ -171,11 +166,10 @@ rendered = template.render(user="Alice")
 print(rendered)
 ```
 
-output:
-
-``` html
+``` html [output]
   <h1>Hello, Alice!</h1>
 ```
+:::
 
 ### For Loops
 
@@ -185,9 +179,9 @@ output:
 {% endfor %}
 ```
 
-example:
+:::code-group
 
-``` python
+``` python [Example #4]
 from jinja2 import Template
 template = Template("""
   <ul>  
@@ -200,15 +194,14 @@ rendered = template.render(items=["Apple", "Banana", "Cherry"])
 print(rendered)
 ```
 
-output:
-
-```html
+```html [output]
   <ul>  
     <li>Apple</li>
     <li>Banana</li>
     <li>Cherry</li>
   </ul>
 ```
+:::
 
 #### Special loop vars
 
@@ -222,9 +215,8 @@ Inside a for loop, Jinja2 provides special variables to get information about th
 - `loop.last`: True if last iteration.
 - `loop.length`: Total number of items.
 
-Example:
-
-```python
+:::code-group
+```python [Example #5]
 from jinja2 import Template
 template = Template("""
 {% for item in items %}
@@ -235,15 +227,14 @@ rendered = template.render(items=["Apple", "Banana", "Cherry"])
 print(rendered)
 ```
 
-output:
-
-```html
+```html [output]
   <p>1: Apple </p>,
   <p>2: Banana </p>,
   <p>3: Cherry </p>
 ```
+:::
 
-#### Try it yourself
+:::details Try it yourself
 
 copy the following code and paste it into a python file, then run it to see the output
 
@@ -278,9 +269,9 @@ We can define variables using the `set` statement. Variables defined with `set` 
 {% set variable = value %}
 ```
 
-Example:
+:::code-group
 
-```python
+```python [Example #6]
 from jinja2 import Template
 template = Template("""
   {% set total = price * quantity %}
@@ -290,11 +281,10 @@ rendered = template.render(price=19.99, quantity=3)
 print(rendered)
 ```
 
-Output:
-
-```html
+```html [output]
   <p>Total Price: $59.97</p>
 ```
+:::
 
 ### With Statement (Scoped Variables)
 
@@ -310,9 +300,9 @@ Output:
 
 Like `set`, but limited to block scope.
 
-Example:
+:::code-group
 
-```python
+```python [Example #7]
 from jinja2 import Template
 template = Template("""
   {% with discount = price * 0.1 %}
@@ -324,12 +314,11 @@ rendered = template.render(price=100)
 print(rendered)
 ```
 
-Output:
-
-```html
+```html [output]
   <p>Discount: $10.0</p>
   <p>Discount outside block: $</p>  {# undefined here #}
 ```
+:::
 
 ### Macros (Reusable Blocks)
 
@@ -347,9 +336,9 @@ Jinja2 macros are similar to functions in programming languages. They allow us t
 {{# now macro_name("value1", "value2") is a macro that can be called in templates #}}
 ```
 
-Example:
+:::code-group
 
-```html
+```html [Example #8]
 {% macro render_input(name, type="text") %}
   <input type="{{ type }}" name="{{ name }}" />
 {% endmacro %}
@@ -358,12 +347,12 @@ Example:
 {{ render_input("password", type="password") }}
 ```
 
-Output:
 
-```html
+```html [output]
   <input type="text" name="username" />
   <input type="password" name="password" />
 ```
+:::
 
 #### Importing Macros
 
@@ -377,9 +366,7 @@ We can import macros from other templates using `import` or `from ... import` st
 {{ render_input("email") }}
 ```
 
-:::tip
-
-### Try it yourself
+:::details ### Try it yourself
 
 copy the following code and paste it into a python file, then run it to see the output
 
@@ -406,19 +393,18 @@ print(rendered)
 
 Escape Jinja2 syntax using `{% raw %}` ... `{% endraw %}` to prevent evaluation.
 
-Example:
+:::code-group
 
-```html
+```html [Example #9]
 {% raw %}
    {{ this will not be evaluated 2+3 }}
 {% endraw %}
 ```
 
-Output:
-
-```html
+```html [output]
    {{ this will not be evaluated 2+3 }}
 ```
+:::
 
 ### Whitespace Control
 
@@ -431,7 +417,7 @@ Jinja2 provides options to control whitespace around tags using `-` (dash) chara
 {%- endif -%}
 ```
 
-#### Try it yourself
+:::details Try it yourself
 
 ```python
 from jinja2 import Template
@@ -447,6 +433,7 @@ print(rendered)
 ```
 
 This trims whitespace before and after the tags.
+:::
 
 ## Template Inheritance (`extends` + `block`)
 
@@ -495,7 +482,9 @@ The examples below illustrates the syntax and behavior of template inheritance b
 
 ### python rendering
 
-```python
+:::code-group
+
+```python [Example #10]
 from jinja2 import Template
 base_template = open("base.html").read()
 child_template = open("child.html").read()
@@ -504,9 +493,8 @@ rendered = template.render()
 print(rendered)
 ```
 
-Output:
 
-```html
+```html [output]
 <!DOCTYPE html>
 <html>
 <head>
@@ -525,6 +513,8 @@ Output:
 </body>
 </html>
 ```
+:::
+
 
 Explanation:When a child template is rendered, Jinja2 first resolves the template inheritance chain defined by the extends statements. It collects all block definitions from the base and child templates, determines which blocks override others, and builds a single final template structure. This resolved template is then rendered to produce the final output.
 
@@ -534,7 +524,9 @@ We can use `super()` to call the content of the parent block within an overridde
 
 #### Child Template
 
-```python
+:::code-group
+
+```python [Example #11]
 {% extends "base.html" %}
 {% block title %}Custom Page Title{% endblock %}
 {% block content %}
@@ -543,9 +535,7 @@ We can use `super()` to call the content of the parent block within an overridde
 {% endblock %}
 ```
 
-Output:
-
-```html
+```html [output]
 <!DOCTYPE html>
 <html>
 <head>
@@ -565,12 +555,11 @@ Output:
 </body>
 </html>
 ```
+:::
 
 This will prepend the base content block( super()'s output ) to the block content.
 
-:::tip
-
-#### Try it yourself
+:::details Try it yourself
 
 copy the following code and paste it into a python file, then run it to see the output
 
@@ -631,9 +620,9 @@ By default, included templates have access to the context of the parent template
 {% include "footer.html" without context %}
 ```
 
-#### Example
+:::code-group
 
-```python
+```python [Example #12]
 from jinja2 import Template
 template = Template("""
   {% include "header.html" with context %}
@@ -644,9 +633,7 @@ rendered = template.render(title="My Page", year=2024)
 print(rendered)
 ```
 
-Output:
-
-```html
+```html [output]
   <header>
     <h1>My Page</h1>
   </header>
@@ -655,6 +642,7 @@ Output:
     <p>&copy; </p>
   </footer>
 ```
+:::
 
 Header.html:
 
@@ -687,9 +675,9 @@ Filters in Jinja2 are used to modify the output of variables. They are applied u
 - `replace`: Replaces occurrences of a substring with another substring.
 - **`groupby`: Groups a list of objects by a specified attribute.** 
 
-### Example
+:::code-group
 
-```python
+```python [Example #13]
 from jinja2 import Template
 template = Template("""
   <p>{{ name | upper }}</p>
@@ -700,13 +688,12 @@ rendered = template.render(name="Alice", items=["apple", "banana"])
 print(rendered)
 ```
 
-Output:
-
-```html
+```html [output]
   <p>ALICE</p>
   <p>2</p>
   <p>No description available.</p>
 ```
+:::
 
 ### Groupby Filter
 
@@ -715,9 +702,9 @@ The `groupby` filter in Jinja2 is used to group a list of objects based on a spe
 - Using two loop variables: one for the group key and another for the list of items in that group.
 - Using a single loop variable that contains both the group key and the list of items, through the `grouper` and `list` attributes.
 
-Example:
+:::code-group
 
-```python
+```python [Example #14]
 from jinja2 import Template
 template1 = Template("""
   {% for category, items in products | groupby('category') %}
@@ -754,9 +741,7 @@ print(output1)
 print(output2)
 ```
 
-Output:
-
-```html
+```html [output]
   <h2>Fruits</h2>
   <ul>
     <li>Apple - $1.0</li> 
@@ -779,10 +764,9 @@ Output:
     <li>Broccoli - $0.8</li> 
   </ul>
 ```
+:::
 
-:::tip
-
-### Try it yourself
+:::details Try it yourself
 
 copy the following code and paste it into a python file, then run it to see the output
 

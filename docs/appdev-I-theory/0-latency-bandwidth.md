@@ -34,10 +34,12 @@
 
 
 ## 🕔Latency (Time delay)
-Latency = How long it takes for data to travel from client → server → client
 
+::: warning How long it takes for data to travel from client → server → client
 Speed of light in vacuum $\approx 3 \times 10^8 \text{ m/s}$
 In copper/fiber cables $\approx 2 \times 10^8 \text{ m/s}$
+:::
+
 Rule of thumb:
   - ≈ 5 nanoseconds per meter
   - ≈ 5 milliseconds per 1000 km

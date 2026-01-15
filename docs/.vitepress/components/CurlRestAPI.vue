@@ -147,87 +147,104 @@ function simulate() {
 
 <style scoped>
 .curl-box {
-  border: 1px solid #000;
-  padding: 16px;
-  border-radius: 10px;
-  background: #fff;
+  background:
+    linear-gradient(
+      135deg,
+      var(--vp-c-bg-soft),
+      var(--vp-c-bg)
+    );
+  border-radius: 14px;
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.12),
+    inset 0 0 0 1px var(--vp-c-divider);
+  color: var(--vp-c-text-1);
 }
 
-.curl-box * {
-  color: #000;
-}
-
+/* Title */
 .title {
-  margin-bottom: 10px;
+  text-align: center;
+  color: var(--vp-c-brand-1);
+  margin-bottom: 0.75rem;
 }
 
+/* Rows */
 .row {
-  margin-bottom: 10px;
-}
-.flag-help {
-  margin-top: 6px;
-  font-size: 14px;
-  background: #f1f5f9;
-  border: 1px dashed #000;
-  padding: 8px;
-  border-radius: 6px;
+  margin-bottom: 0.75rem;
 }
 
-.flag-help p {
-  margin: 4px 0;
+label {
+  font-weight: 500;
 }
 
+/* Inputs */
 input,
 select,
 textarea {
   width: 100%;
-  padding: 6px;
-  border: 1px solid #000;
+  padding: 0.55rem 0.65rem;
+  border-radius: 8px;
+  border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--vp-c-brand-2);
+  box-shadow: 0 0 0 2px var(--vp-c-brand-soft);
 }
 
 textarea {
-  min-height: 80px;
   font-family: monospace;
 }
 
+/* Flags */
 .flags {
   display: flex;
-  gap: 20px;
-  margin-bottom: 10px;
+  gap: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
+/* Help box */
+.flag-help {
+  background: var(--vp-c-brand-soft);
+  border-left: 4px solid var(--vp-c-brand-2);
+  border-radius: 10px;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.85rem;
+}
+
+/* Button */
 button {
-  margin-top: 10px;
-  padding: 8px 16px;
-  background: #2a5fdc;
-  color: #fff;
+  margin-top: 0.75rem;
+  padding: 0.55rem 1.5rem;
+  border-radius: 999px;
   border: none;
-  border-radius: 6px;
+  background: var(--vp-button-brand-bg);
+  color: var(--vp-button-brand-text);
+  font-weight: 600;
   cursor: pointer;
 }
 
+button:hover {
+  background: var(--vp-button-brand-hover-bg);
+}
+
+/* Output */
 pre {
-  border: 1px solid #000;
-  padding: 10px;
-  background: #f9f9f9;
-  white-space: pre-wrap;
+  margin-top: 0.75rem;
+  padding: 0.9rem;
+  border-radius: 12px;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
   font-family: monospace;
 }
 
-/* Highlighting */
-.status {
-  font-weight: bold;
-}
+/* Highlight */
+.headers { color: var(--vp-c-brand-1); }
+.status { font-weight: 600; }
+.cmd { background: var(--vp-c-brand-soft); }
 
-.headers {
-  color: #1d4ed8; /* blue headers */
-}
-
-.body {
-  color: #000;
-}
-
-.cmd {
-  background: #eef2ff;
-}
 </style>

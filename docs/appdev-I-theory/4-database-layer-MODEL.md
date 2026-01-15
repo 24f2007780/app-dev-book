@@ -1,11 +1,3 @@
----
-tags:
-  - MAD1
-  - W4
-date: 2025-04-24 14:25
-syllabus: 
----
-
 
 ## MVC (Model-View-Controller) 
 ![](./static/Model-View-Controller-Architecture.png)*Model-View-Adapter/Presenter/Viewmodel, Hierarchical MVC, Presentation-Abstraction-C*  
