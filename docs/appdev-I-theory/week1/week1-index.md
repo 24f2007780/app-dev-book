@@ -1,5 +1,6 @@
 # Week 1
-In this week we will cover what are "Apps" in general, what are the usual components & different platforms for an app. short glimpse over model-view-controller pattern and the important topic of Client-Server & Peer-to-peer architecture. Interesting glimpse over different `Protocols` in network, what is used when & the evolution of it with `HTTP` & the Internet🌐
+In this week, we will cover what are "Apps" in general, What are the usual components & different platforms for an app.<br>
+Short glimpse over model-view-controller pattern and the important topic of Client-Server & Peer-to-peer architecture.<br> Interesting glimpse over different `Protocols` in network, What is used? When & the evolution of it with `HTTP` & the Internet🌐
 
 1. [Introduction to Apps](1-intro-to-applications.md)
 2. [Types of Architecture](1-types-architecture.md)
