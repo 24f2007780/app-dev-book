@@ -129,7 +129,7 @@ export default defineConfig({
                   },
                   {
                     text:'CSS: specificity & selectors',
-                    link: '/appdev-I-theory/week2/2-css-specificity&inheritance'
+                    link: '/appdev-I-theory/week2/2-css-selector-specificity'
                   },
                   {
                     text:'Additional Topics in CSS',

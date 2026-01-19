@@ -193,11 +193,11 @@ books.forEach(book => {
 
 
 T1 2025
-![](./static/Pasted image 20251204173738.png)
+![](../static/Pasted image 20251204173738.png)
 T3 2024
-![](./static/Pasted image 20251204173858.png)
+![](../static/Pasted image 20251204173858.png)
 T2 2024
-![](./static/Pasted image 20251204173911.png)
+![](../static/Pasted image 20251204173911.png)
 T1 2024
 Which of the below JavaScript statement(s) are used to print information on the browser’s console?
 

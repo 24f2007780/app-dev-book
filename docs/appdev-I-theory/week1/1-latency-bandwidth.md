@@ -1,6 +1,10 @@
+### ⭐Checkout [Important metrics & unit conversions](../week0/0-metrics.md) from Week-0
+
 ## 🕔Latency (Time delay)
+Latency is the time delay between sending a request and receiving the response.
 
 ::: warning How long it takes for data to travel from client → server → client
+
 Speed of light in vacuum $\approx 3 \times 10^8 \text{ m/s}$
 In copper/fiber cables $\approx 2 \times 10^8 \text{ m/s}$
 :::

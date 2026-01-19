@@ -2,7 +2,7 @@
 ## MVC (Model-View-Controller)
 MVC is a software design pattern used to build interactive applications by separating into Model (data), View (UI), and Controller (logic) to improve modularity, maintainability, and scalability.
 
-![](./static/Model-View-Controller-Architecture.png)
+![](../static/Model-View-Controller-Architecture.png)
 It was originally created by *Trygve Reenskaug* while working at *Xerox PARC Smalltalk-80*(GUI design) in the late 1970s.
 
 ::: info Core idea

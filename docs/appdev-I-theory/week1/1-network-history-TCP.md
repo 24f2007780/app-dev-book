@@ -50,9 +50,9 @@ tcp --> domain --> http --"DNS database of ISP local cache/other DNS servers"-->
 | **PUT**    | Update data  | Edit user profile   |
 | **DELETE** | Remove data  | Delete account |
 
-You will learn about *HTTP methods* in greater detail in [Week 6](./6-Rest-APIs.md)
+You will learn about *HTTP methods* in greater detail in [Week 6](../week6/6-Rest-APIs.md)
 
-### ⭐Checkout [Curl Commands](5-business-logic-layer-CONTROLLER#curl-commands) from Week-5
+### ⭐Checkout [Curl Commands](../week5/5-business-logic-layer-CONTROLLER#curl-commands) from Week-5
 
 ## Transmission Control Protocol
 **Transport Layer that ensures data gets delivered correctly**
@@ -125,7 +125,7 @@ $$
 
 
 Correct Answer: B) `0000:0000:AC10:0A19`
-![](./static/binary-conversion-table.png)
+![](../static/binary-conversion-table.png)
 :::
 
 

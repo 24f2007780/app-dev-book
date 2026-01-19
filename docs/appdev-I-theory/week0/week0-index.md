@@ -7,4 +7,4 @@ Here are the topics covered in this week:
 - [Basic setup guide](0-basic-setup-guide.md)
 - [Setting up VS Code](0-vscode-setup.md)
 - [Using the sys module](0-sys.md)
-- [Understanding Latency and Bandwidth](0-latency-bandwidth.md)
+- [Basic conversion units need for Latency and Bandwidth](0-metrics.md)

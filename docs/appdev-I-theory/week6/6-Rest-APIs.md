@@ -934,4 +934,4 @@ The response will automatically be:
 > - For many-to-many, use an association table with two foreign keys and `secondary` in relationships.
 > #### one-to-one
 > add `unique=True` constraint on the foreign key column.
-> ![](./static/Pasted image 20250830140030.png)
+> ![](../static/Pasted image 20250830140030.png)
