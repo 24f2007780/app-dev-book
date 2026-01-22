@@ -67,7 +67,7 @@ User uses <span style="font-weight:bold; color:rgb(240, 96, 118)"> Controller </
 | **Best Use Case**              | Small data, analysis, quick calculations                                                                                                     | Structured data, ERP, banking like *Paypal, Visa, Oracle*      | used alongside SQL for Big data, flexible schemas, high-traffic aspects of *Instagram, Netflix, Youtube, Twitter, Swiggy*   |
 
 
-# Database Example: **Library Management System**
+## Database Example: **Library Management System**
 
 A college library wants to keep track of:
 ##### 📌 `Students`
@@ -97,18 +97,17 @@ A college library wants to keep track of:
 | S102       | B3      | 2024-01-12  |
 | S103       | B1      | 2024-01-18  |
 
----
-
 ## ER diagrams
 ![](../static/ER-diagram.jpg)
+
+::: tip crow feet ER diagram (this is a bit different from the one you learn in DBMS course⚠️<br> don't confuse the two conventions)
 - Vertical line `|` → One (Exactly one instance of the entity)<br>Ex. *A borrow record must be linked to exactly one student*
 - Circle `O` → Optional (Zero or more participate)<br>Ex. *A student may or may not have borrowed books.*
 - Crow's feet - Many<br> Ex. *A student can borrow many books.*
-4️- Second Vertical Line `||` → Mandatory (At least one)<br> Ex. Every borrow record must have at least one book
+- Second Vertical Line `||` → Mandatory (At least one)<br> Ex. Every borrow record must have at least one book
+:::
 
-
-# Case 1: Create Table (Datatypes + Constraints)
-
+### Case 1: Create Table (Datatypes + Constraints)
 ```sql
 CREATE TABLE Students (
   student_id CHAR(4) PRIMARY KEY,
@@ -117,25 +116,20 @@ CREATE TABLE Students (
 );
 ```
 
-👉 Shows: `CHAR`, `VARCHAR`, `PRIMARY KEY`, `NOT NULL`
+👉🏻 CREATE TABLE defines a new relation with specified columns, datatypes, and integrity constraints.
 
----
-
-# Case 2: Insert Data
+### Case 2: Insert Data
 
 ```sql
 INSERT INTO Students
 VALUES ('S104', 'Kunal', 'ME');
 ```
 
-👉 Adds a new student to the library system
+👉🏻 Adds a new student (tuple/row) to the table
 
----
-
-# Case 3: Simple SELECT + WHERE
+### Case 3: Simple SELECT + WHERE
 
 ### ❓ Find all CS students
-👉 filtering using `WHERE`
 
 :::code-group
 ```sql [SQL]
@@ -151,10 +145,10 @@ Meera
 ```
 :::
 
+👉🏻 SELECT retrieves data from a table, and WHERE filters rows before they are returned.
 
----
 
-# Case 4: JOIN (Who borrowed which book?)
+### Case 4: JOIN (Who borrowed which book?)
 
 ::: code-group
 ```sql [SQL]
@@ -175,9 +169,9 @@ Meera   Database Systems
 ```
 :::
 
----
+👉🏻 JOIN combines rows from multiple tables using a related attribute, avoiding a Cartesian product.
 
-# Case 5: Condition with JOIN
+### Case 5: Condition with JOIN
 
 ### ❓ Find students who borrowed **Database Systems**
 
@@ -198,8 +192,9 @@ Meera
 ```
 :::
 
+👉🏻 WHERE can also be used with joined tables to filter results based on a condition.
 
-# Case 6: Aggregation (COUNT + GROUP BY + HAVING)
+### Case 6: Aggregation (COUNT + GROUP BY + HAVING)
 
 ### ❓ How many books has each student borrowed?
 
@@ -209,11 +204,13 @@ FROM BorrowedBooks
 GROUP BY student_id;
 ORDER BY name ASC;
 ```
+👉🏻 GROUP BY groups rows with the same value, aggregate functions COUNT compute a result per group.
+👉🏻 Orders final output alphabetically by value of "name" column
 
 ### ❓ Students who borrowed **more than 1 book**
 
 ::: code-group
-```sql [DSL]
+```sql [SQL]
 SELECT student_id, COUNT(*) AS books_borrowed
 FROM BorrowedBooks
 GROUP BY student_id
@@ -226,6 +223,7 @@ S101   2
 ```
 :::
 
+👉🏻 HAVING filters groups after aggregation, while WHERE filters rows before grouping.
 
 ### DELETE
 
@@ -233,3 +231,4 @@ S101   2
 DELETE FROM BorrowedBooks
 WHERE student_id = 'S102';
 ```
+👉🏻 DELETE removes selected rows from a table while keeping the table structure intact.

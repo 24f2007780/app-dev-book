@@ -16,11 +16,11 @@ Here are the topics covered in this week:
 1. **[Model–View–Controller & Data Storage Systems](4-database-layer-MODEL.md)**  
    MVC pattern, responsibilities of the Model, and use cases of spreadsheets, RDBMS, and NoSQL databases
 
-2. **[Flask: Basic Application (`app.py`)]()**  
+2. **[Flask: Basic Application (`app.py`)]**  
    Creating a minimal Flask app, routes, and request–response flow
 
-3. **[Flask Templating]()**  
+3. **[Flask Templating]**  
    Integrating Flask with templates to render dynamic HTML
 
-4. **[Flask Core Functionalities]()**  
+4. **[Flask Core Functionalities]**  
    Routing, request handling, forms, and basic backend features

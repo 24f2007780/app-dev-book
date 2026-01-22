@@ -9,7 +9,7 @@ This course lays the conceptual foundation required courses such as Appdev II, w
 
 # [Theory](./appdev-I-theory/)
 
-0. **[Setting Up Development Environment](./week0/week0-index.md)**<br>
+0. **[Setting Up Development Environment](appdev-I-theory/week0/week0-index.md)**<br>
     installation guides for:
     - Python
     - VS Code
@@ -19,19 +19,19 @@ This course lays the conceptual foundation required courses such as Appdev II, w
 ::: tip
 A correctly configured development environment prevents most beginner errors and saves hours of debugging later.
 :::
-0. **[Setting Up dev Environment](./week0/week0-index.md)**<br>
+0. **[Setting Up dev Environment](appdev-I-theory/week0/week0-index.md)**<br>
     installation guides for Python, VS Code, etc.
 
-1. **[Web Application Foundations](./week1/week1-index.md)**  
+1. **[Web Application Foundations](appdev-I-theory/week1/week1-index.md)**  
    Applications, platforms, web architecture, and MVC design.Protocols, HTTP, request–response flow, and performance basics.
 
-2. **[HTML & CSS Basics](./week2/week2-index.md)**  
+2. **[HTML & CSS Basics](appdev-I-theory/week2/week2-index.md)**  
    ASCII, Unicode, Markup, styling, DOM fundamentals, and responsive design.
 
-3. **[Presentation Layer (View)](./week3/week3-index.md)**  
+3. **[Presentation Layer (View)](appdev-I-theory/week3/week3-index.md)**  
    UI/UX principles and server-side templating  
    <span style="font-weight:bold; color:rgb(181, 118, 244)">PyHTML, Python templates, Jinja2</span>
-4. **[Database Layer (Model)](./week4/week4-index.md)**  
+4. **[Database Layer (Model)](appdev-I-theory/week4/week4-index.md)**  
    Persistence, databases, relationships, and ER modeling  
    <span style="font-weight:bold; color:rgb(181, 118, 244)">Flask Basics</span>
 
