@@ -20,25 +20,22 @@ sequenceDiagram
 ```
 
 
-- **Machine Client**: User need not interact like software/antivirus updaters running in the *background*.
+- **Client Machine**: may run without direct user interaction, e.g. software/antivirus updaters running in the *background*
 - **Local Systems**: both client & server run on same machine like *browser accessing a local database or `localhost` web server.*
 - **Stateless Requests**: The server does not remember previous requests unless extra mechanisms like sessions, cookies, or tokens are used.
 
-## Distributed peer-to-peer Architecture
+## Distributed or peer-to-peer Architecture
 
-Data can flow in both ways. 
-- All peers are considered "**equivalent**"
-- **Error Tolerance**
-    - No permanent central controller
-    - If a peer fails⚠️, automatically re-selects✅ another peer
-  - The system keeps working even if some peers go offline
-- Shared ℹ️information
-Ex: *bittorrent, Blockchain, Distributed file systems*
+- All peers are considered "**equivalent**" so no permanent central controller
+  - If a peer fails⚠️, automatically re-selects✅ another peer
+  - The system keeps working🔁 even if some peers go offline
+- Shared ℹ️information and resources among **peers**
+- Ex: *bittorrent, Blockchain, Distributed file systems*
 
 :::info When you download a movie using a torrent:
 - You download small pieces of the movie from many users
 - At the same time, you upload the pieces you already have to others<br>
-👉 So, every downloader also becomes an uploader
+👉 So, every downloader also becomes an uploader (Data can flow in both ways)
 :::
 
 ![architectures](../static/client-peer-architecture.png)

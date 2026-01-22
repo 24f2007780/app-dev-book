@@ -1,18 +1,19 @@
 # App
 ::: info App
-is computer program, originally referred to any mobile or desktop application, but as more "App stores" have emerged to sell mobile apps to smartphone and tablet users, the term has evolved to refer to small programs that can be downloaded and installed all at once.
+An **application (app)** is a computer program designed to perform a specific task for users.
+Originally referred to any mobile or desktop application, but with rise of "App stores" for smartphones, the term has evolved for lightweight mobile and web applications that can be easily downloaded and installed.
 :::
 
 ## Platform: Web-based
 
 | **Aspect / Feature**     | **Desktop Applications**                     | **Mobile Applications**                                        | **Web Applications**                           |
 | ------------------------ | -------------------------------------------- | -------------------------------------------------------------- | ---------------------------------------------- |
-| **Execution Model**      | Standalone applications installed on a PC    | Network-oriented apps that frequently communicate with servers | runs inside a browser     |
+| **Execution Model**      | Standalone apps installed on a PC    | apps that frequently communicate with servers, few may work **offline** | runs inside a browser     |
 | **Examples**             | MS Word, Photoshop, VLC Media Player         | Instagram, Google Maps                               | Gmail, Google Docs, YouTube                    |
 | **Data Storage**         | Mostly local storage + optional network sync *Excel* | Limited local storage (like *WhatsApp chats synced to cloud*)    | Mostly server-side storage (CLOUD datacenters *Google Drive*)       |
 | **Hardware Constraints** | High CPU, memory, disk available             | Limited screen, battery, memory, processing power              | Depends on server power, client is lightweight |
-| **SDK/ Development**             | OS-specific  Windows SDK, macOS Cocoa                     | OS-specific Android SDK, Flutter or cross-platform                                          | across OS & devices: React, Vue, Django, Flask                      |
-| **User Interaction**     | *Keyboard, mouse, files, folders*              | *Touch, audio, tilt gestures, camera*                               | * browser-based UI*              |
+| **SDK/ Development**             | OS-specific  *Windows* SDK, macOS *Cocoa*                     | OS-specific *Android* SDK, *Swift* or cross-platform like *Flutter*  | across OS & devices: Frontend:*Vue, React* + Backend: *Flask, Django*   |
+| **User Interaction**     | *Keyboard, mouse, files, folders*              | *Touch, audio, tilt gestures, camera*                               | *browser-based UI*              |
 
 
 **Embedded devices:** single function, limited scope

@@ -52,12 +52,11 @@ export default defineConfig({
         '/appdev-I-theory/': [
             {
               text: 'AppDev I Theory',
-              // link: '/appdev-I-theory/index',
+              link: '/appdev-I-theory/overview',
               collapsed: false,
               next: false,
               prev: false,
               items: [
-                { text: 'Overview', link: '/appdev-I-theory/overview' },
                 { text: 'Week0: Basic Guide', link:'/appdev-I-theory/week0/week0-index',
                   collapsed: true,
                   items: [

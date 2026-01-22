@@ -14,7 +14,7 @@ The `sys.argv` list contains the command-line arguments passed to the file. The 
 Here is an example of how to use `sys.argv` to print the file name and its arguments:
 
 :::tabs
-==args
+==code
 
 ```python
 import sys
@@ -36,7 +36,7 @@ file name: myfile.py
 :::
 
 :::tabs
-== print entire sys.argv list:
+== code
 
 ```python
 import sys
@@ -51,15 +51,14 @@ python myfile.py argument1 argument2 "complex argument 3"
 
 == output
 
+![sys-argv](../static/sys-argv.png)
+
 ```txt
 ['myfile.py', 'argument1', 'argument2', 'complex argument 3']
 ```
-
 :::
 
-See the image below for a visual representation of `sys.argv` for the above command:
 
-![sys-argv](../static/sys-argv.png)
 
 :::info note
 
@@ -68,5 +67,7 @@ See the image below for a visual representation of `sys.argv` for the above comm
 - Arguments are space-separated strings but we can enclose them in quotes to include spaces in arguments or name of the file.
 
 **Note: Python does not decide what arguments are — it simply receives them from the operating system as a list of strings.**
+
+- [Inspect Developer Tools](https://youtu.be/Pf2z_Ue73qE?si=XAul5yx0EI6pAZWH) 
 
 :::

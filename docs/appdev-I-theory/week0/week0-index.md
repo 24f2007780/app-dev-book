@@ -1,6 +1,6 @@
 # Week 0: Basic Setup Guide
 
-In this section we will guide you through the basic setup required for the course. This includes setting up Python, a code editor (VS Code), and creating a virtual environment, how to access command-line input using the `sys` module in Python and a few basic mathematical and computer networking concepts like matric prefixes, latency and bandwidth.
+In this section we will guide you through the basic setup required for the course. This includes setting up Python, a code editor (VS Code), and creating a virtual environment, how to access command-line input using the `sys` module in Python and a few basic mathematical concepts like **metric conversion units**
 
 Here are the topics covered in this week:
 

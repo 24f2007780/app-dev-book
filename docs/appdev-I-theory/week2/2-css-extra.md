@@ -21,7 +21,7 @@ These topics are only for learning purposes if someone is really interested in s
    /* normal (400), bold (700), lighter, 100-900 thickness ranges */
    font-size: 18px;
 
-/* shorthand verion */
+/* shorthand version */
   font: italic bolder 18px Times, serif;
 
 }
@@ -74,8 +74,7 @@ To horizontally center a block-level element, we use:
 }
 <div class="center"></div>
 ```
-
-<!-- Position -->
+<!-- 
 <div class="card">
   <h2>CSS <code>position</code> Property</h2>
   <ul>
@@ -86,7 +85,7 @@ To horizontally center a block-level element, we use:
     <li><strong>sticky</strong> – switches between relative & fixed</li>
   </ul>
 </div>
-
+ -->
 
 ### Buttons
 
@@ -521,6 +520,7 @@ Use: anchor-based navigation.
 ```css
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
 ```
+- for details checkout: [Bootstrap guide MAD1 project](.../appdev-I-project/bootstrap.md)
 - Standard styles for buttons, forms, icons
 - Uses `label for`	, `aria-describedby`, `aria-labelledby` for screen readers
 

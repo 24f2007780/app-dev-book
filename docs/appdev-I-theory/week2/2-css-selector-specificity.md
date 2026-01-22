@@ -1,21 +1,27 @@
 
 ## Cascading Style Sheets
-- CSS describes how HTML elements are to be displayed on screen. It saves a lot of work as can control the layout of multiple web pages all at once
+
+::: warning ⚠️ This section is reference-heavy. Focus primarily on selectors, specificity, and commonly used pseudo-classes for exams.
+:::
+
+- CSS describes how HTML elements are to be displayed on screen. It saves a lot of work because a single CSS file can control the layout and appearance of multiple web pages at once.
+
 
 ## Type of CSS Selectors (Think of Them as Conditions)
 ```txt
 IF an element matches the selector
+AND no higher-priority rule overrides it
 THEN apply the styles inside { }
 ```
 
 :::tabs
 ==type selector
 ```css
-/* anchor tag on mouse hover will be underline with Inter sans-serif font */
-a:hover{
-    text-decoration: underline;
-    font-family: 'Inter sans-serif';
-    margin: 0;}
+/* anchor tag (+ pseudo class HOVER) on mouse hover will be underline with Inter sans-serif font */
+a:hover { 
+  text-decoration: underline;
+  font-family: Inter, sans-serif;
+}
 ```
 ==.class selector
 selects HTML elements with a specific `class` attribute.
@@ -28,18 +34,18 @@ selects HTML elements with a specific `class` attribute.
     }
 
 .large{
-    font-size: large;
+    font-size: 1.25rem;
     }
 ```
 ==ID selector
-The id of an element is unique within a page, so the id selector is used to selects 1 unique HTML element.
+The id of an element is unique within a page, so the id selector is used to select 1 unique HTML element.
 - Use hash (#) + id of the element.
 ```css
 #main-header {
     font-size: 2em;
     padding: 30px 20px;
 }
-/* padding: vertical horizontal
+/* padding: VERTICAL HORIZONTAL
    30px → top & bottom
    20px → left & right */
 ```
@@ -58,32 +64,33 @@ input[type="button"] {
   background-color: lightgreen;
 }/*<input> element with EXACTLY type="button"*/
 ```
-`[attribute~="value"]`: select elements with an attribute value **containing a specific word**.
+`[attribute~="value"]`: select elements with an attribute value **containing a specific word**<br>
+matches whole words (space-separated values)
 ```css
 [title~="first"] {
   border: 5px solid yellow;
 } /* "first post", "para first" but ❌"first-list", ❌"firstoy" */
 
 ```
-`[attribute*="value"]`: whose attribute value contains a **specific value**.
+`[attribute*="value"]`: whose attribute value contains **specific value**<br>matches any substring (partial match allowed)
 
 ```css
 div[class*="post"] {
-	background-color: #333;
-	}/*all `<div>` whose class contains "post" substring background becomes grey
+	background-color: #9a9797;
+	}/* postman Aposts newpost: any class contains "post" substring background becomes grey */
 ```
 
-`[attribute|="value"]`: whose value can be **exactly or start with the specific value** followed by a hyphen (-).
+`[attribute|="value"]`: exact match or starts with val followed by a hyphen (-).
 
 ```css
-[class|="top"] {
-} /*"top" or "top-text" */
+[class|="en"] {
+} /* lang "en", "en-US", ❌"english" */
 ```
-`[attribute^="value"]`: whose value **starts with** a specific value.
+`[attribute^="value"]`: whose value **starts with** a specific value. (no hyphen rule)
 
 ```css
-[class^="top"] {
-}
+[class^="en"] {
+} /* lang "en", "en-US", "english" */
 ```
 `[attribute$="value"]`: whose value **ends with** a specific value.
 ```css
@@ -101,7 +108,7 @@ The CSS rule will affect every HTML element on the page:
   color: blue;
 }
 ```
-better to avoid using them as affects every element so can slow down page rendering.
+better to avoid using them as it affects every element and can make styles harder to manage in large projects.
 
 ## Grouping selector
 Allows you to apply the same set of CSS rules to multiple HTML elements at once, using commas.
@@ -116,79 +123,58 @@ div, span, p {
 Apply these styles to all `<div>` elements, all `<span>` elements, and all `<p>` elements.
 
 
-<div class="card">
-  <h3>Block-level Elements</h3>
-  <p>
-    Block-level elements always start on a new line and stretch to fill the
-    full width of their container.
-  </p>
-  <ul>
-    <li><code>&lt;div&gt;</code></li>
-    <li><code>&lt;h1&gt; – &lt;h6&gt;</code></li>
-    <li><code>&lt;p&gt;</code></li>
-    <li><code>&lt;form&gt;</code></li>
-    <li><code>&lt;section&gt;</code></li>
-  </ul>
-
-  <h3>Inline Elements</h3>
-  <p>
-    Inline elements stay within the same line and only take as much space as
-    their content needs.
-  </p>
-  <ul>
-    <li><code>&lt;span&gt;</code></li>
-    <li><code>&lt;a&gt;</code></li>
-    <li><code>&lt;img&gt;</code></li>
-  </ul>
-</div>
 
 
-### How to Add CSS
-#### 1. External CSS
+## How to Add CSS?
+#### 1. External CSS `<link rel="stylesheet" href="style.css">`
 Usually used for the common theme of your entire website within 1 file!!
 - `<link>` element , inside the `<head>` section of HTML page.
 ```html
 <html>
-<head>
-<link rel="stylesheet" type="text/css" href="example.css">
-</head>
+  <head>
+    <link rel="stylesheet" href="example.css">
+  </head>
 <body>
 ```
 
-#### 2. Internal CSS
+#### 2. Internal CSS `<style></style>`
 may be used if that HTML page has a unique style, separate or in addition to the external styling.
 
 ```html
-<style>
-body {
-  background-color: linen;
-}
+<head>
+  <link rel="stylesheet" href="external-style.css"> <!-- has p { color: red; } -->
 
-h1 {
-  color: maroon;
-  margin-left: 40px;
-}
-</style>
+  <style> /* inline css */
+  p {
+    color: blue;
+  }
+
+  h1 {
+    color: maroon;
+    margin-left: 40px;
+  }
+  </style>  
+</head>
 ```
+- Both have same selector `p` but internal style is defined AFTER the link of `external` css, so inline wins🏆 `BLUE`
 
-#### 3. Inline CSS
+#### 3. Inline CSS `<tag style=";"></tag>`
 May be used to apply unique style for a single element
 ```html
-<div style="font-size: large; text-align: center">IMP TEXT</div>
 <td style="border: 1px solid black;">Statistics for Data Science I</td>
+
+<p style="color: green;">p tag with inline css</p>
 ```
-
-- If internal style is defined AFTER the link of `external` css (mostly). It will follow `internal`
-- If internal style is defined BEFORE  the link of `external` css. It will follow `external`
-- `inline` style (with the HTML element) cascades `internal & external` style sheets in the `head` section
-
+- `inline` style overrides `internal & external` stylesheets in the `head` section, so paragraph tag will now be 🏆`GREEN`❌`BLUE`
 
 ## CSS specificity
-::: warning From strongest to weakest: `!important > inline > ID > class > element`
+::: warning From strongest to weakest: `!important > inline > ID > class / attribute > element`
+*refers to `(pseudo)` classes & elements as well*
 
-1. If an element is styled using two different classes, then it will acquire styling from the **latest class in order**.
-2. If an element is styled using an ID and a class, then it will acquire styling from the **ID** selector.
-3. The `!important` rule is used to give the value of a specific property the highest priority.It will **override ALL previous styling rules** for that specific property on that element!
+1. If selectors have the same specificity, the rule defined later takes priority.
+2. If specificity is different, the more specific selector wins.
+3. `!important` has HIGHEST priority; **overrides ALL styling rules** for that specific property on that element!
+
 :::
 
 ---
@@ -197,15 +183,25 @@ May be used to apply unique style for a single element
 
 ---
 
-::: details Explanation (try adding `!important;` to `.green` class and see what happens and WHY?)
-Text1 → Red (class overrides element)<br>
-Text2 → Plum (inline overrides class & id)<br>
-Text3 → Grey (ID overrides class)<br>
-Text4 → Blue (element selector)<br>
-Text5 → Blue (inherits same template)<br>
-👉 Think of CSS like template inheritance: each layer builds on the previous one and may override it.
-:::
+::: details Explanation of Each Case
 
+**Case 1:**  Both selectors are classes (same specificity).<br>
+👉 The rule written **later in the CSS** wins.<br>
+
+**Case 2:** ID selectors have higher specificity than class selectors.<br>
+👉 ID rule overrides class rule.<br>
+
+
+**Case 3:** Inline styles have higher priority than both ID and class selectors.<br>
+👉 Inline style wins.<br>
+
+**Case 4:** The `!important` declaration overrides inline, ID, and class rules.<br>
+👉 `!important` wins for that property.<br>
+
+**Case 5: Multiple `!important` rules**  
+When both rules use `!important`, normal specificity rules apply.<br> 
+If specificity is equal, the rule written later in the CSS wins.
+:::
 
 
 ### Margins, height, width, padding
@@ -222,17 +218,18 @@ Text5 → Blue (inherits same template)<br>
 ```css
 div {
     height: 100px;
-    max-width: 500px;
-    /* width: max(50%, 500px); */
+    width: 50%;
+    max-width: 500px;/* EQUIVALENT TO width: max(50%, 500px); */
 
     margin: 3px;
     padding: 25px 50px 75px 100px;
+/* remember the 🚨ORDER is top right bottom left */
     border: 5px solid gray;
 
-  /* top right bottom left */
+  
 }
 ```
-::: details height and width properties do not include padding, borders, or margins
+::: details By default (`box-sizing: content-box`), height and width do not include padding or borders.
 ![padding border margin image](https://cdn.hashnode.com/res/hashnode/image/upload/v1662289464907/UChQ641Mf.png)
 ```txt
 500px (width of content area) + 150px (left padding + right padding) + 10px (left border + right border) = 500px (as we set max-width else 660 px)
@@ -241,7 +238,8 @@ div {
 ```
 
 ### Some named colors in CSS
-no need to use `RGB (red-green-blue values), HEX codes or HSL (hue-saturation-light values)`, if a named color!!
+Named colors can be used for simplicity, for more precise colors, use `RGB (red-green-blue values), HEX codes or HSL (hue-saturation-light values)`
+
 <iframe
   src="https://davidbau.com/colors/"
   title="CSS Color Names Visualizer"
@@ -284,7 +282,7 @@ a:visited {
 }
 ```
 == :hover
-a link when the user 's mouse pointer is placed over the link.
+a link when the user's mouse pointer is placed over the link.
 Use: commonly used for interaction feedback. Indicate “this is clickable”
 ```css
 a:hover {
@@ -314,15 +312,16 @@ For more info checkout: [User-interaction pseudo classes](2-css-extra.md#user-in
   </p>
 
   <ul>
-    <li><strong>inline</strong> – flows inside text</li>
-    <li><strong>block</strong> – takes full width</li>
-    <li><strong>inline-block</strong> – inline -level but you can apply width, height, padding, margin as block</li>
-    <li><strong>flex</strong> – flexible block for rows or columns</li>
-    <li><strong>grid</strong> – 2D grid system</li>
+    <li><strong>inline</strong> : flows inside text</li>
+    <li><strong>block</strong> : takes full width</li>
+    <li><strong>inline-block</strong> : behaves like inline, but allows width, height, padding, and margin like a block
+</li>
+    <li><strong>flex</strong> : flexible block for rows or columns</li>
+    <li><strong>grid</strong> : 2D grid system</li>
   </ul>
 </div>
 
-::: warning `display: none;` removes the element from layout entirely. (not take up any space)
+::: warning `display: none;` removes the element from layout entirely. (does not take up any space)
 :::
 
 ## CSS Combinators
@@ -351,7 +350,7 @@ div ~ p {
   background-color: yellow;
 }
 ```
-selects all `<p>` elements that are next siblings of `<div>`, and share the same parent
+selects all `<p>` elements that follow the `<div>` and share the same parent
 
 | Selector | Meaning |
 |--------|--------|

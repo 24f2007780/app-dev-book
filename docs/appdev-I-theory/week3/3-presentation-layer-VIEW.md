@@ -1,11 +1,17 @@
 # Presentation Layer (VIEW)
-**"What user sees"**
+responsible for **displaying data to the user** and 
+capturing user interactions.
+
 - User-interface of application
-- Interfaces for finding ℹ️information from `model`
-- Ex: `HTML pages, templates, Register form, Charts`
+- Defines how information (received from Controller/Model) is presented (not how it is stored/processed)
+- responsible for **displaying data to the user** and capturing user interactions.
+
+- Ex: `HTML pages, server-side templates, Forms, rendered Charts`
 
 
 ## [Usability Heuristics ](https://www.nngroup.com/articles/ten-usability-heuristics/)
+
+These are **design guidelines** applied during UI/UX design decisions.
 
 1. **Visibility of System Status:** Always keep users informed about what is happening through timely & clear feedback.
 2. **Match Between System & the Real World:** Use language, concepts, & conventions familiar to users; avoid jargon & follow real-world logic.
@@ -20,6 +26,7 @@
 
 
 ## Accessibility
+Accessibility guidelines are defined by the **Web Content Accessibility Guidelines (WCAG)**. Can be summarized as **POUR** acronym:
 
 <div class="card-grid">
 
@@ -36,7 +43,7 @@
       </li>
       <li>
         Easier to <strong>see & hear</strong> content using 
-        <span class="hl">assistive technologies</span> (screen readers, speech browsers)
+        <span class="hl">assistive technologies</span> (screen readers, text-to-speech browsers)
       </li>
     </ul>
   </div>
@@ -93,5 +100,3 @@
 
 </div>
 
-[Inspect Developer Tools](https://youtu.be/Pf2z_Ue73qE?si=XAul5yx0EI6pAZWH) 
-`console.table(array)`

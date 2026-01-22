@@ -21,7 +21,7 @@ $$
 $$
 
 ### 💡 Why Used?
-- Natural for humans (10 fingers) in daily calculatons
+- Natural for humans (10 fingers) in daily calculations
 </div>
 
 <div class="card">
@@ -49,7 +49,7 @@ $$
 - Foundation of all digital systems: *CPU operations, memory, machine-level code*
 
 ::: warning How Many Values Can Binary Represent?
-With $n$ bits, a binary system can represent $2^n$ possible values<br> In the range (0 to $2^{n} -1$)<br>
+With $n$ bits, a binary system can represent $2^n$ possible values (0 or 1) <br> In the range (0 to $2^{n} -1$)<br>
 Example: $\text{4 bits} \to 2^4 = \text{ 16 values Range: } \to 0 \text{ to }15$
 ::: 
 </div>
@@ -89,7 +89,7 @@ $$
 
 ## 🟣 Hexadecimal Number System  (Base 16)
 
-- **Digits used:** $0-9,; A-F$
+- **Digits used:** $0-9, A-F$
 - **Base:** $16$
 `A=10,; B=11,; C=12,; D=13,; E=14,; F=15`
 
@@ -118,10 +118,10 @@ $$
 
 </div>
 
-![binary-decimal-converson](https://dotnettutorials.net/wp-content/uploads/2022/08/word-image-29702-1.png)
+![binary-decimal-conversion](https://dotnettutorials.net/wp-content/uploads/2022/08/word-image-29702-1.png)
 
 ### Binary-Decimal Conversion
-Each bit represents a power of 2, starting from the rightmost bit (Least Significant bit $\to 2^0$)<br>
+Each bit represents a power of 2, starting from the rightmost bit (from Least Significant Bit i.e. $2^0$ up to $\to 2^n$)<br>
 $\begin{align}
 &0110 = 0\times 2^0 + 1 \times 2^1 + 1\times {2}^2 + 0 \times 2^3 \\& = 0 + 2 + 4 + 0 = 6\\& \text{So, } {0110}_2 = 6_{10} \end{align}$
 
@@ -175,7 +175,7 @@ $${11011010}_{2} = {DA}_{16}$$
 | 254 ÷ 16 | 15       | 14 (E)    |
 | 15 ÷ 16  | 0        | 15 (F)    |
 
-$${254}_{10} = FE_{10}$$
+$${254}_{10} = FE_{16}$$
 ::: 
 
 :::info 5. Binary ${10111101}_{2}$ → Octal

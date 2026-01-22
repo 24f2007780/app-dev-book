@@ -2,7 +2,7 @@
 
 Hello! In this module, we will guide you through the basic setup and use of the tools required for this course. Also:
 
-- What is latency and bandwidth?
+- some basic units for solving numericals
 - accessing command-line input using the `sys` module
 
 ::: tip **Disclaimer:**

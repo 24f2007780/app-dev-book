@@ -35,17 +35,7 @@ The installation steps for VS Code differ by operating system. Below are the ste
   allowfullscreen>
 </iframe>
 
-### macOS Installation Video Guide
-
-<iframe
-  width="100%"
-  height="400"
-  src="https://www.youtube.com/embed/w0xBQHKjoGo"
-  title="YouTube video player"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  allowfullscreen>
-</iframe>
+[macOS Installation Video Guide](https://www.youtube.com/w0xBQHKjoGo)
 
 ## Basic usage of VS Code
 

@@ -201,27 +201,52 @@ HTML elements can be classified into semantic and non-semantic elements based on
 
 :::
 
-### Block vs Inline Elements
+## Block-level vs inline elements
 
-HTML elements can also be classified as block-level or inline elements based on their display behavior.
+<div class="card">
+  <h3>Block-level Elements</h3>
+  <p>
+    Block-level elements always start on a new line and stretch to fill the
+    full width of their container.
+  </p>
+  <ul>
+    <li><code>&lt;div&gt;</code></li>
+    <li><code>&lt;h1&gt; to &lt;h6&gt;</code></li>
+    <li><code>&lt;p&gt;</code></li>
+    <li><code>&lt;form&gt;</code></li>
+    <li><code>&lt;section&gt;</code></li>
+    <li><code>&lt;ul, ol, li&gt;</code></li>
 
-- **Block-Level Elements**: These elements take up the full width available and start on a new line. Examples include `<div>`, `<p>`, `<h1>` to `<h6>`, `<ul>`, `<ol>`, and `<li>`.
-- **Inline Elements**: These elements only take up as much width as necessary and do not start on a new line. Examples include `<span>`, `<a>`, `<img>`, `<strong>`, and `<em>`.
+  </ul>
+</div>
+<div class="card">
+  <h3>Inline Elements</h3>
+  <p>
+    Inline elements stay within the same line and only take as much space as
+    their content needs.
+    <strong>width</strong> and <strong>height</strong> do not apply to inline elements.
+  </p>
+  <ul>
+    <li><code>&lt;span&gt;</code></li>
+    <li><code>&lt;a&gt;</code></li>
+    <li><code>&lt;img&gt;</code></li>
+    <li><code>&lt;strong, em&gt;</code></li>
 
-| Block-Level Elements | Inline Elements      |
-| ---                  | ---                  |
-| `<div>`              | `<span>`             |
-| `<p>`                | `<a>`                |
-| `<h1>` to `<h6>`     | `<img>`              |
-| `<ul>`               | `<strong>`           |
-| `<ol>`               | `<em>`               |
+  </ul>
+</div>
 
-:::info Note:
 
 - Block-level elements are typically used for larger sections of content, while inline elements are used for smaller pieces of content within block-level elements.
-- Understanding the difference between block and inline elements is crucial for effective HTML structuring and CSS styling.
-- By default, elements have block or inline behavior, which can later be changed using CSS properties like `display: block;` or `display: inline;`.
+- By default, elements have block or inline behavior, which can later be changed using CSS properties like `display: block;` or `display: inline;`
 
+<block-inline-visualizer />
+
+::: details Explanation (Edit the HTML on the left and observe how it appears on the right)<br>1. Why do `SPAN` and `EM` appear on **same line**?<br>2. Why does `PARAGRAPH` move to the **next line**?<br>3.  `SPAN`s, `STRONG`, and `ANCHOR` are inline yet Why they take up **two lines**?<br>4. Why does `DIV` &  final `SPAN` take full line?
+
+1. `<span>`,`<em>`, `<strong>`, `<a>` are **inline** elements so take up required width and try to fit on same line.
+2. `<p>` is **block-level** element so starts on a **new line**
+3. If multiple inline elements  can't fit within same line then they spill onto next line.
+4. `div` is **block-level** element so occupies the **full width** of their container and Force the next element onto a new line (even if that's **inline**)
 :::
 
 ## Summary
@@ -238,6 +263,6 @@ In this chapter, we learned:
 
 - [HTML Basics (W3Schools)](https://www.w3schools.com/html/html_basic.asp)
 - [HTML5 Introduction (MDN)](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Introduction)
-- [Creating a Simple HTML Page (YouTube)](https://youtu.be/PlxWf493en4?t=56) -> A video tutorial on creating a simple HTML page.
+- [Creating a Simple HTML Page (YouTube)](https://youtu.be/PlxWf493en4?t=56) → A video tutorial on creating a simple HTML page.
 
 :::

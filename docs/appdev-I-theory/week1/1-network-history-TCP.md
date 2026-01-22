@@ -13,11 +13,11 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-tcp["🔁**TCP**: Reliable error-prone delivery & autoscale"] 
-domain["🌐 **Domain name** is easier to remember than **IP address**: protocol://www.**Domain Name**.com/gov/org/net/country/folder/file.html"]
+tcp["🔁**TCP**: Reliable delivery over an error-prone network & autoscale"] 
+domain["🌐 **Domain name** is easier to remember than **IP address**: protocol://www.**Domain Name**.tld(com/gov/org/net/country)/folder/file.html"]
 http["📄 HyperText: Text with links & Formatting tags"]
 web["🌍**World Wide Web**: network of linked documents"]
-tcp --> domain --> http --"DNS database of ISP local cache/other DNS servers"--> web 
+tcp --> domain --> http --"DNS database of ISP local cache"--> web 
 ```
 
 
@@ -27,16 +27,16 @@ tcp --> domain --> http --"DNS database of ISP local cache/other DNS servers"-->
 :::
 
 :::tip **Protocol** defines: 
-- What should client can ask server?
+- What a client can request from a server?
 - How the server respond to client?
-*How to format packets, place them on wire, headers/checksums*
+<br>*How to format packets, place them on wire, headers/checksums*
 :::
 
 ## HyperText Transfer Protocol (HTTP)
 - Rulebook for communication between browser and server
-- **Client requests server** for some data -> read result -> process
-- **Server sends response** with Headers + Body
-- **Response Header**: contains
+- **Client requests server** for some data → read result → process
+- **Server sends response** with Header + Body content
+- **Response Header** contains:
   - acceptable content types client can deal with
   - language
   - encoding
@@ -55,28 +55,44 @@ You will learn about *HTTP methods* in greater detail in [Week 6](../week6/6-Res
 ### ⭐Checkout [Curl Commands](../week5/5-business-logic-layer-CONTROLLER#curl-commands) from Week-5
 
 ## Transmission Control Protocol
-**Transport Layer that ensures data gets delivered correctly**
-TCP ensures reliable communication between different machines **Accuracy > Speed**:
+**Transport Layer that ensures data gets delivered correctly Accuracy > Speed**
+TCP ensures reliable communication between different machines:
 - reassembles packets in CORRECT ORDER
-- data arrives without loss
-- missing data is resent if that chunk number is not acknowledged by receiver
+
+::: warning checksum
+it's like a digital footprint of "data packet". A number generated from the packet's header and data
+```mermaid
+flowchart LR
+  B[🔢 Extract Checksum from Packet Header]
+  B --> C["🔁 Receiver Recalculates Checksum<br/>from Header + Data"]
+
+  C --> D{Do checksums match?}
+
+  D -- "YES ✅" --> E["✔ Packet Accepted"]
+  E --> F["📩 Send Acknowledgement"]
+
+  D -- "NO ❌" --> G["❌ Packet is Damaged"]
+  G --> H["🗑️ Discard Packet"]
+  H --> I["📢 Request Resend"]
+```
+:::
+
 - dynamically adjusts sending speed based on receiver's capacity & network overload
 
 #### Ports
 TCP uses 16-bit unsigned integers for port numbers
-- This allows values from 0 to 65,535 ($2^{16 \text{ bits}}-1$). 
+- This allows values from 0 to 65,535 ($2^{16}-1 \text{ bits}$). 
 
 ::: danger Port 0 is reserved
 If you try to bind with port 0, Operating System automatically assigns a random free port.
 :::
 
 ## Internet Protocol
-**Network Layer decides where data should go**
-IP is responsible for:
+**Network Layer that decides where data should go**
 - assigning IP addresses
-- routing packets across networks
 - breaking data into packets
-- forwarding packets from router to router (no guarantee of delivered or in same order)
+- routing packets across networks
+- forwarding packets from router to router (doesn't guarantee delivery or in same order)
 
 packet has:
 ```txt
@@ -87,7 +103,7 @@ payload (data)
 
 ::: warning  TCP/IP always work as a pair:
 1. Application gives data to TCP
-  - breaks data into segments
+  - TCP breaks data into segments
 2. IP wraps each segment into packets
   - packets travel thru the internet
   - delivers to destination
@@ -98,16 +114,16 @@ payload (data)
 #### IP Address
 - Unique number to every device on a network
 - IPv4: `192.168.1.1` 
-  - 4 numbers 
+  - 4 numbers of 1 byte/8-bit
   - in range 0–255, separated by dots
   - Size: `32` bits = 4 Bytes
 - Assigned temporarily using DHCP when your device boots
 - IPv6
-  - Size: `128` bits
-  - Written as 8 groups of 16-bit hexadecimal numbers
+  - 8 groups of 16-bit/2 bytes hexadecimal numbers
+  - Size: `128` bits = 16 Bytes
   - Created due to IPv4 address shortage
 
-::: details ❓ An IPv4 address is given as: `172.16.10.25`<br>Each IPv4 octet is first converted to hexadecimal and then combined pairwise to form an IPv6-style address using 4 hexadecimal digits per group.<br>How will the above IPv4 address be represented in IPv6-style hexadecimal notation?<br>A) `AC10:0A19:0000:0000`<br>B) `0000:0000:AC10:0A19`<br>C) `AC10:190A:0000:0000`<br>D) `0000:AC10:0A19:0000`<br>
+::: details ❓ An IPv4 address is given as: `172.16.10.25`<br>Each IPv4 octet is converted→ to hexadecimal → combined pairwise (using 4 hexadecimal digits per group).<br>How will the above IPv4 address be represented in IPv6-style hexadecimal notation?<br>A) `AC10:0A19:0000:0000`<br>B) `0000:0000:AC10:0A19`<br>C) `AC10:190A:0000:0000`<br>D) `0000:AC10:0A19:0000`<br>
 $$
 \begin{align}
 &\textbf{Given IPv4 address: } 172.16.10.25 \\
@@ -170,7 +186,7 @@ Correct Answer: B) `0000:0000:AC10:0A19`
 
 
 ::: details TCP, UDP, Proxy, Peer-to-Peer, Broadcast, Unicast, Multicast
-- **TCP (Transmission Control Protocol)** is a connection-oriented protocol that ensures reliable, ordered, and error-checked delivery of data between devices on a network through handshakes and acknowledgements.
+- **TCP (Transmission Control Protocol)** is a connection-oriented protocol that ensures ordered & reliable delivery of data between devices on a network through handshakes and acknowledgements.
 - **UDP (User Datagram Protocol)** is a connectionless protocol that sends data without establishing a prior connection, prioritizing speed over reliability and not guaranteeing delivery.
 - **Proxy** acts as an intermediary server between clients and other servers to facilitate requests, improving security, performance, or anonymity.
 - **Peer-to-Peer (P2P)** is a decentralized communication model where each device can act as both client and server, sharing resources directly without central servers.

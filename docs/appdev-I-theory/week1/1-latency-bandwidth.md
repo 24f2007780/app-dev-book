@@ -3,7 +3,7 @@
 ## 🕔Latency (Time delay)
 Latency is the time delay between sending a request and receiving the response.
 
-::: warning How long it takes for data to travel from client → server → client
+::: warning How long it takes for data to travel from client → server 
 
 - Speed of light in vacuum $\approx 3 \times 10^8 \text{ m/s}$
 - Speed in copper/fiber cables $\approx 2 \times 10^8 \text{ m/s}$
@@ -13,12 +13,12 @@ Rule of thumb:
   - ≈ 5 nanoseconds per meter
   - ≈ 5 milliseconds per 1000 km
 
-If communication is **continous request–response** based:
+If communication is **continuous request–response** based:
 - A new request is sent **only** after the previous response is received
 - So latency directly limits how many requests per second are possible
 
 ::: danger ❓Problem 1: A student in Chennai is attending an online exam hosted on a server in Delhi.
-  - Distance between client and server = 2000 km .i.e $2000 \times 10^3$ m
+  - Distance between client and server = 2000 km i.e. $2000 \times 10^3$ m
   - Signal speed through cables $= 2 \times 10^8 \text{ m/s}$
 :::
 
@@ -43,11 +43,11 @@ $$2 \times \text{10 ms = 20 ms}$$
 So in 1 second, the number of requests possible is:
 $$\begin{gather} \text{Requests per second} \approx \frac{1}{\text{Round-trip latency}} \\ = \frac{1}{\text{20 ms}} = \frac{1}{0.02} =
 \text{50 requests/sec} \end{gather}$$
-👉 Latency alone limits how many requests you can do per second, even if student has high bandwidth or Fast CPU
+👉 Even if student has **high bandwidth or Fast CPU**, Latency still limits how many requests you can do per second, 
 This is why:
 1. Far-away servers feel slower
-2. Databases use caching
-3. `CDNs` exist
+2. Databases use [caching](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Caching#/)
+3. [CDNs](https://developer.mozilla.org/en-US/docs/Glossary/CDN#/) exist
 :::
 
 <LatencyVisualizer />
@@ -81,7 +81,7 @@ $$
 :::
 
 
-::: details How much data (in MB per second) does the server send?
+::: info How much data (in MB per second) does the server send?
 $$\begin{gather}
 \text{total requests/sec $\times$ each request data size
 }\\
@@ -105,7 +105,7 @@ $$
 - Each viewer needs a a **4 MB buffer** on the server (few seconds of video so it doesnt buffer when viewer is playing the video)
 :::
 
-::: details How much total memory (in GB) is required?
+::: info How much total memory (in GB) is required?
 50,000 viewers are **active at the same time** (memory needs to be store **simultaneously**)
 Then server must hold:
 $$\begin{gather}
@@ -132,5 +132,8 @@ Increasing bandwidth does not always reduce page loading time.
 | **Latency**   | How fast data travels (time delay)   |
 | **Bandwidth** | How much data can be sent per second |
 
-For more numericals
+::: tip ⚠️Latency limits the number of requests per second, while bandwidth limits the amount of data per second.
+:::
+
+For more numericals to practice, refer to Week 1 instructor sessions:
 <iframe src="https://drive.google.com/file/d/1WzbE5AQ08NXfRE6adb7sggVSy6yndeY2/preview" width="640" height="480"></iframe>

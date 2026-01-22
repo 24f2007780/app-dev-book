@@ -4,8 +4,29 @@
 
     <div class="input">
       <label>
-        Total distance (km):
-        <input type="number" v-model.number="totalDistanceKm" min="1" />
+        Distance from client to server (km):
+        <input type="number" v-model.number="DistanceKm" min="1" />
+      </label>
+    </div>
+
+    <!-- Medium selection -->
+    <div class="input">
+      <label>
+        Client → Router medium:
+        <select v-model="clientToRouter">
+          <option value="cable">Cable</option>
+          <option value="air">Air</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="input">
+      <label>
+        Router → Server medium:
+        <select v-model="routerToServer">
+          <option value="cable">Cable</option>
+          <option value="air">Air</option>
+        </select>
       </label>
     </div>
 
@@ -42,61 +63,64 @@
 </template>
 
 <script setup>
-  defineOptions({
+defineOptions({
   name: 'LatencyVisualizer',
 })
 
-
 import { ref } from 'vue'
 
-const totalDistanceKm = ref(18000)
+const DistanceKm = ref(18000)
+const clientToRouter = ref('cable')
+const routerToServer = ref('air')
 const output = ref('Click "Send Request" to calculate RTT')
 
-// convert number to scientific notation (×10^n)
+const SPEED = {
+  cable: 2e8,
+  air: 3e8,
+}
+
+// scientific notation helper
 function sci(n) {
   if (n === 0) return '0'
-  else{
-    const exp = Math.floor(Math.log10(Math.abs(n)))
-  
+  const exp = Math.floor(Math.log10(Math.abs(n)))
   const mantissa = (n / Math.pow(10, exp)).toFixed(2)
   return `${mantissa} × 10^${exp}`
-  }
 }
 
 function simulate() {
-  const totalDistanceM = totalDistanceKm.value * 1000
+  const totalDistanceM = DistanceKm.value * 1000
   const halfDistanceM = totalDistanceM / 2
 
-  const cableSpeed = 1.5e8
-  const airSpeed = 3e8
+  const speed1 = SPEED[clientToRouter.value]
+  const speed2 = SPEED[routerToServer.value]
 
-  const cableTimeSec = halfDistanceM / cableSpeed
-  const airTimeSec = halfDistanceM / airSpeed
+  const t1 = halfDistanceM / speed1
+  const t2 = halfDistanceM / speed2
 
-  const oneWaySec = cableTimeSec + airTimeSec
-  const rttMs = oneWaySec * 2 * 1000
+  const oneWayMs = (t1 + t2) * 1000
+  const rttMs = oneWayMs * 2
 
   output.value = `
 GIVEN:
-Total distance = ${totalDistanceKm.value} km
-Router placed exactly at midpoint
+Total distance = ${DistanceKm.value} km
+Router placed at midpoint
 
 STEP 1: Distance split
-Client → Router = ${totalDistanceKm.value / 2} km
-Router → Server = ${totalDistanceKm.value / 2} km
+Client → Router = ${DistanceKm.value / 2} km
+Router → Server = ${DistanceKm.value / 2} km
 
 STEP 2: Time = Distance / Speed
 
-Cable (1.5 × 10⁸ m/s):
-t₁ = (${sci(halfDistanceM)}) / (1.5 × 10⁸)
-   = ${cableTimeSec.toFixed(2)} s = ${(cableTimeSec*1000).toFixed(2)} ms
+Client → Router (${clientToRouter.value}):
+t₁ = ${sci(halfDistanceM)} / ${sci(speed1)}
+   = ${(t1 * 1000).toFixed(2)} ms
 
-Air (3 × 10⁸ m/s):
-t₂ = (${sci(halfDistanceM)}) / (3 × 10⁸)
-   = ${airTimeSec.toFixed(2)} s = ${(airTimeSec*1000).toFixed(2)} s
+Router → Server (${routerToServer.value}):
+t₂ = ${sci(halfDistanceM)} / ${sci(speed2)}
+   = ${(t2 * 1000).toFixed(2)} ms
 
 STEP 3: Round-trip latency
-RTT = 2 × ${(oneWaySec * 1000).toFixed(2)} ms
+RTT = 2 × ${oneWayMs.toFixed(2)} ms
     = ${rttMs.toFixed(0)} ms
 
 FINAL ANSWER:
@@ -104,6 +128,7 @@ FINAL ANSWER:
 `
 }
 </script>
+
 
 <style scoped>
 /* =========================================================
