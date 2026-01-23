@@ -20,7 +20,7 @@
 
 <script setup>
 defineOptions({
-  name: 'BlockInlineThinkingEditable'
+  name: 'block-inline-visualizer'
 })
 
 import { ref } from 'vue'
