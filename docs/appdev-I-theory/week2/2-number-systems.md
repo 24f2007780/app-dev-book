@@ -1,28 +1,5 @@
-<div class="card">
+In this page, we will learn about four number systems (base 2, 8, 10, 16) and how to convert them into each other. Try converting from one number system to another and check your answers with the step-by-step **conversion component**!!
 
-## 🔢 Decimal Number System (Base 10)
-
-- **Digits used:** $\{0,1,2,3,4,5,6,7,8,9\}$
-- **Base:** $10$
-- $\text{Position values: } 10^0, 10^1, 10^2, 10^3, \dots$
-
-### 📌 Positional System
-
-The value of a digit depends on **its position**.
-
-### ✅ Example
-
-$$
-\begin{align}
-384_{10} &= 3\times10^2 + 8\times10^1 + 4\times10^0 \\
-&= 300 + 80 + 4 \\
-&= 384
-\end{align}
-$$
-
-### 💡 Why Used?
-- Natural for humans (10 fingers) in daily calculations
-</div>
 
 <div class="card">
 
@@ -83,6 +60,33 @@ $$
 - Easier to read than raw bits
 - UNIX/Linux file permissions
 
+</div>
+
+
+<div class="card">
+
+## 🔢 Decimal Number System (Base 10)
+
+- **Digits used:** $\{0,1,2,3,4,5,6,7,8,9\}$
+- **Base:** $10$
+- $\text{Position values: } 10^0, 10^1, 10^2, 10^3, \dots$
+
+### 📌 Positional System
+
+The value of a digit depends on **its position**.
+
+### ✅ Example
+
+$$
+\begin{align}
+384_{10} &= 3\times10^2 + 8\times10^1 + 4\times10^0 \\
+&= 300 + 80 + 4 \\
+&= 384
+\end{align}
+$$
+
+### 💡 Why Used?
+- Natural for humans (10 fingers) in daily calculations
 </div>
 
 <div class="card">

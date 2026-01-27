@@ -4,7 +4,7 @@
 Welcome to the Appdev I Theory documentation!
 This course is designed for beginners who want to understand how web applications work from the ground up. Appdev I focuses on how applications are structured to how data flows between the browser (view), server, and database (model).
 
-This course lays the conceptual foundation required courses such as Appdev II, where you will work with modern frontend frameworks and dive in detail on some concepts we touch upon here!!
+This course lays the conceptual foundation required for courses such as Appdev II, where you will work with modern frontend frameworks and dive in detail on some concepts we touch upon here!!
 
 
 # [Theory](./appdev-I-theory/)

@@ -1,6 +1,8 @@
 # Week 2
-This week builds the **foundations of how content is represented and displayed on the Web**.
 
+<SessionResources :week="2" />
+
+This week builds the **foundations of how content is represented and displayed on the Web**.
 
 **CSS** controls visual styling with special focus on **selectors and specificity**, as these concepts determine  — a common source of confusion.
 
@@ -9,9 +11,8 @@ By the end of this week, you should be able to:
 - Convert numbers between different number systems, used internally by machines
 - Write basic HTML to structure content
 - *which CSS selector styles actually apply* by browser when multiple rules exist
----
 
-Here are the topics covered in this week:
+### Topics Covered
 
 - [Character Encoding](2-ascii-unicode.md)  
   ASCII, Unicode, UTF-8, and how text is represented in memory

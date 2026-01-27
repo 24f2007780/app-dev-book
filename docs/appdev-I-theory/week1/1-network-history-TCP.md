@@ -1,11 +1,16 @@
+1. Who am I talking to? → IP addresses (DNS finds IP for that domain name)
+2. How do I reach them? → IP routing across networks
+3. How do I talk reliably? → TCP (reliable) / UDP (fast)
+4. What kind of conversation is this? → Application protocols (HTTP, SMTP, SSH, SFTP)
+
 # Historical Background of Networks
 ```mermaid
 flowchart LR
     %% --- TOP BLOCK: Networking History & Protocols ---
-    A["📞 **Telephone** Networks <br> Physical line tied up during call. A talks to B through *complex switching network*"]
-    B["📦 **Packet-switched networks**: Wire occupied only when data is sent; can carry several different convos, any type of data. faster"]
+    A["📞 **Telephone** Networks <br> Physical line per call, line blocked even during silence. A talks to B through *complex switching network*"]
+    B["📦 **Packet-switched networks**: Wire occupied only when data is sent; Same wire shared for many conversations; any type of data. faster"]
     proto["*IBM SNA, DECnet, Ethernet* each had own protocol rules"]
-    C["How do different networks talk❓→ 🌍 **Internet IP**<br>standard headers & packet format *network of servers*"]
+    C["How do different networks talk❓→ 🌍 **Internet Protocol**<br>standard headers & packet format *network of servers*"]
 
     A --> B --"**ARPANet**<br>Node-to-node network"--> proto  --> C
 
@@ -13,7 +18,7 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-tcp["🔁**TCP**: Reliable delivery over an error-prone network & autoscale"] 
+tcp["🔁**TCP**: Reliable delivery over an error-prone network & dynamically adjusts its  rate based on congestion & capacity."] 
 domain["🌐 **Domain name** is easier to remember than **IP address**: protocol://www.**Domain Name**.tld(com/gov/org/net/country)/folder/file.html"]
 http["📄 HyperText: Text with links & Formatting tags"]
 web["🌍**World Wide Web**: network of linked documents"]
@@ -28,11 +33,12 @@ tcp --> domain --> http --"DNS database of ISP local cache"--> web
 
 :::tip **Protocol** defines: 
 - What a client can request from a server?
-- How the server respond to client?
+- How the server responds to client?
 <br>*How to format packets, place them on wire, headers/checksums*
 :::
 
 ## HyperText Transfer Protocol (HTTP)
+> Client to server: Give me this resource, and tell me what is the status now? (TCP handles reliability)
 - Rulebook for communication between browser and server
 - **Client requests server** for some data → read result → process
 - **Server sends response** with Header + Body content
@@ -51,16 +57,17 @@ tcp --> domain --> http --"DNS database of ISP local cache"--> web
 | **DELETE** | Remove data  | Delete account |
 
 You will learn about *HTTP methods* in greater detail in [Week 6](../week6/6-Rest-APIs.md)
+[HTTPS is HTTP + encryption (TLS)](../week9/9-Security.md)
 
 ### ⭐Checkout [Curl Commands](../week5/5-business-logic-layer-CONTROLLER#curl-commands) from Week-5
 
 ## Transmission Control Protocol
-**Transport Layer that ensures data gets delivered correctly Accuracy > Speed**
+**Transport Layer that ensures data gets delivered correctly (Accuracy > Speed)**
 TCP ensures reliable communication between different machines:
 - reassembles packets in CORRECT ORDER
 
 ::: warning checksum
-it's like a digital footprint of "data packet". A number generated from the packet's header and data
+it's like a digital "fingerprint" to verify "data packet" has not been altered/damaged. A number generated from the packet's header and data
 ```mermaid
 flowchart LR
   B[🔢 Extract Checksum from Packet Header]
@@ -81,18 +88,23 @@ flowchart LR
 
 #### Ports
 TCP uses 16-bit unsigned integers for port numbers
-- This allows values from 0 to 65,535 ($2^{16}-1 \text{ bits}$). 
+- This allows values from 0 to 65,535 ($2^{16}$). 
 
 ::: danger Port 0 is reserved
 If you try to bind with port 0, Operating System automatically assigns a random free port.
+
+- `127.0.0.1` is **loopback address** for "this same machine" (whispering to yourself i.e. Virtual machine)
+
+- `0.0.0.0` binding tells the app to **listen to all interfaces (wildcard)**
 :::
 
+<!-- Broadcast is 255.255.255.255. -->
 ## Internet Protocol
 **Network Layer that decides where data should go**
 - assigning IP addresses
-- breaking data into packets
+- encapsulates TCP segments into packets
 - routing packets across networks
-- forwarding packets from router to router (doesn't guarantee delivery or in same order)
+- forwarding packets from router to router (doesn't guarantee delivery or in same order like **TCP**)
 
 packet has:
 ```txt
@@ -101,14 +113,29 @@ destination IP address
 payload (data)
 ```
 
-::: warning  TCP/IP always work as a pair:
-1. Application gives data to TCP
-  - TCP breaks data into segments
-2. IP wraps each segment into packets
-  - packets travel thru the internet
-  - delivers to destination
-3. TCP reorders & verifies data
-4. App receives clean data
+::: tip TCP/IP commonly used as a pair:
+| Protocol | Layer | Responsibility |
+|--------|------|----------------|
+| **IP** | Network | Where packets go |
+| **TCP** | Transport | How packets arrive correctly |
+| **HTTP** | Application | What the data means |
+
+#### Opening a website (`https://example.com`)
+1. **DHCP**  → Your device is assigned an *IP address*, gateway, and DNS server.
+2. **DNS**  → “What is the IP address of `example.com`?”  
+3. **Application (Browser)** → Creates an **HTTPS request**  
+4. **TCP (Transport layer)** 
+  - breaks HTTP data into <span style="color:rgb(181, 118, 244)">segments</span>
+   - Adds sequence numbers & `checksum` <span style="color:rgb(152, 205, 137)"> reliable </span>
+5. **IP (Network layer)**  
+   - Wraps TCP segments into **IP packets**
+   - <span style="color:rgb(181, 118, 244)">route</span> packets hop-by-hop to destination (no guarantees)
+6. **TCP (Receiver side)**  
+   -  <span style="color:rgb(152, 205, 137)">  Reorders packets </span>
+   - Verifies  <span style="color:rgb(152, 205, 137)"> checksums </span>
+   - Requests retransmission if needed
+7. **HTTPS Server Response**  
+   - Sends status code `2xx` + content
 :::
 
 #### IP Address
@@ -117,7 +144,7 @@ payload (data)
   - 4 numbers of 1 byte/8-bit
   - in range 0–255, separated by dots
   - Size: `32` bits = 4 Bytes
-- Assigned temporarily using DHCP when your device boots
+- Typically assigned temporarily using DHCP when your device boots (for DHCP lease period)
 - IPv6
   - 8 groups of 16-bit/2 bytes hexadecimal numbers
   - Size: `128` bits = 16 Bytes
@@ -153,6 +180,13 @@ Correct Answer: B) `0000:0000:AC10:0A19`
 | **443** | HTTPSecure |
 | **25**  | sending Email      |
 
+::: details Some terminologies
+1. **DNS**: **Internet's phonebook** Convert human-friendly names to IP addresses `www.google.com → 142.250.182.14`
+2. **DHCP**: **reception desk when you're new to network!!** Automatically assign IPs to devices
+3. **SSH**: lets you sit at another computer, safely, over the network. (encrypted terminal access)
+4. **SMTP**: sending emails between mail servers
+5. **SFTP**: transfer files <span style="color:rgb(152, 205, 137)"> securely </span> (on top of SSH)
+:::
 
 
 ## Status codes
@@ -171,7 +205,7 @@ Correct Answer: B) `0000:0000:AC10:0A19`
 |  | 404 Not Found | Resource missing | Course ID not found |
 |  | 415 Unsupported Media Type | Wrong Content-Type | Not JSON |
 | <span style="font-weight:bold; color:rgb(181, 118, 244)">5xx Server Error </span>  | 500 | Internal Server Error | A general error indicating something went wrong on the server |
-|  | 502 Bad Gateway | Invalid response from a gateway or proxy | Bug in backend |
+|  | 502 Bad Gateway | Invalid response from a gateway or proxy | backend bug or fail |
 |  | 503 Service Unavailable | Overloaded or down | Server down |
 |  | 504 | Gateway Timeout |  |
 
@@ -186,8 +220,8 @@ Correct Answer: B) `0000:0000:AC10:0A19`
 
 
 ::: details TCP, UDP, Proxy, Peer-to-Peer, Broadcast, Unicast, Multicast
-- **TCP (Transmission Control Protocol)** is a connection-oriented protocol that ensures ordered & reliable delivery of data between devices on a network through handshakes and acknowledgements.
-- **UDP (User Datagram Protocol)** is a connectionless protocol that sends data without establishing a prior connection, prioritizing speed over reliability and not guaranteeing delivery.
+- **TCP (Transmission Control Protocol)** is a connection-oriented protocol that ensures ordered & reliable delivery of data between devices on a network through handshakes and acknowledgements. (✅guarantee)
+- **UDP (User Datagram Protocol)** is a connectionless protocol that sends data without establishing a prior connection, prioritizing SPEED over reliability (❌guarantees) 
 - **Proxy** acts as an intermediary server between clients and other servers to facilitate requests, improving security, performance, or anonymity.
 - **Peer-to-Peer (P2P)** is a decentralized communication model where each device can act as both client and server, sharing resources directly without central servers.
 - **Broadcast** is a one-to-all communication where data is sent from one sender to all devices on a network segment simultaneously.

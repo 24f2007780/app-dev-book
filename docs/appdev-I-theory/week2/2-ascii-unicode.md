@@ -11,7 +11,7 @@ Computers ultimately work with **bits** (0 and 1). So we need some Standard “e
 ::: tip American Standard Code for **Information Interchange**: is a character encoding used by machines to represent text → assigns a unique numerical value to each character. 
 $$\begin{gather}\text{ASCII uses 7-bits, allowing $2^7 = 128$ unique characters} \\ \text{i.e. digits + uppercase and lowercase English alphabets + control symbols}\\\underbrace{0...9}_{48 -57}+\underbrace{A...Z}_{65 -90}+ \underbrace{a...z}_{97-122}
 \end{gather}$$
-![ascii-code](https://blog.gcwizard.net/wp-content/uploads/2021/01/ASCII-code.png)
+<img style="margin: auto;" src="https://blog.gcwizard.net/wp-content/uploads/2021/01/ASCII-code.png">
 
 But if we want to include `!@# %&*() -Ľätīń/Rõman` symbols, we can use **extended 8-bit encodings**, allowing up to $2^8 =256$ characters! (not global standard)
 

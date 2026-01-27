@@ -1,6 +1,5 @@
 # Week3
-
-This week focuses on the **Presentation Layer** i.e. the **View** in a web application.
+<SessionResources :week="3" />
 
 This week answers a critical question:
 > **How does dynamic data get displayed to users in a meaningful and interactive way?**
@@ -9,8 +8,7 @@ You will learn how servers generate dynamic content using **templates**, how str
 
 Also understand usability and accessibility considerations for user-facing views
 
----
-Here are the topics covered in this week:
+### Topics Covered
 
 - [Presentation Layer: View](3-presentation-layer-VIEW.md)  
   Role of the View in MVC, usability, and accessibility

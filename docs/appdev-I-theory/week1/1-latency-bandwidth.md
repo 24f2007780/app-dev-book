@@ -9,9 +9,9 @@ Latency is the time delay between sending a request and receiving the response.
 - Speed in copper/fiber cables $\approx 2 \times 10^8 \text{ m/s}$
 :::
 
-Rule of thumb:
-  - ≈ 5 nanoseconds per meter
-  - ≈ 5 milliseconds per 1000 km
+Rule of thumb:<br>
+  ≈ 5 nanoseconds per meter<br>
+  ≈ 5 milliseconds per 1000 km
 
 If communication is **continuous request–response** based:
 - A new request is sent **only** after the previous response is received

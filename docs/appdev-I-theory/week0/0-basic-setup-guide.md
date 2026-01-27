@@ -13,7 +13,7 @@ Hello! In this module, we will guide you through the basic setup and use of the 
 
 ## 1. Python
 
-In this course, we will use the Python programming language for application development. Python is a high-level, interpreted programming language known for its simplicity and readability.
+In this course, we will use the Python programming language for application development. Python is a **high-level, interpreted programming language** known for its simplicity and readability.
 
 ### Why Python
 
@@ -21,16 +21,15 @@ In this course, we will use the Python programming language for application deve
 - Extensive libraries and frameworks.
 - Cross-platform compatibility.
 - Strong community support.
-- Versatile and can be used for web development, data analysis, artificial intelligence, scientific computing, automation, and more.
+- Versatile and can be used for <span style="color:rgb(98, 151, 208)"> web development, data analysis, artificial intelligence, scientific computing, automation, and more</span>
 
 ### Installation of Python
 
 1. Open a browser and visit the official Python downloads page: [python download page](https://www.python.org/downloads/).
-1. Download and install the version for your operating system.
-1. During installation, make sure to check the box that says **Add Python to PATH**.
-1. After installation, open Command Prompt and type `python --version` to verify the installation.
-1. You should see the installed Python version printed in the terminal.
-1. If you see an error message, revisit the installation steps and ensure that Python is added to PATH.<br> Video guide: [python installation video](https://www.youtube.com/watch?v=91SGaK7_eeY).
+2. Download and install the version for your operating system.
+3. During installation, make sure to check the box that says **Add Python to PATH**.
+4. After installation, open Command Prompt and type `python --version` -> verify if you see the installed Python version printed in the terminal.
+5. If you see an error message, revisit the installation steps and ensure that Python is added to ["Path" environment variable](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/).<br> Video guide: [python installation video](https://www.youtube.com/watch?v=91SGaK7_eeY).
 
 ![python version](../static/python-version.png)
 

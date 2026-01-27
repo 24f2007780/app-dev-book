@@ -246,3 +246,19 @@
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
+/* =========================================================
+   Global Content Alignment
+   ========================================================= */
+
+/* Center all images inside markdown content */
+.vp-doc img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Center headings (h1 → h5) inside markdown content */
+.vp-doc h1,
+.vp-doc h2 {
+  text-align: center;
+}

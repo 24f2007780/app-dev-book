@@ -2,6 +2,7 @@
 ## Cascading Style Sheets
 
 ::: warning ⚠️ This section is reference-heavy. Focus primarily on selectors, specificity, and commonly used pseudo-classes for exams.
+a short CSS Video tutorial!! https://youtu.be/l1mER1bV0N0?si=JzvInFpRWEqTltJ1
 :::
 
 - CSS describes how HTML elements are to be displayed on screen. It saves a lot of work because a single CSS file can control the layout and appearance of multiple web pages at once.
@@ -327,23 +328,26 @@ For more info checkout: [User-interaction pseudo classes](2-css-extra.md#user-in
 ## CSS Combinators
 Combinators define relationships between elements.
 
-- **Descendant (space)**: selects all nested elements (children, grandchildren, etc.)
-- **Child (`>`)**: selects direct children only
+1. **Descendant (space)**: selects all nested elements (children, grandchildren, etc.)
+
+2. **Child (`>`)**: selects direct children only
 ```css
 div > p {
   background-color: yellow;
 }
 ```
 selects all `<p>` elements that are direct children of `<div>`
-- **Next sibling (+)**: selects the immediate next element (same parents)
+
+3. **Next sibling (+)**: selects the immediate next element (same parents)
 
 ```css
 div + p {
   background-color: yellow;
 }
 ```
-selects the first `<p>` element that immediately follows a `<div>`, and share the same parent:
-- **Subsequent sibling (~)**: selects all following siblings
+selects the first `<p>` element that immediately follows a `<div>`, and share the same parent
+
+4. **Subsequent sibling (~)**: selects all following siblings
     
 ```css
 div ~ p {
