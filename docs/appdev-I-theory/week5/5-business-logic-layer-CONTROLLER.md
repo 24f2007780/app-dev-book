@@ -8,18 +8,22 @@ custom_validations. js') }}"></script>
 ```
 
 ## Curl Commands
+
 - HTTP is a **stateless protocol**: each client request is handled independently. The server does not remember previous requests. To maintain user state across multiple requests (e.g., shopping cart, login sessions), techniques such as:
-    - HTTP cookies
-    - Hidden form fields
-    - Server-side sessions
+
+- HTTP cookies
+- Hidden form fields
+- Server-side sessions
 
 ##### minimal HTTP server
+
 ```bash
  while true; do 
- 	echo -e "HTTP/1/1 200 OK\n\n $(date)" |
- 		nc -l localhost 1500;
+    echo -e "HTTP/1/1 200 OK\n\n $(date)" |
+    nc -l localhost 1500;
  done
 ```
+
 - Listens on port 1500 & sends the current date as the HTTP response
 
 ##### Python Built-in HTTP Server
@@ -27,6 +31,7 @@ custom_validations. js') }}"></script>
 ```bash
 python -m http.server
 ```
+
 $http:// \underbrace{0.0.0.0}_\text{default IP address}: \underbrace{8000}_\text{default port}$ Serves files from the current working directory
 
 HTTP 1.1 variant → large persistent connections and pipelining<br>

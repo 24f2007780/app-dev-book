@@ -182,6 +182,26 @@ export default defineConfig({
                     text: 'SQL Recap',
                     link: '/appdev-I-theory/week4/4-SQL-Recap',
                   },
+                  {
+                    text: 'Flask Basics',
+                    link: '/appdev-I-theory/week4/4-flask-basics',
+                  },
+                  {
+                    text: 'Templating in Flask',
+                    link: '/appdev-I-theory/week4/4-flask-templating',
+                  },
+                  {
+                    text: 'More Features in Flask',
+                    link: '/appdev-I-theory/week4/4-more-flask-features',
+                  },
+                  {
+                    text: 'HTML Forms',
+                    link: '/appdev-I-theory/week4/4-html-forms',
+                  },
+                  {
+                    text: 'Form Handling in Flask',
+                    link: '/appdev-I-theory/week4/4-request',
+                  }
                 ],
               },
               // { text: 'W5 – business logic: CONTROLLER', link: '/appdev-I-theory/week5/5-business-logic-layer-CONTROLLER' },
