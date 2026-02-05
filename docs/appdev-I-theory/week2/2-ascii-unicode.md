@@ -126,6 +126,7 @@ Markup is a way of adding special cues or codes within normal text to control ho
       <li>2️⃣ Indent by two lines</li>
     </ul>
     <li>Emphasizes <strong>how to format</strong>, not what the content means</li>
+    <li><strong>Examples:</strong> PostScript, RTF, TeX</li>
   </ul>
 </div>
 
@@ -142,6 +143,6 @@ Markup is a way of adding special cues or codes within normal text to control ho
       Example structure:
       <code>&lt;title&gt; with &lt;heading&gt; within 2 &lt;paragraph&gt;s</code>
     </li>
-    <li><strong>Examples:</strong> LaTeX, HTML</li>
+    <li><strong>Examples:</strong> XML, HTML</li>
   </ul>
 </div>

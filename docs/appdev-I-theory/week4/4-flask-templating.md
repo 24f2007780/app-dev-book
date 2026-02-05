@@ -150,11 +150,10 @@ our_flask_app/
 {% block title %}Home Page{% endblock %}
 
 {% block content %}
-    <h2>Welcome to the {{ title }}'s Home Page!</h2>
+    <h2>Welcome to {{ title }}'s Home Page!</h2>
     <p>This is the content of the home page.</p>
 {% endblock %}
 ```
-
 #### app.py
 
 ```python
@@ -172,6 +171,10 @@ if __name__ == '__main__':
 
 This will generate a complete HTML page by combining `base.html` and `home.html`, resulting in the following HTML:
 
+<TemplateInheritanceViewer />
+
+::: details Explanation
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -185,7 +188,7 @@ This will generate a complete HTML page by combining `base.html` and `home.html`
         <h1>My Website Header</h1>
     </header>
     <main>
-        <h2>Welcome to the My Website's Home Page!</h2>
+        <h2>Welcome to My Website's Home Page!</h2>
         <p>This is the content of the home page.</p>
     </main>
     <footer>
@@ -195,8 +198,9 @@ This will generate a complete HTML page by combining `base.html` and `home.html`
 </html>
 ```
 
-This demonstrates how template inheritance can be effectively used in Flask applications to create a consistent layoout across multiple pages while allowing for dynamic content for each page.
+This demonstrates how template inheritance can be effectively used in Flask applications to create a consistent layout across multiple pages while allowing for dynamic content for each page.
 
+:::
 ## Static File Serving
 
 Flask automatically serves static files from the `static` folder. So we can access static files using the `/static/` URL path. For example, if we have a CSS file named `styles.css` in the `static` folder, we can access it in our HTML templates like this:
@@ -214,7 +218,7 @@ our_flask_app/
 
 This allows us to host static files such as CSS, JavaScript, and images alongside our Flask application. **Though this method is not recommended for production use, as dedicated web servers like Nginx or Apache are better suited for serving static content efficiently.**
 
-## Conclusion
+## Summary
 
 Flask's templating system, powered by Jinja2, provides a powerful way to create dynamic web pages by separating the presentation layer from the business logic. By using templates, we can create reusable HTML structures, include static files, and implement template inheritance to maintain a consistent layout across our web application.
 
@@ -222,7 +226,8 @@ If we are not familiar with Jinja2 templating syntax, it is recommended to revie
 
 In the next module, we will explore how to handle forms and user input in Flask applications.
 
-### Extra resources:
+### Additional resources:
 
 - [Flask Documentation - Templating](https://flask.palletsprojects.com/en/2.3.x/templating/)
 - [Jinja2 Documentation](https://jinja.palletsprojects.com/en/3.1.x/)
+- [HTTP status codes](../week1/1-network-history-TCP.md#status-codes)

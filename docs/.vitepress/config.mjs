@@ -4,6 +4,7 @@
 import { defineConfig } from 'vitepress';
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs';
 import { vitepressMermaidPreview } from 'vitepress-mermaid-preview';
+import lightbox from "vitepress-plugin-lightbox"
 
 const customElements = ['mjx-container'];
 
@@ -392,6 +393,7 @@ export default defineConfig({
     config(md) {
       md.use(tabsMarkdownPlugin); // ✅ tabs support
       md.use(vitepressMermaidPreview);
+      md.use(lightbox, {});
     },
   },
   // If you want auto-sidebar generation for deeply nested structures,

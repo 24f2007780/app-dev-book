@@ -1,15 +1,15 @@
 # `sys` Module
 
-The `sys` module in Python provides access to some variables used or maintained by the interpreter and to functions that interact strongly with the interpreter. We will only cover a few important aspects of the `sys` module here.
+The `sys` module in Python provides access to some variables used or maintained by the interpreter and to functions that interact strongly with the interpreter. <br> *We will only cover a few important aspects of the `sys` module here.*
 
-- `sys.argv`: A list of command-line arguments passed to a Python file. The first element is the file name.
-- `sys.exit([arg])`: Exit from Python. This function can take an optional argument to specify the exit status.
-- `sys.version`: A string containing the version of the Python interpreter.
-- `sys.platform`: A string that identifies the platform on which Python is running.
+- `sys.argv`: a list of command-line arguments passed to a Python file. The first element is the file name.
+- `sys.exit([arg])`: exit from Python. This function can take an optional argument to specify the exit status.
+- `sys.version`: a string containing the version of the Python interpreter.
+- `sys.platform`: a string that identifies the platform on which Python is running.
 
 ## sys.argv
 
-The `sys.argv` list contains the command-line arguments passed to the file. The first element, `sys.argv[0]`, is the name of the file itself. The subsequent elements are the arguments passed to the file.
+The `sys.argv` list contains the command-line arguments passed to the file. The first element `sys.argv[0]`, is the name of the file itself. The subsequent elements are the arguments passed to the file.
 
 Here is an example of how to use `sys.argv` to print the file name and its arguments:
 
@@ -60,7 +60,7 @@ python myfile.py argument1 argument2 "complex argument 3"
 
 
 
-:::info note
+:::warning note
 
 - The first element of `sys.argv` is always the file name.
 - If no arguments are passed, `sys.argv` will contain only one element, the file name.
@@ -68,6 +68,6 @@ python myfile.py argument1 argument2 "complex argument 3"
 
 **Note: Python does not decide what arguments are — it simply receives them from the operating system as a list of strings.**
 
-- [Inspect Developer Tools](https://youtu.be/Pf2z_Ue73qE?si=XAul5yx0EI6pAZWH) 
+<!-- - [Inspect Developer Tools](https://youtu.be/Pf2z_Ue73qE?si=XAul5yx0EI6pAZWH)  -->
 
 :::

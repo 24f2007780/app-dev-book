@@ -134,7 +134,7 @@ Hello, my name is Alice and I am 30 years old.
 | Use case suitability        | legacy code     | Moderate formatting | Simple formatting |
 
 :::danger Security Warning:
-Avoid using f-strings or `str.format()` with untrusted user input. Both `fstring` and `string.format` allows **dynamic expression evaluation** which can be exploited. Always sanitize and validate any user-provided data before embedding it in strings or simply use safer templating engines like [**string.Template**](./3-string-templating.md#string.Template) or [**jinja2.Template**](./3-jinja2.md).<br>
+Both `fstring` and `string.format` allows **dynamic expression evaluation** which can be exploited. Always sanitize and validate any user-provided data before embedding it in strings or simply use safer templating engines like [**string.Template**](./3-string-templating.md#string.Template) or [**jinja2.Template**](./3-jinja2.md).<br>
 :::
 
 :::tip see here for more information:

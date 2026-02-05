@@ -31,8 +31,8 @@ These topics are only for learning purposes if someone is really interested in s
     - `em`: This uni`t is relative to the font size of the parent element.
     - `rem`: This unit is relative to the font size of the root HTML element.
     - `%:` This unit is relative to the font size of the parent element
-    - `smaller` and `larger`: These units adjust the font size relative to th`e parent element.
-👉 Always provide **fallback** fonts so the browser can choose if the first one is not found or installed properly.
+    - `smaller` and `larger`: These units adjust the font size relative to the parent element.
+Always provide **fallback** fonts so the browser can choose if the first one is not found or installed properly.
 
 ## Lists
 ```css
@@ -514,13 +514,13 @@ Use: anchor-based navigation.
 
 
 ::: details Bootstrap
-👉 Bootstrap is a CSS framework that provides ready-made styles and layout utilities so we don’t have to write everything from scratch.
+Bootstrap is a CSS framework that provides ready-made styles and layout utilities so we don’t have to write everything from scratch.
 
 - To import bootstrap styles in your html file
 ```css
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
 ```
-- for details checkout: [Bootstrap guide MAD1 project]
+- for details checkout: [Bootstrap guide MAD1 project](to be added)
 - Standard styles for buttons, forms, icons
 - Uses `label for`	, `aria-describedby`, `aria-labelledby` for screen readers
 
@@ -545,7 +545,8 @@ Use: anchor-based navigation.
 ```
 :::
 
-::: warning other less-used css properties if you are interested to checkout 
+### Additional Resources
+other less-used css properties if you are interested to checkout 
 1. [text-decoration](https://www.w3schools.com/css/css_text_decoration.asp)
 2. [text spacing](https://www.w3schools.com/css/css_text_spacing.asp)
 3. [shadow](https://www.w3schools.com/css/css_text_shadow.asp)
@@ -554,4 +555,4 @@ Use: anchor-based navigation.
 5. [For more icons](https://fontawesome.com/) `<i class="fas fa-cloud"></i>`
 6. [styling for HTML forms](https://www.w3schools.com/css/css_form.asp)
 7. [gradients](https://www.w3schools.com/css/css3_gradients.asp)
-:::
+

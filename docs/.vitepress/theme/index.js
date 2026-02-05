@@ -4,6 +4,7 @@ import { useData } from 'vitepress'
 import { enhanceAppWithTabs } from 'vitepress-plugin-tabs/client'
 import { initComponent } from 'vitepress-mermaid-preview/component';
 import 'vitepress-mermaid-preview/dist/index.css';
+import Layout from "./Layout.vue";
 
 import OSSwitcher from '../components/OSSwitcher.vue'
 import './style.css'
@@ -13,13 +14,7 @@ const components = import.meta.glob('../components/*.vue', { eager: true })
 
 export default {
   extends: DefaultTheme,
-
-  Layout() {
-    return h(DefaultTheme.Layout, null, {
-      'sidebar-top': () => h(OSSwitcher),
-    })
-  },
-
+  Layout,
   enhanceApp({ app }) {
     enhanceAppWithTabs(app);
     initComponent(app);

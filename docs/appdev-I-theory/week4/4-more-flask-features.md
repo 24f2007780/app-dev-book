@@ -64,6 +64,7 @@ This will generate the following links:
 
 - Alice's Profile: `/user/alice`
 - Bob's Profile: `/user/bob?age=23`
+<UrlForVisualizer />
 
 **Note**: The `age` parameter in Bob's profile link is passed as a query parameter since it is not part of the route definition. If a parameter is not defined in the route, it will be added as a query string.
 
@@ -269,7 +270,7 @@ if __name__ == '__main__':
 
 Now when a 404 or 403 error occurs, Flask will render the corresponding custom error page defined in the `404.html` and `403.html` templates.
 
-:::info `abort` Error Codes
+:::details `abort` [Error Codes](../week1/1-network-history-TCP.md#status-codes)
 
 By default, the `abort` function can raise only a few HTTP status codes which are defined by underlying **Werkzeug** server. Here is a list of a few of those error codes:
 
@@ -280,8 +281,8 @@ By default, the `abort` function can raise only a few HTTP status codes which ar
 - 405: Method Not Allowed
 - 500: Internal Server Error
 
-If we try to `abort(407)` it will throw a **LookupError** instead of a **Proxy Authentication Required** error. The `abort` function can raise only those HTTP status codes that have corresponding HTTPException classes in Werkzeug.
-While many common HTTP status codes are supported (404, 403, 401, etc.), some valid HTTP codes like 407 (Proxy Authentication Required) do not have a built-in exception class.
+If we try to `abort(407)` it will throw a **LookupError** instead of a **Proxy Authentication Required** error. The `abort` function can raise only those HTTP status codes that have corresponding `HTTPException` classes in Werkzeug.<br>
+While many common HTTP status codes are supported (404, 403, 401, etc.), some valid HTTP codes like 407 (Proxy Authentication Required) do not have a built-in exception class.<br>
 Attempting to `abort(407)` therefore raises a LookupError. But if we want to raise custom error codes, we can create a custom exception class that inherits from `HTTPException` and define our own status code.
 
 **We can also return the error code directly from the view function without using `abort`. For example:**
@@ -332,6 +333,6 @@ Flask offers many more features that we can be really useful. Some of these feat
 
 In the next module, we will explore HTML Forms and how to handle user input in Flask applications.
 
-### Extra resources
+### Additional resources
 
 - [Flask Documentation - URL Building](https://flask.palletsprojects.com/en/2.3.x/quickstart/#url-building)

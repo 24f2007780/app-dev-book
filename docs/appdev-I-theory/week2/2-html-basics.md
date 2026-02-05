@@ -1,7 +1,9 @@
 # HTML Introduction
 
-HTML (HyperText Markup Language) is the standard markup language used to create web pages. It provides the structure and content of a webpage, allowing browsers to display text, images, links, and other multimedia elements. HTML5 is the current standard of HTML, introducing features and improvements for modern web development. In this section, we will cover the basics of HTML5, including its syntax and how to create a simple webpage.
+HTML (HyperText Markup Language) is the standard markup language used to create web pages. It provides the structure and content of a webpage, allowing browsers to display text, images, links, and other multimedia elements.<br>
+HTML5 is the current standard of HTML, introducing features and improvements for modern web development.<br>
 
+In this section, we will cover the basics of HTML5, including its syntax and how to create a simple webpage.
 ## Basic Structure of an HTML Document
 
 An HTML document consists of several key elements that define its structure. Here is a basic template for an HTML5 document:
@@ -33,14 +35,13 @@ In the example above, we have the following key components:
 - `<!DOCTYPE html>`: Declares the document type and version of HTML.
 - `<html>`: The root element that contains all other HTML elements.
 - `<head>`: Contains meta-information about the document, such as the title and links to stylesheets.
-- `<meta charset="UTF-8">`: Specifies the character encoding for the document.
-- `<title>`: Sets the title of the webpage, which appears in the browser tab.
+  - `<meta charset="UTF-8">`: Specifies the [character encoding](2-ascii-unicode.md) for the document.
+  - `<title>`: Sets the title of the webpage, which appears in the browser tab.
 - `<body>`: The body of the document is enclosed within the `<body>` tags. This is where the content that will be displayed on the webpage is placed.
 
   - Inside the `<body>`, we have a heading (`<h1>`) and a paragraph (`<p>`).
   - The `<h1>` tag defines a top-level heading. These headings range from `<h1>` to `<h6>`, with `<h1>` being the most important and `<h6>` is the least important.
   - The `<p>` tag defines a paragraph of text. It can be used to display a block of normal text.
-  - We will explore more HTML elements in the next section.
 
 :::details **Try it yourself**
 
@@ -66,15 +67,17 @@ You can create your own HTML document by copying the example above into a text e
 
 HTML provides a variety of elements to structure and format content. Here are some commonly used HTML elements:
 
-- `<a>`: Defines a hyperlink.
-- `<img>`: Embeds an image.
-- `<ul>`: Creates an unordered list.
-- `<ol>`: Creates an ordered list.
-- `<li>`: Defines a list item.
-- `<div>`: A container element used to group other elements.
-- `<span>`: An inline container used to style a part of the text.
-- `<table>`: Creates a table to display data.
-- `<form>`: Defines a form for user input.
+| HTML Tag | Description |
+|---------|-------------|
+| `<a>` | Defines a hyperlink |
+| `<img>` | Embeds an image |
+| `<ul>` | Creates an unordered list |
+| `<ol>` | Creates an ordered list |
+| `<li>` | Defines a list item |
+| `<div>` | Container element used to group other elements |
+| `<span>` | Inline container used to style part of the text |
+| `<table>` | Creates a table to display data |
+| `<form>` | Defines a form for user input |
 
 In the next section, we will explore these elements in more detail and see how they can be used to create more complex webpages.
 
@@ -82,13 +85,9 @@ In the next section, we will explore these elements in more detail and see how t
 
 Attributes provide additional information about HTML elements. They are included within the opening tag of an element and consist of a name and a value. Here are some common attributes:
 
-- `id`: A unique identifier for an element.
-- `class`: A class name that can be used to group elements for styling.
 - `href`: Specifies the URL of a link (used with `<a>` tags).
 - `src`: Specifies the source of an image (used with `<img>` tags).
 - `alt`: Provides alternative text for an image (used with `<img>` tags).
-- `style`: Allows inline CSS styling for an element.
-- `title`: Provides additional information about an element, often displayed as a tooltip.
 
 Example of an HTML element with attributes:
 
@@ -100,7 +99,7 @@ This creates a hyperlink that points to "https://www.example.com", has an `id` o
 
 ### Global Attributes
 
-Some attributes are specific to certain elements (like href for links or src for images), while others are global and can be used on almost any element. Common global attributes include:
+Some attributes are specific to certain elements (like href for links or src for images), whereas global can be used on almost any element. Common global attributes include:
 
 - `id`: A unique identifier for the element.
 - `class`: A space-separated list of classes for the element.
@@ -144,7 +143,7 @@ Classifications of HTML elements help in understanding their behavior and purpos
 HTML elements can be classified into container elements and void(empty) elements based on whether they can contain other elements or not.
 
 - **Container Elements**: These elements can contain other HTML elements or text. They have both opening and closing tags. Examples include `<div>`, `<p>`, `<h1>` to `<h6>`, `<ul>`, `<ol>`, and `<li>`.
-  
+<!--   
 Example of a Container Element:
   
 ```html
@@ -152,10 +151,10 @@ Example of a Container Element:
   <h1>This is a Heading</h1>
   <p>This is a paragraph inside a div.</p>
 </div>
-```
+``` -->
 
 - **Void Elements**: These elements do not contain any content and do not have a closing tag. They are self-closing. Examples include `<img>`, `<br>`, `<hr>`, and `<input>`.
-
+<!-- 
 Example of a Void Element:
 
 ```html
@@ -163,7 +162,7 @@ Example of a Void Element:
 <br>
 <hr>
 <input type="text" name="username">
-```
+``` -->
 
 :::info Note:
 
@@ -177,7 +176,7 @@ Example of a Void Element:
 
 HTML elements can be classified into semantic and non-semantic elements based on their meaning and purpose.
 
-- **Semantic Elements**: These elements clearly describe their meaning in a human- and machine-readable way. Examples include `<header>`, `<footer>`, `<article>`, `<section>`, `<em>` and `<strong>`. They provide better accessibility and SEO benefits.
+- **Semantic Elements**: These elements clearly describe their meaning in a human and machine-readable way. Examples include `<header>`, `<footer>`, `<article>`, `<section>`, `<em>` and `<strong>`. They provide better accessibility and SEO benefits.
 
 - **Non-Semantic Elements**: These elements do not convey any specific meaning about their content. Examples include `<div>`, `<span>`, `<b>` and `<i>`. They are primarily used for styling and layout purposes without providing additional context.
 
@@ -203,7 +202,6 @@ HTML elements can be classified into semantic and non-semantic elements based on
 
 ## Block-level vs inline elements
 
-<div class="card">
   <h3>Block-level Elements</h3>
   <p>
     Block-level elements always start on a new line and stretch to fill the
@@ -218,8 +216,6 @@ HTML elements can be classified into semantic and non-semantic elements based on
     <li><code>&lt;ul, ol, li&gt;</code></li>
 
   </ul>
-</div>
-<div class="card">
   <h3>Inline Elements</h3>
   <p>
     Inline elements stay within the same line and only take as much space as
@@ -233,7 +229,6 @@ HTML elements can be classified into semantic and non-semantic elements based on
     <li><code>&lt;strong, em&gt;</code></li>
 
   </ul>
-</div>
 
 
 - Block-level elements are typically used for larger sections of content, while inline elements are used for smaller pieces of content within block-level elements.
@@ -255,7 +250,7 @@ In this chapter, we learned:
 
 - What HTML is and how a basic HTML document is structured
 - Common HTML elements and attributes
-- The difference between container and void elements
+- Container vs void elements
 - Semantic vs non-semantic elements
 - Block-level vs inline elements
 

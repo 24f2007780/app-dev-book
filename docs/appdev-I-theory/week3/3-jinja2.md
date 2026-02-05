@@ -65,7 +65,7 @@ Some important information about Jinja2 rendering:
 
 We can use double curly braces to access variables, object attributes, list items and evaluate a limited set of python like expressions like arithmetic, logical operations etc.
 
- :::info
+ :::warning
 Jinja2 has its own expression syntax which is similar to Python but not exactly the same. For example, Jinja2 uses `and`, `or`, `not`. But it is important to note that not all Python expressions are supported in Jinja2 templates.
  :::
 
@@ -247,7 +247,7 @@ template = Template("""
 rendered = template.render(users=[{"first_name": "John", "last_name": "Doe"}, {"first_name": "Jane", "last_name": "Smith"}, {"first_name": "Alice", "last_name": "Johnson"}])
 print(rendered)
 ```
-
+:::
 :::info
 
 - Jinja2 supports looping over lists, tuples, dictionaries, and ranges.
@@ -287,6 +287,7 @@ print(rendered)
 :::
 
 ### With Statement (Scoped Variables)
+Like `set`, but limited to block scope.
 
 ```html
 {% with x = 5 %}
@@ -297,8 +298,6 @@ print(rendered)
 ```
 
 **Note**: undefined variables are rendered as empty strings by default.
-
-Like `set`, but limited to block scope.
 
 :::code-group
 
@@ -327,7 +326,7 @@ Jinja2 macros are similar to functions in programming languages. They allow us t
 
 - Macros return the entire block enclosed within them.
 - Macros can be defined in the same template or imported from other templates.
-- Macros may include parameters with default values.
+- Macros may include **parameters** with default values.
 
 ```html
 {% macro macro_name(param1, param2="default") %}
@@ -392,8 +391,8 @@ print(rendered)
 
 ### Escaping
 
-Escape Jinja2 syntax using `{% raw %}` ... `{% endraw %}` to prevent evaluation.
-
+Escape Jinja2 syntax using `{% raw %}` ... `{% endraw %}` to prevent evaluation.<br>
+Use: showing text which conflicts with jinja2 syntax but we want to print it as it is, without rendering as jinja2.
 :::code-group
 
 ```html [Example #9]
@@ -517,7 +516,13 @@ print(rendered)
 
 :::
 
-Explanation:When a child template is rendered, Jinja2 first resolves the template inheritance chain defined by the extends statements. It collects all block definitions from the base and child templates, determines which blocks override others, and builds a single final template structure. This resolved template is then rendered to produce the final output.
+:::details Explanation
+When a child template is rendered, Jinja2 first resolves the template inheritance chain defined by the extends statements. 
+- It collects all block definitions from the base and child templates.
+- determines which blocks override others.
+- builds a single final template structure. 
+- This resolved template is then rendered to produce the final output.
+:::
 
 ### Using `super()`
 
@@ -611,7 +616,7 @@ Jinja2 allows including reusable template fragments using the `include` statemen
 {% include "header.html" %}
 ```
 
-### With Context vs Without Context
+::: details With Context vs Without Context
 
 By default, included templates have access to the context of the parent template. However, we can use `with context` or `without context` to control this behavior.
 
@@ -622,6 +627,24 @@ By default, included templates have access to the context of the parent template
 {% include "header.html" with context %}
 {% include "footer.html" without context %}
 ```
+
+Header.html:
+
+```html
+<header>
+  <h1>{{ title }}</h1>
+</header>
+```
+
+Footer.html:
+
+```html
+<footer>
+  <p>&copy; {{ year }}</p>
+</footer>
+```
+:::
+
 
 :::code-group
 
@@ -645,24 +668,7 @@ print(rendered)
     <p>&copy; </p>
   </footer>
 ```
-
 :::
-
-Header.html:
-
-```html
-<header>
-  <h1>{{ title }}</h1>
-</header>
-```
-
-Footer.html:
-
-```html
-<footer>
-  <p>&copy; {{ year }}</p>
-</footer>
-```
 
 ## Filters
 
@@ -800,8 +806,9 @@ print(rendered)
 
 :::
 
-## Comparison Tables
+## Summary
 
+::: details Comparison Tables
 ### Template Inheritance vs Includes
 
 | Feature                 | Template Inheritance (`extends` + `block`) | Includes (`include`)                     |
@@ -822,6 +829,8 @@ print(rendered)
 | Use Case                | Reusable form elements, widgets           | Headers, footers, navbars                |
 | Complexity              | More complex due to parameterization      | Simpler, just includes fragments         |
 
+:::
+
 ### Jinja2 vs string.Template vs Python Built-in Formatting
 
 | Feature | Jinja2 | string.Template | Python Built-in Formatting |
@@ -835,8 +844,6 @@ print(rendered)
 | Complexity | More complex, powerful | Simple, limited | Moderate |
 | formatting capabilities | Advanced (filters, custom functions) | Substitution | very precise and flexible formatting |
 | Use Case | Web applications, complex documents | Simple string substitutions | General-purpose string formatting |
-
-## Summary
 
 In this guide, we have explored the key features of Jinja2, a powerful templating engine for Python. We covered variable interpolation, control structures, template inheritance, includes, macros, filters, and more. Jinja2 provides a robust way to separate application logic from presentation logic, making it easier to manage and maintain code in web applications. In future sections, we will explore how to integrate Jinja2 with web frameworks like Flask to build dynamic web applications. Here's a quick summary of the main features covered:
 

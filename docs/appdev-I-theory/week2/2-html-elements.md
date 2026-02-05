@@ -6,22 +6,27 @@ In the previous section, we introduced some basic HTML elements such as headings
 
 HTML provides several elements for formatting text. Here are some of the most commonly used text formatting elements:
 
-- `<b>`: Bold text
-- `<i>`: Italic text
-- `<u>`: Text with a non-textual annotation (often rendered as underlined)
-- `<strong>`: Important text (usually rendered as bold)
-- `<em>`: Emphasized text (usually rendered as italic)
-- `<mark>`: Highlighted text
-- `<small>`: Smaller text
-- `<del>`: Deleted text (usually rendered with a strikethrough)
-- `<ins>`: Inserted text (usually rendered with an underline)
-- `<sub>`: Subscript text
-- `<sup>`: Superscript text
-- `<code>`: Inline code snippet
-- `<pre>`: Preformatted text (preserves whitespace and line breaks)
-- **`<br>`**: Line break (void element, no closing tag)
+| HTML Tag | Description |
+|--------|-------------|
+| `<b>` | Bold text |
+| `<i>` | Italic text |
+| `<u>` | Text with a non-textual annotation (often rendered as underlined) |
+| `<strong>` | Important text (usually rendered as bold) |
+| `<em>` | Emphasized text (usually rendered as italic) |
+| `<mark>` | Highlighted text |
+| `<small>` | Smaller text |
+| `<del>` | Deleted text (usually rendered with a strikethrough) |
+| `<ins>` | Inserted text (usually rendered with an underline) |
+| `<sub>` | Subscript text |
+| `<sup>` | Superscript text |
+| `<code>` | Inline code snippet |
+| `<pre>` | Preformatted text (preserves whitespace and line breaks) |
+| `<br>` | Line break (void element, no closing tag) |
 
 ## Example
+
+:::tabs
+== html
 
 ``` html[example 1]
 <p>This is <b>bold</b> text.</p>
@@ -35,8 +40,7 @@ HTML provides several elements for formatting text. Here are some of the most co
 <p>This is <ins>inserted</ins> text.</p>
 ```
 
-Output:
-
+== Output
 This is <b>bold</b> text.<br>
 This is <i>italic</i> text.<br>
 This is <u>underlined</u> text.<br>
@@ -46,8 +50,9 @@ This is <mark>highlighted</mark> text.<br>
 This is <small>smaller</small> text.<br>
 This is <del>deleted</del> text.<br>
 This is <ins>inserted</ins> text.<br>
+:::
 
-:::info INFO
+:::details Explanation
 
 - The `<b>` and `<i>` tags are used for stylistic purposes, while `<strong>` and `<em>` convey semantic meaning.
 - Refer back to the section on Semantic HTML for more details on the importance of using semantic elements. [Semantic HTML](2-html-basics.md#semantic-vs-non-semantic-elements)
@@ -186,7 +191,7 @@ Images are added to a webpage using the `<img>` tag. The `src` attribute specifi
 
 This will display the image located at "image.jpg" with the specified dimensions. If the image cannot be displayed, the text "Description of the image" will be shown instead.
 
-:::info
+:::details
 
 - The `<img>` tag is a void element and does not have a closing tag.
 - **By default, html will search for the image in the same directory. We can also provide a relative or absolute path to the image.**
@@ -338,3 +343,6 @@ You can copy the following code into an HTML file and open it in your web browse
 In this section, we explored basic text formatting and additional HTML elements including lists (ordered, unordered, and description lists), links, and images. These elements are fundamental for structuring content on web pages and enhancing user interaction. Understanding how to use these elements effectively is crucial for web development.
 
 In the next section, we will delve into HTML tables, which are used to display tabular data on web pages.
+
+### External Sources
+- [HTML tags (W3Schools)](https://www.w3schools.com/tags/tag_img.asp)

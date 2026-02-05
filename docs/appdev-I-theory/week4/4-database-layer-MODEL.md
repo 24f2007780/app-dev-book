@@ -3,7 +3,7 @@
 MVC is a software design pattern that separates an interactive applications into Model (data), View (UI), and Controller (logic) to improve modularity, maintainability, and scalability.
 
 ![](../static/Model-View-Controller-Architecture.png)
-It was originally introduced by *Trygve Reenskaug* while working at *Xerox PARC Smalltalk* in the late 1970s.
+<!-- It was originally introduced by *Trygve Reenskaug* while working at *Xerox PARC Smalltalk* in the late 1970s. -->
 
 ::: info Core idea
 Separate what the application stores (data), how it is presented (UI),
@@ -22,13 +22,13 @@ MVC enforces this separation of concerns:
 - Stores Core data for the application and the validation constraints on data 
 - Ex: `price >= 0 in Product Table, ID is unique in User Table`
 - Searching & manipulation on databases. 
-- Interacts with databases, files, or external APIs
+- Interacts with databases, files, or external data-APIs
 
 == View
 **What user sees (presentation)**
 - User-interface of application
-- Defines how information (received from Controller/Model) is presented (not how it is stored/processed)
-- Ex: `HTML pages, server-side templates, Forms, rendered Charts`
+- Defines how information (received from Controller/Model) is presented (`View` is not concerned about how it is stored/processed)
+- Ex: `HTML pages, server-side templates, forms, rendered charts`
 
 == Controller
 **What the app does? What should happen on user request?**

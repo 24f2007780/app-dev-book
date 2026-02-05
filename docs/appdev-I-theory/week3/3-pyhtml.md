@@ -1,10 +1,8 @@
-# Pyhtml and System Integration
+# PyHTML
 
 In this section, we will briefly cover: generating simple HTML output using the `pyhtml` library.
 
-## Pyhtml Library
-
-The `pyhtml` library is a simple and lightweight library for generating HTML in Python. It allows you to create HTML elements using Python syntax. Pyhtml uses functions to represent HTML tags.
+The `pyhtml` library is a simple and lightweight library for generating HTML in Python. It allows you to create HTML elements using Python syntax. PyHTML uses functions to represent HTML tags.
 
 ### Installation
 
@@ -48,7 +46,7 @@ print(doc)
 
 Here we used the `html`, `head`, `body`, `h1`, and `p` functions from the `pyhtml` library to create an HTML document structure. The base element is `html`, which contains the `head` and `body` elements. Inside the `head`, we added a `title`, and inside the `body`, we added a heading (`h1`) and a paragraph (`p`). We can follow this structure to create more complex HTML documents.
 
-### Creating Nested HTML Structures using Pyhtml
+### Creating Nested HTML Structures using PyHTML
 
 You can create more complex HTML structures by nesting elements. Here is an example:
 :::code-group
@@ -56,7 +54,7 @@ You can create more complex HTML structures by nesting elements. Here is an exam
 from pyhtml import html, head, title, body, h1, p, ul, li
 doc = html(
     head(
-        title("My Complex Pyhtml Page")
+        title("My Complex PyHTML Page")
     ),
     body(
         h1("Welcome to My Page"),
@@ -75,7 +73,7 @@ print(doc)
 ```html [HTML output]
 <html>
   <head>
-    <title>My Complex Pyhtml Page</title>
+    <title>My Complex PyHTML Page</title>
   </head>
   <body>
     <h1>Welcome to My Page</h1>
@@ -96,7 +94,7 @@ print(doc)
 from pyhtml import html, head, title, body, h1, p, ul, li
 doc = html(
     head(
-        title("My first Pyhtml Page")
+        title("My first PyHTML Page")
     ),
     body(
         h1("Welcome to My Page"),
@@ -113,9 +111,13 @@ print(doc)
 
 :::
 
-### Comparison between pyhtml and jinja2
+## Summary
 
-| Feature               | pyhtml                                      | jinja2                                    |
+In this section, we have introduced the `pyhtml` library for generating HTML using Python syntax, demonstrating its basic usage and how to create nested HTML structures. Finally, we compared `pyhtml` with the popular templating engine `jinja2`, highlighting their differences in syntax, use cases, and community support.
+
+### Comparison between PyHTML and jinja2
+
+| Feature               | PyHTML                                      | jinja2                                    |
 |-----------------------|---------------------------------------------|-------------------------------------------|
 | Syntax                | Python function calls                       | Template syntax with delimiters           |
 | Learning Curve        | Easier for Python developers                | Requires learning template syntax         |
@@ -127,12 +129,8 @@ print(doc)
 | Popularity            | Less popular                               | Widely used in web development             |
 | Use in Web Frameworks | Less commonly used                          | Commonly used in frameworks like Flask |
 
-## Summary
 
-In this section, we explored the `sys` module in Python, focusing on `sys.argv` for command-line argument handling. We also introduced the `pyhtml` library for generating HTML using Python syntax, demonstrating its basic usage and how to create nested HTML structures. Finally, we compared `pyhtml` with the popular templating engine `jinja2`, highlighting their differences in syntax, use cases, and community support.
+### Additional Resources
 
-:::info Check the following links for more details:
-
-- [sys module documentation](https://docs.python.org/3/library/sys.html)
-- [pyhtml documentation](https://pypi.org/project/pyhtml/)
+- [PyHTML documentation](https://pypi.org/project/pyhtml/)
 - [jinja2](./3-jinja2.md)

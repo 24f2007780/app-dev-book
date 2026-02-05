@@ -18,7 +18,7 @@ In this example, the form has two input fields for the user's name and email add
 
 Any data sent through an HTML form should have `name` and `value` attributes for every data field. The `name` attribute represent the **key** and `value` attribute represent the **value** in the form data.
 
-After submission, the browser encodes the form data as key–value pairs (derived from name and user-entered values) and sends it to the server using the specified encoding method. For example, if a user enters "John Doe" as the name and enters "john.doe@example.com" as the email, the form data will be sent to the server somewhat similar to the following format:
+After submission, the browser encodes the form data as key–value pairs (derived from name and user-entered values) and sends it to the server using the specified encoding method. For example, if a user enters "John Doe" as the name and enters `john.doe@example.com` as the email, the form data will be sent to the server somewhat similar to the following format:
 
 ```text
 
@@ -59,15 +59,17 @@ The `input` tag is used to create various types of input fields in an HTML form.
 This creates a single-line text input field for the username. The `value` attribute will be taken from the user input. Here the `id` can be used to identify the input element with the HTML page and `name` and `value` will be sent over the network. We can add additional attributes to enhance the input field. Some of the commonly used attributes are:
 
 - `placeholder`: Provides a hint to the user about what to enter in the input field.
-- `title`: Provides additional information about the input field, usually displayed as a tooltip.
 - `size`: Specifies the width of the input field in characters.
 - `maxlength`: Specifies the maximum number of characters allowed in the input field.
 - `minlength`: Specifies the minimum number of characters required in the input field.
-- `required`: Indicates that the input field must be filled out before submitting the form.
 - `value`: Sets a default value for the input field.
-- `readonly`: Makes the input field read-only, preventing user modification.
-- `disabled`: Disables the input field, preventing user interaction, submission and transmission over the network.
 - `pattern`: Specifies a regular expression that the input value must match for validation.
+
+These attributes can be used be all `<input>` tags:
+- `required`: Indicates that the input field must be filled out before submitting the form.
+- `disabled`: Disables the input field, preventing user interaction, submission and transmission over the network.
+- `title`: Provides additional information about the input field, usually displayed as a tooltip.
+- `readonly`: Makes the input field read-only, preventing user modification.
 
 ### email Input
 
@@ -75,7 +77,7 @@ This creates a single-line text input field for the username. The `value` attrib
 <input type="email" name="user_email" id="user_email_id" required>
 ```
 
-This creates an input field for email addresses. The browser will validate the input to ensure it is in a valid email format. The `required` attribute indicates that this field must be filled out before submitting the form. The `email` input type also supports other attributes mentioned in the `text` input section.
+This creates an input field for email addresses. The browser will validate the input to ensure it is in a valid email format. The `required` attribute indicates that this field must be filled out before submitting the form.
 
 ### password Input
 
@@ -83,7 +85,7 @@ This creates an input field for email addresses. The browser will validate the i
 <input type="password" name="user_password" id="user_password_id" required>
 ```
 
-This creates a password input field where the entered text is masked for security. The `required` attribute indicates that this field must be filled out before submitting the form. The `password` input type also supports other attributes mentioned in the `text` input section.
+This creates a password input field where the entered text is masked for security.=
 
 ### radio Input
 
@@ -97,11 +99,7 @@ Gender:
 The `radio` input type allows users to select one option from a group of related options. Each radio button has the same `name` attribute but different `value` attributes. When the form is submitted, only the selected radio button's value will be included in the form data.
 
 We can also add some additional attributes to the radio input type:
-
 - `checked`: Specifies that the radio button should be pre-selected when the page loads.
-- `disabled`: Disables the radio button, preventing user interaction and submission over the network.
-- `required`: Indicates that one of the radio buttons in the group must be selected before submitting the form.`
-- `title`: Provides additional information about the radio button, usually displayed as a tooltip.
 
 ### checkbox Input
 
@@ -166,9 +164,6 @@ We can also add some additional attributes to the select tag:
 
 - `multiple`: Allows users to select multiple options from the drop-down list.
 - `size`: Specifies the number of visible options in the drop-down list.
-- `required`: Indicates that an option must be selected before submitting the form.
-- `disabled`: Disables the drop-down list, preventing user interaction and submission over the network.
-- `title`: Provides additional information about the select field, usually displayed as a tooltip.
 
 ### Option Tag
 
@@ -183,9 +178,7 @@ We can also add some additional attributes to the option tag:
 
 - `selected`: Specifies that this option should be pre-selected when the page loads.
 - `hidden`: Hides the option from the dropdown list while keeping it in the DOM.
-- `disabled`: Disables the option, preventing user selection.
 - `label`: Provides a shorter label for the option, which can be used for accessibility purposes.
-- `title`: Provides additional information about the option, usually displayed as a tooltip.
 
 :::info Providing a default blank option
 To provide a default blank option in a select dropdown, we can add an option tag with an empty value at the beginning of the select element. This allows users to see a blank option when they first interact with the dropdown.
@@ -225,7 +218,7 @@ selected_cars = request.form.getlist('cars')
 
 :::
 
-## file Input
+## `file` input
 
 We can also use the `input` tag to create a file upload field in an HTML form. The `type` attribute should be set to `file` to create a file input field. But to successfully upload a file, the form's `enctype` attribute must be set to `multipart/form-data`.
 
@@ -242,8 +235,6 @@ Common attributes for the file input type include:
 
 - `accept`: Specifies the types of files that the server accepts (e.g., `image/*`, `.pdf`).
 - `multiple`: Allows users to select multiple files for upload.
-- `disabled`: Disables the file input field, preventing user interaction and submission over the network.
-- `title`: Provides additional information about the file input field, usually displayed as a tooltip.
 
 ## textarea Tag
 
@@ -259,9 +250,6 @@ Common attributes for the textarea tag include:
 
 - `maxlength`: Specifies the maximum number of characters allowed in the text area.
 - `minlength`: Specifies the minimum number of characters required in the text area.
-- `readonly`: Makes the text area read-only, preventing user modification.
-- `disabled`: Disables the text area, preventing user interaction and submission over the network.
-- `title`: Provides additional information about the text area, usually displayed as a tooltip.
 
 ## Label Tag
 
@@ -388,7 +376,7 @@ In this lesson, we explored HTML forms and their components, including various i
 
 In the next lesson, we will learn how to handle form submissions and process the data on the server side using flask request object.
 
-### references
+### Additional references
 
 - [MDN Web Docs - HTML forms](https://developer.mozilla.org/en-US/docs/Learn/Forms)
 - [MDN Web Docs - Input types](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)

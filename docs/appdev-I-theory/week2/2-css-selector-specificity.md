@@ -1,19 +1,58 @@
 
 ## Cascading Style Sheets
-
+CSS describes how HTML elements are to be displayed on screen. It saves a lot of work because a single CSS file can control the layout and appearance of multiple web pages at once.
 ::: warning ⚠️ This section is reference-heavy. Focus primarily on selectors, specificity, and commonly used pseudo-classes for exams.
 a short CSS Video tutorial!! https://youtu.be/l1mER1bV0N0?si=JzvInFpRWEqTltJ1
 :::
 
-- CSS describes how HTML elements are to be displayed on screen. It saves a lot of work because a single CSS file can control the layout and appearance of multiple web pages at once.
 
+## How to Add CSS?
+#### 1. External CSS `<link rel="stylesheet" href="style.css">`
+Usually used for the common theme of your entire website within 1 file!!
+- `<link>` element , inside the `<head>` section of HTML page.
+```html
+<html>
+  <head>
+    <link rel="stylesheet" href="example.css">
+  </head>
+<body>
+```
+
+#### 2. Internal CSS `<style></style>`
+may be used if that HTML page has a unique style, separate or in addition to the external styling.
+
+```html
+<head>
+  <link rel="stylesheet" href="external-style.css"> <!-- has p { color: red; } -->
+
+  <style> /* inline css */
+  p {
+    color: blue;
+  }
+
+  h1 {
+    color: maroon;
+    margin-left: 40px;
+  }
+  </style>  
+</head>
+```
+- Both have same selector `p` but internal style is defined AFTER the link of `external` css, so inline wins ✅`Blue`
+
+#### 3. Inline CSS `<tag style=";"></tag>`
+May be used to apply unique style for a single element
+```html
+<td style="border: 1px solid black;">Statistics for Data Science I</td>
+
+<p style="color: green;">p tag with inline css</p>
+```
+- `inline` style overrides `internal & external` stylesheets in the `head` section, so paragraph tag will now be ✅`green`❌`blue`
 
 ## Type of CSS Selectors (Think of Them as Conditions)
-```txt
-IF an element matches the selector
-AND no higher-priority rule overrides it
+IF an element matches the selector<br>
+AND no higher-priority rule overrides it<br>
 THEN apply the styles inside { }
-```
+
 
 :::tabs
 ==type selector
@@ -46,9 +85,7 @@ The id of an element is unique within a page, so the id selector is used to sele
     font-size: 2em;
     padding: 30px 20px;
 }
-/* padding: VERTICAL HORIZONTAL
-   30px → top & bottom
-   20px → left & right */
+/* padding: VERTICAL HORIZONTAL */
 ```
 ==attribute selector
 select elements with a specific attribute
@@ -119,54 +156,13 @@ div, span, p {
   text-align: center;
   background-color: black;
 }
-/* (div) OR (span) OR (p) NOT AND */
+/* (div) OR (span) OR (p) */
 ```
 Apply these styles to all `<div>` elements, all `<span>` elements, and all `<p>` elements.
 
 
 
 
-## How to Add CSS?
-#### 1. External CSS `<link rel="stylesheet" href="style.css">`
-Usually used for the common theme of your entire website within 1 file!!
-- `<link>` element , inside the `<head>` section of HTML page.
-```html
-<html>
-  <head>
-    <link rel="stylesheet" href="example.css">
-  </head>
-<body>
-```
-
-#### 2. Internal CSS `<style></style>`
-may be used if that HTML page has a unique style, separate or in addition to the external styling.
-
-```html
-<head>
-  <link rel="stylesheet" href="external-style.css"> <!-- has p { color: red; } -->
-
-  <style> /* inline css */
-  p {
-    color: blue;
-  }
-
-  h1 {
-    color: maroon;
-    margin-left: 40px;
-  }
-  </style>  
-</head>
-```
-- Both have same selector `p` but internal style is defined AFTER the link of `external` css, so inline wins🏆 `BLUE`
-
-#### 3. Inline CSS `<tag style=";"></tag>`
-May be used to apply unique style for a single element
-```html
-<td style="border: 1px solid black;">Statistics for Data Science I</td>
-
-<p style="color: green;">p tag with inline css</p>
-```
-- `inline` style overrides `internal & external` stylesheets in the `head` section, so paragraph tag will now be 🏆`GREEN`❌`BLUE`
 
 ## CSS specificity
 ::: warning From strongest to weakest: `!important > inline > ID > class / attribute > element`
@@ -187,17 +183,17 @@ May be used to apply unique style for a single element
 ::: details Explanation of Each Case
 
 **Case 1:**  Both selectors are classes (same specificity).<br>
-👉 The rule written **later in the CSS** wins.<br>
+ The rule written **later in the CSS** wins.<br>
 
 **Case 2:** ID selectors have higher specificity than class selectors.<br>
-👉 ID rule overrides class rule.<br>
+ ID rule overrides class rule.<br>
 
 
 **Case 3:** Inline styles have higher priority than both ID and class selectors.<br>
-👉 Inline style wins.<br>
+ Inline style wins.<br>
 
 **Case 4:** The `!important` declaration overrides inline, ID, and class rules.<br>
-👉 `!important` wins for that property.<br>
+ `!important` wins for that property.<br>
 
 **Case 5: Multiple `!important` rules**  
 When both rules use `!important`, normal specificity rules apply.<br> 
@@ -206,10 +202,10 @@ If specificity is equal, the rule written later in the CSS wins.
 
 
 ### Margins, height, width, padding
-1. **Margin**
-2. Padding is used to generate space around an element's content (inside borders).
-3. **height**
-4. **width**
+1. **Margin** is the distance between an element's border and the surrounding elements.
+2. **Padding** is used to generate space around an element's content (inside borders).
+3. **Height**
+4. **Width**
 5. `max-width` property sets the maximum allowed width of an element. 
 
 - `auto` - the browser calculates
@@ -224,7 +220,7 @@ div {
 
     margin: 3px;
     padding: 25px 50px 75px 100px;
-/* remember the 🚨ORDER is top right bottom left */
+/* remember the ORDER is top right bottom left */
     border: 5px solid gray;
 
   
@@ -265,8 +261,8 @@ CSS provides special pseudo-classes to style each state. Order matters:
 
 :::tabs
 == :link
-a normal, user has never clicked before link. DEFAULT STATE
-👉 Use: Show users that the link is new / unexplored
+DEFAULT STATE, user has never clicked before link.<br>
+Use: Show users that the link is new / unexplored
 
 ```css
 a:link {
@@ -275,7 +271,7 @@ a:link {
 ```
 
 == :visited
-a link the user has visited
+a link the user has visited<br>
 Use: Help users recognize pages they’ve already opened
 ```css
 a:visited {
@@ -283,7 +279,7 @@ a:visited {
 }
 ```
 == :hover
-a link when the user's mouse pointer is placed over the link.
+a link when the user's mouse pointer is placed over the link.<br>
 Use: commonly used for interaction feedback. Indicate “this is clickable”
 ```css
 a:hover {
@@ -292,8 +288,8 @@ a:hover {
 }
 ```
 == :active
-Applies at the exact moment the link is clicked (mouse down)
-Give a **very short** “pressed link” feedback
+Applies at the exact moment the link is clicked (mouse down)<br>
+Use: give a **very short** “pressed link” feedback
 ```css
 a:active {
   color: red;
@@ -362,4 +358,4 @@ selects all `<p>` elements that follow the `<div>` and share the same parent
 | `A B` | B inside A |
 | `A > B` | Direct child |
 | `A + B` | Immediate sibling |
-| `A ~ B` | All following siblings |
+| `A ~ B` | All subsequent siblings |

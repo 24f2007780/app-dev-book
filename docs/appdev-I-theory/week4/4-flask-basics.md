@@ -152,7 +152,7 @@ Flask recognises certain characters as delimiters in URLs. These characters are 
 - `&` (ampersand): Used to separate multiple query parameters.
 - `+` (plus sign): Represents a space character in URL encoding.
 
-:::details `/` number of occurrences
+:::details routing based on number of occurrences of `/`
 
 If we define a route without a trailing slash, Flask will not match URLs with a trailing slash to that route. For example:
 
@@ -172,8 +172,9 @@ def about():
 
 Now, accessing `/about` (without a trailing slash) will automatically redirect to `/about/`, and the route will be matched successfully.
 
-**More than one trailing slash**: Flask treats multiple trailing slashes as a single slash. For example, accessing `/about///` will be treated the same as `/about/`.
-This behavior is not very predicatable in nature and it is generally recommended to use a single trailing slash for consistency and clarity in our URL design.
+More than one trailing slash: **Flask treats multiple trailing slashes as a single slash**. For example, accessing `/about///` will be treated the same as `/about/`.
+
+*This behavior is not very predictable in nature and it is generally recommended to use a single trailing slash for consistency and clarity in our URL design.*
 
 :::
 
@@ -296,6 +297,6 @@ In this module we learned about
 
 In the next module, we will explore template rendering in flask.
 
-### Extra resources:
+### Additional resources:
 
 - [Flask Official Documentation](https://flask.palletsprojects.com/)

@@ -20,7 +20,7 @@ $$
 \end{align}
 $$
 
-### 💡 Why Used? ⚡ Digital circuits & computers work with two voltage levels/logical states:
+### 💡 Why it is Used? ⚡ Digital circuits & computers work with two voltage levels/logical states:
     - ON or YES → 1
     - OFF or NO → 0
 - Foundation of all digital systems: *CPU operations, memory, machine-level code*
@@ -54,7 +54,7 @@ $$
 \end{align}
 $$
 
-### 💡 Why Used?
+### 💡 Why it is Used?
 
 - Compact form of binary
 - Easier to read than raw bits
@@ -85,7 +85,7 @@ $$
 \end{align}
 $$
 
-### 💡 Why Used?
+### 💡 Why it is Used?
 - Natural for humans (10 fingers) in daily calculations
 </div>
 
@@ -113,7 +113,7 @@ $$
 \end{align}
 $$
 
-### 💡 Why Important?
+### 💡 Why it is Used?
 
 - Very compact form of binary
 - Used in **memory addresses**
@@ -153,6 +153,11 @@ check your steps in below interactive component:
 <NumberSystemConverter />
 
 ## 🔁 Other Conversions (Quick Rules)
+::: info Binary conversion
+If there are less number of digits to group into threes or fours.
+Then use appropriate numbers of zeroes to the leftmost group<br>
+- Binary `10101` to Hexadecimal -> `0001` , `0101` -> 15
+:::
 
 ::: info 3. Binary ${11011010}_{2}$ → Hexadecimal
 

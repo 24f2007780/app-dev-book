@@ -44,4 +44,4 @@ The installation steps for VS Code differ by operating system. Below are the ste
 1. Use the integrated terminal by going to `View` > `Terminal` or pressing ``Ctrl + ` ``.
 1. Install extensions by going to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window or pressing `Ctrl + Shift + X`.
 
-***VS Code tour video guide:*** [vscode tour video](https://youtu.be/yjeHLSrhPao).
+***VS Code tour video guide:*** [Vscode tour video](https://youtu.be/yjeHLSrhPao).

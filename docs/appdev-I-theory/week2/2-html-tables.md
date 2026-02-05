@@ -2,15 +2,17 @@
 
 HTML tables are used to display data in a structured format using rows and columns. They are created using the following tags:
 
-- `<table>`: Defines the table.
-- `<tr>`: Defines a table row.
-- `<th>`: Defines a table header cell.
-- `<td>`: Defines a table data cell.
-- `<thead>`: Groups the header content in a table know as **Table Header Section**.
-- `<tbody>`: Groups the body content in a table know as **Table Body Section**.
-- `<tfoot>`: Groups the footer content in a table know as **Table Footer Section**.
-- `<caption>`: Adds a caption to the table.
-- `colspan` and `rowspan` attributes: Used to span cells across multiple columns or rows.
+| HTML Tag / Attribute | Description |
+|----------------------|-------------|
+| `<table>` | Defines the table |
+| `<tr>` | Defines a table row |
+| `<th>` | Defines a table header cell |
+| `<td>` | Defines a table data cell |
+| `<thead>` | Groups the header content in a table (Table Header Section) |
+| `<tbody>` | Groups the body content in a table (Table Body Section) |
+| `<tfoot>` | Groups the footer content in a table (Table Footer Section) |
+| `<caption>` | Adds a caption to the table |
+| `colspan`, `rowspan` | Span cells across multiple columns or rows |
 
 :::warning Deprecated Attribute
 **`border` attribute** is deprecated in HTML5, and it is recommended to use CSS for styling tables instead. We can use following CSS properties to add borders to tables:
@@ -41,13 +43,6 @@ The `<table>` element itself has very few attributes in modern HTML. Most table 
     <!-- Table content goes here -->
 </table>
 ```
-
-:::info Note
-
-- We can customize the table further using CSS for styling.
-- We can also give id to the table for further reference in CSS or JavaScript.
-
-:::
 
 ## Table Rows `<tr>`
 
@@ -155,6 +150,12 @@ In this example, the table is divided into three sections: the header (`<thead>`
 
 ## Complete Example
 
+::: tabs
+== output
+This will render as:
+
+![Table Example](../static/html-tables.png)
+== code
 Here's an example of a simple HTML table with proper semantics using `<thead>`, `<tbody>`, and `<tfoot>`:
 
 ```html
@@ -210,9 +211,7 @@ Here's an example of a simple HTML table with proper semantics using `<thead>`, 
 </html>
 ```
 
-This will render as:
-
-![Table Example](../static/html-tables.png)
+:::
 
 In this example:
 
@@ -222,13 +221,7 @@ In this example:
 - The `<tbody>` section contains the data rows with `<td>` elements.
 - The `<tfoot>` section contains the footer row, which can be used for summary information.
 
-:::info Note
 
-- We can customize the appearance of tables further using CSS for styling, such as changing colors, fonts, and spacing.
-- It is a good practice to use `<thead>`, `<tbody>`, and `<tfoot>` for better organization and accessibility of tables.
-- We should use CSS for styling tables instead of using deprecated attributes like `border`, `bgcolor`, `background`, `align`, `cellpadding`, and `cellspacing`.
-
-:::
 
 :::details **Try it yourself**
 
@@ -282,14 +275,13 @@ You can create your own HTML table by copying the example above into a text edit
 
 ## Summary
 
-In this section, we explored HTML tables, which are used to display data in a structured format using rows and columns. We learned about the various tags used to create tables, including `<table>`, `<tr>`, `<th>`, `<td>`, `<thead>`, `<tbody>`, and `<tfoot>`. We also discussed how to use attributes like `colspan` and `rowspan` to customize the layout of table cells. Additionally, we highlighted the importance of using CSS for styling tables instead of deprecated HTML attributes. Understanding how to create and structure tables is essential for effectively presenting tabular data on web pages.
+In this section, we explored HTML tables, which are used to display data in a structured format using rows and columns. We learned about the various tags used to create tables, including `<table>`, `<tr>`, `<th>`, `<td>`, `<thead>`, `<tbody>`, and `<tfoot>`. <br> We also discussed how to use attributes like `colspan` and `rowspan` to customize the layout of table cells. Additionally, we highlighted the importance of using CSS for styling tables instead of deprecated HTML attributes. Understanding how to create and structure tables is essential for effectively presenting tabular data on web pages.
 
 *We will continue to exploring more HTML elements and their usage in further sections. Specifically, we will look into forms and input elements after flask-basics section.*
 
-:::info Additional Resources:
+### Additional Resources:
 
 - [MDN Web Docs - HTML Tables](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table)
 - [W3Schools - HTML Tables](https://www.w3schools.com/html/html_tables.asp)
 - [HTML Living Standard - Tables](https://html.spec.whatwg.org/multipage/tables.html)
 
-:::

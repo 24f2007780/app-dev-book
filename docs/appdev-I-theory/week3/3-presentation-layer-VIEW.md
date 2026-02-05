@@ -1,11 +1,9 @@
 # Presentation Layer (VIEW)
-responsible for **displaying data to the user** and 
-capturing user interactions.
+responsible for **displaying data to the user** and capturing user interactions.
 
 - User-interface of application
 - Defines how information (received from Controller/Model) is presented (not how it is stored/processed)
 - responsible for **displaying data to the user** and capturing user interactions.
-
 - Ex: `HTML pages, server-side templates, Forms, rendered Charts`
 
 
@@ -52,8 +50,8 @@ Accessibility guidelines are defined by the **Web Content Accessibility Guidelin
     <h3>Operable</h3>
     <ul>
       <li>
-        All features usable using a 
-        <span class="hl">keyboard</span>
+        Features which are usable using a 
+        <span class="hl">keyboard and mouse</span>
       </li>
       <li>
         Users get <strong>enough time</strong> to read and interact
@@ -100,3 +98,5 @@ Accessibility guidelines are defined by the **Web Content Accessibility Guidelin
 
 </div>
 
+### Additional Resources
+- [Jakob Nielsen's Usability Heuristics](https://www.nngroup.com/articles/ten-usability-heuristics/)

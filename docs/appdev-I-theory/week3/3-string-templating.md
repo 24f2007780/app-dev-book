@@ -135,13 +135,9 @@ print(result2)
 - When compatibility with older Python versions (2.4 and above) is required.
 - When you want to avoid the complexity of `f-strings` or `str.format()` for basic use cases.
 
----
 
-:::tip
+### Additional Resources
+- For more complex templating needs, consider using advanced templating engines like Jinja2 which provide more features and flexibility.
+- For extra details, refer to the [official documentation](https://docs.python.org/3/library/string.html#template-strings-strings)
+- You can also check out the t-string introduced in python 3.14 for enhanced string templating capabilities [t-strings](https://realpython.com/python-t-strings/).
 
-For more complex templating needs, consider using advanced templating engines like Jinja2 which provide more features and flexibility.
-
-For extra details, refer to the [official documentation](https://docs.python.org/3/library/string.html#template-strings-strings)
-
-You can also check out the t-string introduced in python 3.14 for enhanced string templating capabilities [t-strings](https://realpython.com/python-t-strings/).
-:::

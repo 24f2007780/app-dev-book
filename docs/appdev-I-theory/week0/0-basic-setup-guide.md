@@ -1,9 +1,6 @@
 # Basic setup guide
 
-Hello! In this module, we will guide you through the basic setup and use of the tools required for this course. Also:
-
-- some basic units for solving numericals
-- accessing command-line input using the `sys` module
+Hello! In this module, we will guide you through the basic setup and use of the tools required for this course. 
 
 ::: tip **Disclaimer:**
 
@@ -21,7 +18,7 @@ In this course, we will use the Python programming language for application deve
 - Extensive libraries and frameworks.
 - Cross-platform compatibility.
 - Strong community support.
-- Versatile and can be used for <span style="color:rgb(98, 151, 208)"> web development, data analysis, artificial intelligence, scientific computing, automation, and more</span>
+- Versatile and can be used for <span style="color:rgb(98, 151, 208)"> web development, data analysis, artificial intelligence, scientific computing, automation,and more</span>
 
 ### Installation of Python
 
@@ -29,11 +26,17 @@ In this course, we will use the Python programming language for application deve
 2. Download and install the version for your operating system.
 3. During installation, make sure to check the box that says **Add Python to PATH**.
 4. After installation, open Command Prompt and type `python --version` -> verify if you see the installed Python version printed in the terminal.
-5. If you see an error message, revisit the installation steps and ensure that Python is added to ["Path" environment variable](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/).<br> Video guide: [python installation video](https://www.youtube.com/watch?v=91SGaK7_eeY).
+5. If you see an error message, revisit the installation steps and ensure that Python is added to ["Path" environment variable](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/).
+
+Video guide: [python installation video](https://www.youtube.com/watch?v=91SGaK7_eeY).
 
 ![python version](../static/python-version.png)
 
-### Virtual Environments
+:::info Linux & MacOS
+For Linux & MacOS, python is already installed
+:::
+
+## 2. Virtual Environments
 
 Virtual environments are isolated environments that allow you to manage dependencies for different projects separately. This helps to avoid conflicts between packages required by different projects.
 
@@ -97,13 +100,15 @@ Video guide: [python virtual environment video](https://youtu.be/Z9Vm9Uxk5pA).
 
 #### Basic pip commands
 
-- To install a package: `pip install package_name`
-- To uninstall a package: `pip uninstall package_name`
-- To list installed packages: `pip freeze`
-- To upgrade a package: `pip install --upgrade package_name`
-- To install packages from a requirements file: `pip install -r requirements.txt`
-- To uninstall packages from a requirements file: `pip uninstall -r requirements.txt`
-- To show information about a package: `pip show package_name`
+| Task | Command |
+|-----|---------|
+| Install a package | `pip install package_name` |
+| Uninstall a package | `pip uninstall package_name` |
+| List installed packages | `pip freeze` |
+| Upgrade a package | `pip install --upgrade package_name` |
+| Install packages from a requirements file | `pip install -r requirements.txt` |
+| Uninstall packages from a requirements file | `pip uninstall -r requirements.txt` |
+| Show information about a package | `pip show package_name` |
 
 For example, to install the Flask package, run:
 
@@ -111,4 +116,5 @@ For example, to install the Flask package, run:
 pip install flask
 ```
 
-**Note:** Make sure to activate your virtual environment before installing packages to ensure they are installed in the correct environment.
+::: info Make sure to activate your virtual environment before installing packages to ensure they are installed in the correct environment.
+:::

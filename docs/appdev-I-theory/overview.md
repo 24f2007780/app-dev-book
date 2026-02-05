@@ -7,11 +7,13 @@ This course lays the conceptual foundation required courses such as Appdev II, w
 
 ## Topics
 
+0. **[Setting Up dev Environment](./week0/week0-index.md)**<br>
+    installation guides for Python, VS Code, etc.
+
 1. **[Web Application Foundations](./week1/week1-index.md)**  
    - What is an application?
    - Platforms: desktop, mobile, and web
    - Client–Server and Peer-to-Peer architectures
-   - Intro to Model–View–Controller (MVC) pattern
    - Basics of networking protocols
    - HTTP request–response flow
    - Performance parameters
@@ -20,26 +22,34 @@ This course lays the conceptual foundation required courses such as Appdev II, w
    - basics of number systems
    - ASCII, Unicode representation
    - Markup languages: HTML
-   - DOM tree 
    - CSS styling
-   - Responsive design principles
 
 3. **[Presentation Layer (View)](./week3/week3-index.md)**  
 This module focuses on the presentation layer of the web:
-   - UI/UX principles
-   - Types of view  
-   - <span style="font-weight:bold; color:rgb(181, 118, 244)">PyHTML</span>
-   - <span style="font-weight:bold; color:rgb(181, 118, 244)">Python string module, Jinja2 templates</span>
+   - Responsive design principles
+   - Python string module
+   - Jinja2 templates
+   - PyHTML
    
 4. **[Database Layer (Model)](./week4/week4-index.md)**  
 This module focuses on the database layer of the web:
-   - Persistent storage
-   - Relational DBMS SQL vs unstructured NoSQL 
-   - relationships and ER modeling  
+   - Intro to Model–View–Controller (MVC) pattern
+   - Relational DBMS SQL vs unstructured NoSQL vs flat file storage
+   - relationships and ER diagram  
    - basic SQL queries
-   - Get familiar with Flask, a lightweight web framework for Python
-   - <span style="font-weight:bold; color:rgb(181, 118, 244)">Flask Basics</span>
+   - Introduction to Flask
+   - More on Flask
 
-Please refer to the detailed guides in this section for comprehensive coverage of each topic.
+
+## Additional Resources
+
+For supplementary learning, you can explore the following:
+
+- [Flask Documentation](https://flask.palletsprojects.com/)
+- [SQLAlchemy Documentation](https://docs.sqlalchemy.org/)
+- [Python Official Documentation](https://docs.python.org/3/)
+---
+
+We hope you find this documentation helpful as you progress through Appdev I. Happy learning and coding!
 
 contributed by MAD1 TAs Yashvi, Himanshu & Darshan

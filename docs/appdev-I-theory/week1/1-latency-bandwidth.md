@@ -6,15 +6,15 @@ Latency is the time delay between sending a request and receiving the response.
 ::: warning How long it takes for data to travel from client → server 
 
 - Speed of light in vacuum $\approx 3 \times 10^8 \text{ m/s}$
-- Speed in copper/fiber cables $\approx 2 \times 10^8 \text{ m/s}$
+- Speed in copper/fiber cables $\approx 2 \times 10^8 \text{ m/s}$=
+  - Rule of thumb:<br>
+      ≈ 5 nanoseconds per meter<br>
+      ≈ 5 milliseconds per 1000 km
 :::
 
-Rule of thumb:<br>
-  ≈ 5 nanoseconds per meter<br>
-  ≈ 5 milliseconds per 1000 km
 
 If communication is **continuous request–response** based:
-- A new request is sent **only** after the previous response is received
+- For numericals, we assume that a new request is sent **only** after the previous response is received sucessfully
 - So latency directly limits how many requests per second are possible
 
 ::: danger ❓Problem 1: A student in Chennai is attending an online exam hosted on a server in Delhi.
