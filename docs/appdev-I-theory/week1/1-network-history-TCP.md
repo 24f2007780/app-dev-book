@@ -58,7 +58,62 @@ tcp --> domain --> http --"DNS database of ISP local cache"--> web
 
 You will learn about *HTTP methods* in greater detail in [Week 6](../week6/6-Rest-APIs.md)<br>
 
-### ⭐Checkout [Curl Commands](../week5/5-business-logic-layer-CONTROLLER#curl-commands) from Week-5
+
+## [Curl Commands](../week5/5-business-logic-layer-CONTROLLER#curl-commands)
+
+- HTTP is a **stateless protocol**: each client request is handled independently. The server does not remember previous requests. To maintain user state across multiple requests (e.g., shopping cart, login sessions), techniques such as:
+
+  - HTTP cookies
+  - Hidden form fields
+  - Server-side sessions
+
+##### minimal HTTP server
+
+```bash
+ while true; do 
+    echo -e "HTTP/1/1 200 OK\n\n $(date)" |
+    nc -l localhost 1500;
+ done
+```
+
+- Listens on port 1500 & sends the current date as the HTTP response
+
+##### Python Built-in HTTP Server
+
+```bash
+python -m http.server
+```
+
+$http:// \underbrace{0.0.0.0}_\text{default IP address}: \underbrace{8000}_\text{default port}$ Serves files from the current working directory
+
+HTTP 1.1 variant → large persistent connections and pipelining<br>
+
+::: tip ✅ TODO: Try `curl wttr.in/{type city name}` on your wsl terminal like `curl wttr.in/london`
+:::
+
+:::code-group
+
+```bash [Client Request]
+GET / HTTP/1.1
+Host: localhost:5000 or www.domain.com
+User-Agent: curl/7.64.1
+Accept: */*
+```
+
+```bash [Server Response]
+HTTP/1.1 200 OK
+Server: SimpleHTTP/0.6 Python/3.x
+Content-Type: text/html
+Content-Length: <file-size>
+```
+
+:::
+
+- `127.0.0.1 (IPv4)` and `::1 (IPv6)` are **loopback** addresses. Packets sent to these addresses:
+    - Never leave the host machine & are looped through the network interface card only.
+    - This can be used for **diagnostic** purposes to verify that the internal path through the TCP/IP protocols is working.
+
+<CurlRestAPI />
 
 ## Transmission Control Protocol
 **Transport Layer that ensures data gets delivered correctly (Accuracy > Speed)**
@@ -190,6 +245,7 @@ Correct Answer: B) `0000:0000:AC10:0A19`
 :::
 
 
+
 ## Status codes
 
 | Category | Status Code | Status Name | Description |
@@ -210,9 +266,7 @@ Correct Answer: B) `0000:0000:AC10:0A19`
 |  | 503 Service Unavailable | Overloaded or down | Server down |
 |  | 504 | Gateway Timeout |  |
 
-<!-- <ClientOnly> -->
   <StatusCodeSimulator />
-<!-- </ClientOnly> -->
 
 &emsp;&emsp;&emsp; Web 1.0 1990-2000 &emsp;&emsp;&emsp;&emsp; Web 2.0 2004-2016  &emsp;&emsp;&emsp;&emsp; Web 3 2016- 
 

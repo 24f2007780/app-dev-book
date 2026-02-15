@@ -9,7 +9,14 @@ Finally, we explore how the Internet🌐 works by understanding evolution of dif
 
 ### Topics Covered
 
-- [Introduction to Apps](1-intro-to-applications.md)
-- [Types of Architecture](1-types-architecture.md)
-- [Network History: TCP/IP, HTTP Protocols](1-network-history-TCP.md)
-- ⚠️[Latency Bandwidth](1-latency-bandwidth.md) is essential for numericals in exams
+- [Introduction to Apps](1-intro-to-applications.md)<br>
+  Desktop vs Mobile vs Web
+
+- [Types of Architecture](1-types-architecture.md)<br>
+  Client-Server vs Peer-to-peer, Model View Controller
+
+- [Network History: TCP/IP, HTTP Protocols, cURL commands](1-network-history-TCP.md)<br>
+  TCP/IP, HTTP Status Codes & Headers, IP address vs Port
+
+- ⚠️[Latency and Bandwidth](1-latency-bandwidth.md)<br>
+  essential for numericals in exams

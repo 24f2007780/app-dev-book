@@ -14,21 +14,23 @@ By the end of this week, you should be able to:
 
 ### Topics Covered
 
-1. **[Model–View–Controller & Data Storage Systems](4-database-layer-MODEL.md)**  
+- **[Model–View–Controller & Data Storage Systems](4-database-layer-MODEL.md)**  
    MVC pattern, responsibilities of the Model, and use cases of spreadsheets, RDBMS, and NoSQL databases
-2. **[SQL Recap](4-SQL-Recap.md)**<br>
+
+- **[SQL Recap](4-SQL-Recap.md)**<br>
    Small revision on necessary SQL queries from DBMS course.
-2. **[Flask: Basic Application](4-flask-basics.md)**  
+   
+- **[Flask: Basic Application](4-flask-basics.md)**  
    Creating a minimal Flask app, routes, and request–response flow
 
-3. **[Flask Templating](4-flask-templating.md)**  
+- **[Flask Templating](4-flask-templating.md)**  
    Integrating Flask with templates to render dynamic HTML
 
-4. **[More Features of Flask](4-more-flask-features.md)**
+- **[More Features of Flask](4-more-flask-features.md)**
    `url_maps`, redirecting, error-handling, flask CLI commands
 
-5. **[HTML Forms](4-html-forms.md)**
+- **[HTML Forms](4-html-forms.md)**
    Data & file input methods in HTML forms. 
 
-6. **[Flask Core Functionalities](4-request.md)**  
+- **[Flask Core Functionalities](4-request.md)**  
    Data handling in flask with `request` object

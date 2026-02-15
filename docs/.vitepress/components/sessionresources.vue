@@ -95,6 +95,18 @@ const best = computed(() => {
 <template>
   <div class="sessions-inline">
     <strong class="heading">📺 Session Resources</strong>
+    <div v-if="best.length" class="line">
+      <span class="label">Best recorded session:</span>
+      <a
+        v-for="(s, i) in best"
+        :key="i"
+        :href="s.link"
+        target="_blank"
+      >
+        {{ s.label }}
+      </a>
+    </div>
+
     <div class="line">
       <span class="label">Instructor sessions:</span>
       <a
@@ -111,17 +123,6 @@ const best = computed(() => {
       <span class="label">TA sessions:</span>
       <a :href="liveSessions.ta.link" target="_blank">
         Tue, Thu, Sat · 6–8 PM
-      </a>
-    </div>
-    <div v-if="best.length" class="line">
-      <span class="label">Best recorded session:</span>
-      <a
-        v-for="(s, i) in best"
-        :key="i"
-        :href="s.link"
-        target="_blank"
-      >
-        {{ s.label }}
       </a>
     </div>
   </div>

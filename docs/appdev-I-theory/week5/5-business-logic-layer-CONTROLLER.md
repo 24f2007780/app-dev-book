@@ -61,9 +61,7 @@ Content-Length: <file-size>
     - Never leave the host machine & are looped through the network interface card only.
     - This can be used for **diagnostic** purposes to verify that the internal path through the TCP/IP protocols is working.
 
-<ClientOnly>
-  <CurlRestAPI />
-</ClientOnly>
+<CurlRestAPI />
 
 | **Command**          | **Description**                                          |
 |----------------------|----------------------------------------------------------|
